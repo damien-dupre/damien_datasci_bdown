@@ -13,12 +13,40 @@
     
     
     <item>
+      <title>A Comparison of Three Commercial Systems for Automatic Recognition of Spontaneous Facial Expressions</title>
+      <link>/talk/2018-cere/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2018-cere/</guid>
+      <description>SYMPOSIUM 2: Affect Recognition in Humans versus Machines: Current Issues and Future Challenges Convener: Eva Krumhuber, University College London, UK
+ABSTRACT: Automatic facial expression recognition systems can provide important information about our emotions and how they change over time. While the use of automatic systems has seen a steady increase over the last years, their classification results have not yet been systematically compared. The aim of this research was to test commercial software packages from Affectiva, Kairos and Microsoft companies in terms of their recognition accuracy.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Analysis of Automatic Facial Expressions Recognition ‘in the Wild’ Using Generalized Additive Mixed Models and Significant Zero Crossing of the Derivatives</title>
+      <link>/talk/2018-bhci/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2018-bhci/</guid>
+      <description>ABSTRACT: The analysis of facial expressions is currently a favoured method of inferring experienced emotion, and consequently significant efforts are currently being made to develop improved facial expression recognition techniques. Among these new techniques, those which allow the automatic recognition of facial expression appear to be most promising. This paper presents a new method of facial expression analysis with a focus on the continuous evolution of emotions using Generalized Additive Mixed Models (GAMM) and Significant Zero Crossing of the Derivatives (SiZer).</description>
+    </item>
+    
+    <item>
       <title>Example Talk</title>
       <link>/talk/example-talk/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/talk/example-talk/</guid>
       <description>Embed your slides or video here using shortcodes. Further details can easily be added using Markdown and $\rm \LaTeX$ math code.</description>
+    </item>
+    
+    <item>
+      <title>Multivariate Body Area Network of Physiological Measures “In the Wild”: A case study with zipline activity</title>
+      <link>/talk/2018-mb/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2018-mb/</guid>
+      <description>ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts.</description>
     </item>
     
   </channel>

@@ -34,12 +34,28 @@ filter_default = 0
   tag = "*"
 
 [[filter]]
-  name = "Deep Learning"
-  tag = "Deep Learning"
+  name = "MiRAbility"
+  tag = ".mirability"
+
+[[filter]]
+  name = "DynEmo"
+  tag = ".dynemo"
+  
+[[filter]]
+  name = "Oudjat"
+  tag = ".oudjat"
+  
+[[filter]]
+  name = "EmoLyse"
+  tag = ".emolyse"
+  
+[[filter]]
+  name = "LTfLL"
+  tag = ".ltfll"
 
 [[filter]]
   name = "Other"
-  tag = "Demo"
+  tag = ".demo"
 
 +++
 

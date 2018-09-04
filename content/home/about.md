@@ -9,32 +9,37 @@ weight = 5
 
 # List your academic interests.
 [interests]
-  interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+interests = [
+    "Emotion",
+    "Statistics",
+    "Facial Expressions",
+    "Wearable Devices",
+    "Physiology",
+    "Human Computer Interactions"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "Ph.D. in Social & Experimental Psychology"
+  institution = "University Grenoble Alps, France"
+  year = 2016
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
+  course = "M.Sc. in Social & Cognitive Science"
+  institution = "University Grenoble Alpes, France"
+  year = 2010
 
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
+  course = "B.Sc. in Psychology"
+  institution = "University Grenoble Alpes, France"
+  year = 2007
  
 +++
 
 # Biography
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Ph.D in Social and Experimental Psychology from the University Grenoble-Alpes, France, my researches are focus on understanding psychophysiological responses 'in the wild'. With Anna Tcherkassof in Grenoble, I have contributed to develop the DynEmo database by recording and assessing dynamic and spontaneous facial expressions of emotions. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Whereas my thesis aimed to evaluate Emotional UX of innovative technologies and designs for the company Ixiade (www.ixiade.com), I have collaborated with Queen's University and Sensum Ltd (www.sensum.co) to evaluate emotions with physiological sensors and automatic facial expression recognition. In Insight, I am processing physiological measurements from marathon runners under the direction of Aonghus Lawlor.
+
+My domain of expertise relies in multivariate time series analysis and trend extraction for supervised or unsupervised machine learning classification. 
