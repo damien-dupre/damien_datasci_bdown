@@ -22,7 +22,7 @@
 &lt;p&gt;The &lt;code&gt;blogdown&lt;/code&gt; package is very well documented and if you are intended to publish your own websites the best approach is to have a look at the bookdown made by Yihui Xie, Amber Thomas and Alison Presmanes Hill &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;blogdown: Creating Websites with R Markdown&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Several tutorials are available to help new users in this case:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A blog post writen by Alison Presmanes Hill, &lt;a href=&#34;https://alison.rbind.io/post/up-and-running-with-blogdown/&#34;&gt;Up and running with blogdown&lt;/a&gt;, is a very good first step to blogdown. The post is well documented and will help to solve most of the major problem to setup a website.&lt;/li&gt;
+&lt;li&gt;A blog post writen by Alison Presmanes Hill, &lt;a href=&#34;https://alison.rbind.io/post/up-and-running-with-blogdown/&#34;&gt;Up and running with blogdown&lt;/a&gt;, is a very good first step to blogdown. The post is well documented and will help to solve most of the major problems to setup a website.&lt;/li&gt;
 &lt;li&gt;The talk given by Yihui Xie at the rstudio::conf 2018, &lt;a href=&#34;https://www.rstudio.com/resources/videos/create-and-maintain-websites-with-r-markdown-and-blogdown/&#34;&gt;Create and maintain websites with R Markdown and blogdown&lt;/a&gt;, is short and very well presented.&lt;/li&gt;
 &lt;li&gt;The youtube tutorial by John Muschelli, &lt;a href=&#34;https://www.youtube.com/watch?v=syWAKaj-4ck&#34;&gt;Making a Website with Blogdown&lt;/a&gt;, presents all the steps from building a website to publishing it on netlify.com.&lt;/li&gt;
 &lt;/ul&gt;

@@ -18,7 +18,7 @@ The `blogdown` package is very well documented and if you are intended to publis
   
 Several tutorials are available to help new users in this case:
 
-* A blog post writen by  Alison Presmanes Hill, [Up and running with blogdown](https://alison.rbind.io/post/up-and-running-with-blogdown/), is a very good first step to blogdown. The post is well documented and will help to solve most of the major problem to setup a website. 
+* A blog post writen by  Alison Presmanes Hill, [Up and running with blogdown](https://alison.rbind.io/post/up-and-running-with-blogdown/), is a very good first step to blogdown. The post is well documented and will help to solve most of the major problems to setup a website. 
 * The talk given by Yihui Xie at the rstudio::conf 2018, [Create and maintain websites with R Markdown and blogdown](https://www.rstudio.com/resources/videos/create-and-maintain-websites-with-r-markdown-and-blogdown/), is short and very well presented.
 * The youtube tutorial by John Muschelli, [Making a Website with Blogdown](https://www.youtube.com/watch?v=syWAKaj-4ck), presents all the steps from building a website to publishing it on netlify.com.
 
