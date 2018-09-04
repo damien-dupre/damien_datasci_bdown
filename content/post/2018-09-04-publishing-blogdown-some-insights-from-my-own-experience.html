@@ -1,0 +1,80 @@
+---
+title: Publishing blogdown, some insights from my own experience
+author: ''
+date: '2018-09-04'
+slug: publishing-blogdown-some-insights-from-my-own-experience
+categories: []
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<p>Finally! My first post to my website is about to be live on the web! I’m always amazed by the possibilities offered by R and Rstudio and my first lines will thank this huge community which make the awesomeness real. However it’s not always easy to use and to apply these magnificent tools. Publishing a blogdown is a good example of a process that looks easy on the first sight but which can be tricky. Here are some insights from my experience in publishing a research blog from blogdown.</p>
+<div id="first-steps-with-blogdown" class="section level2">
+<h2>First steps with blogdown</h2>
+<p>The <code>blogdown</code> package is very well documented and if you are intended to publish your own websites the best approach is to have a look at the bookdown made by Yihui Xie, Amber Thomas and Alison Presmanes Hill <a href="https://bookdown.org/yihui/blogdown/">blogdown: Creating Websites with R Markdown</a>.</p>
+<p>Several video tutorials are available to help new user in this case:</p>
+<ul>
+<li>The talk given by Yihui Xie at the rstudio::conf 2018, <a href="https://www.rstudio.com/resources/videos/create-and-maintain-websites-with-r-markdown-and-blogdown/">Create and maintain websites with R Markdown and blogdown</a>, is short and very well presented.</li>
+<li>The youtube tutorial by John Muschelli, <a href="https://www.youtube.com/watch?v=syWAKaj-4ck">Making a Website with Blogdown</a>, presents all the steps from building a website to publishing it on netlify.com.</li>
+</ul>
+</div>
+<div id="problem-solving" class="section level2">
+<h2>Problem solving</h2>
+<p>Even if the authors of <code>blogdown</code> made it very easy to publish a blog from Rstudio, some problem can be encountered while following the basic steps. Here is my experience in troubleshooting some of the problems that can happen.</p>
+<div id="prerequisite" class="section level3">
+<h3>Prerequisite</h3>
+<p>In order to avoid the majority of the problems that may happen, it is essential to have the latest versions of R, Rstudio, <code>blogdown</code> package (don’t hesitate to use its GitHub version <code>devtools::install_github(&quot;rstudio/blogdown&quot;)</code>) and Hugo (<code>blogdown::update_hugo()</code>). Like mine, <strong>if the process of publishing a blogdown takes several weeks, upgrading to the latest version for every try can slove a lot of problems</strong>.</p>
+</div>
+<div id="creating-a-github-connection" class="section level3">
+<h3>Creating a GitHub connection</h3>
+<p>If one wants to make blogdown live on the web, a GitHub integration is the way to go according to me. Two routes are possible:</p>
+<ol style="list-style-type: decimal">
+<li>Creating a blogdown project from Rstudio and then uploading the project on GitHub. Rstudio GUI is one of its main asset and creating a blogdown project from Rstudio is very easy but the connection with GitHub has to be done afterward which can lead to several problems when committing the changes.</li>
+<li>Creating an empty repo on GitHub, then creating a new project with version control on Rstudio and use the function <code>blogdown::build_site()</code> in this new project. <strong>This solution doesn’t look as straight forward but once it is done, the connection with GitHub is very stable</strong>.</li>
+</ol>
+</div>
+<div id="installing-a-new-theme" class="section level3">
+<h3>Installing a new theme</h3>
+<p>When it comes to build the site, it is possible to specify the theme you want to use with <code>blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;)</code>. Even if the default theme is nice, researchers and students can find the theme “academic” more suitable. But be sure to have installed a version of Hugo that corresponds with the theme version of Hugo.</p>
+<p>After this initial command, the template website should be displayed in Rstudio viewer. If you have to close the project it is possible to relaunch this view using the Serve Site shortcut in Rstudio Addins or by using <code>blogdown::serve_site()</code>. Next step is the uploading of this template website in GitHub.</p>
+</div>
+<div id="making-github-commit-and-push" class="section level3">
+<h3>Making GitHub commit and push</h3>
+<p>A big advantage of GitHub integration is that when your website is live on the web, any new post or new content is automatically uploaded with simple commit and push from Rstudio project. Rstudio provides a nice interface to do these commit and push to GitHub without using any command lines which is great for new coders and/or windows users. However with the initial commit and push of a blogdown I didn’t manage to use Rstudio GUI resulting of endless lags and multiple reboots. <strong>The solution is to use github commit and push from command lines</strong>.</p>
+<p>if you are new to command lines don’t be afraid, it is very easy:</p>
+<ol style="list-style-type: decimal">
+<li>If your project is linked with GitHub, that means Git is also installed and Git comes with a CMD prompt that can be used for manual commit and push to GitHub.</li>
+<li>Change the directory
+<ul>
+<li>from <code>C:\Users\MyName&gt;</code></li>
+<li>to <code>C:\Users\MyName\MyFolderName\MyBlogdownProjectName&gt;</code></li>
+<li>using <code>cd .\MyFolderName\MyBlogdownProjectName</code>.</li>
+</ul></li>
+<li>Add all changes with the command <code>git add -A</code>.</li>
+<li>Commit these changes with the command <code>git commit -m &quot;initial commit text&quot;</code>.</li>
+<li>Push these changes to GitHub with the command <code>git push</code>.</li>
+</ol>
+<p>Note: these commands are the most basic ones, it can me more complicated to add only specific files or to push from another branch but in these cases you can easily find the commands on the web.</p>
+</div>
+<div id="publishing-the-template-to-netlify" class="section level3">
+<h3>Publishing the template to Netlify</h3>
+<p>Once this initial commit is done, it is possible to make the template live on Netlify. I think it is a good idea to not modify the template yet in order to first check how Netlify is handling the template website.</p>
+<p>On Netlify, with GitHub login and password, it is easy to find you repo and to deploy the website. However Netlify will analyse the project and this can result in more errors and problems. The biggest problem that I had was solved very easily with the genius Mara Averick and her blog post <a href="https://maraaverick.rbind.io/2017/10/updating-blogdown-hugo-version-netlify/">Updating your version of Hugo for blogdown on Netlify</a>. I should create a blog dedicated to how amazing Mara is and as usual she solved a massive problem. Indeed, Hugo’s theme have specific minimum Hugo version to use but even Rstudio is using the latest version to build the website, Netlify needs to know which version to use. <strong>The correct version must be set as a New variable with the key to <code>HUGO_VERSION</code></strong>. Then the magic happens and the website is deployed to the world. the first URL address of the website is quite complicated but Netlify allows to change it for free.</p>
+</div>
+<div id="changing-the-content-of-the-template" class="section level3">
+<h3>Changing the content of the template</h3>
+<p>Last but not least, the website you have just published needs to be filled with your own content. The first step will be to replace all the lines in the sub-folder <code>home</code> with your own data and to delete all the posts, publications, citations, images, etc. inside the template. However it is still possible to broke the website by deleting a useful link. In this case I have two advice:</p>
+<ol style="list-style-type: decimal">
+<li>Keep a version of the template in case you need to get back one of the files and then understanding why deleting these information is braking the website.</li>
+<li>Do not delete the files called <code>_index.md</code>, they are very useful to create the public site of the website.</li>
+</ol>
+</div>
+</div>
+<div id="whats-next" class="section level2">
+<h2>What’s next?</h2>
+<p>The websites created with the <code>blogdown</code> package from the R and stats community are united in a project called <a href="https://github.com/rbind?tab=repositories">rbind</a>. I hope to be one day expert enough to be part of this community and hopefully with my tricks and tips, you will as well ;)</p>
+</div>

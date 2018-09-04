@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 2.4.0">
+  <meta name="generator" content="Hugo 0.48" />
+  <meta name="author" content="Damien Dupré">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Finally! My first post to my website is about to be live on the web! I’m always amazed by the possibilities offered by R and Rstudio and my first lines will thank this huge community which make the awesomeness real. However it’s not always easy to use and to apply these magnificent tools. Publishing a blogdown is a good example of a process that looks easy on the first sight but which can be tricky.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/publishing-blogdown-some-insights-from-my-own-experience/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#0095eb">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Damien DataSci Blog">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Damien DataSci Blog">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/publishing-blogdown-some-insights-from-my-own-experience/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@damien-dupre">
+  <meta property="twitter:creator" content="@damien-dupre">
+  
+  <meta property="og:site_name" content="Damien DataSci Blog">
+  <meta property="og:url" content="/post/publishing-blogdown-some-insights-from-my-own-experience/">
+  <meta property="og:title" content="Publishing blogdown, some insights from my own experience | Damien DataSci Blog">
+  <meta property="og:description" content="Finally! My first post to my website is about to be live on the web! I’m always amazed by the possibilities offered by R and Rstudio and my first lines will thank this huge community which make the awesomeness real. However it’s not always easy to use and to apply these magnificent tools. Publishing a blogdown is a good example of a process that looks easy on the first sight but which can be tricky.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-09-04T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-09-04T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Publishing blogdown, some insights from my own experience | Damien DataSci Blog</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Damien DataSci Blog</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Publishing blogdown, some insights from my own experience</h1>
+
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Damien Dupré">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-09-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2018-09-04 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Sep 4, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Damien Dupré">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Publishing%20blogdown%2c%20some%20insights%20from%20my%20own%20experience&amp;url=%2fpost%2fpublishing-blogdown-some-insights-from-my-own-experience%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fpublishing-blogdown-some-insights-from-my-own-experience%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fpublishing-blogdown-some-insights-from-my-own-experience%2f&amp;title=Publishing%20blogdown%2c%20some%20insights%20from%20my%20own%20experience"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fpublishing-blogdown-some-insights-from-my-own-experience%2f&amp;title=Publishing%20blogdown%2c%20some%20insights%20from%20my%20own%20experience"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Publishing%20blogdown%2c%20some%20insights%20from%20my%20own%20experience&amp;body=%2fpost%2fpublishing-blogdown-some-insights-from-my-own-experience%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Finally! My first post to my website is about to be live on the web! I’m always amazed by the possibilities offered by R and Rstudio and my first lines will thank this huge community which make the awesomeness real. However it’s not always easy to use and to apply these magnificent tools. Publishing a blogdown is a good example of a process that looks easy on the first sight but which can be tricky. Here are some insights from my experience in publishing a research blog from blogdown.</p>
+<div id="first-steps-with-blogdown" class="section level2">
+<h2>First steps with blogdown</h2>
+<p>The <code>blogdown</code> package is very well documented and if you are intended to publish your own websites the best approach is to have a look at the bookdown made by Yihui Xie, Amber Thomas and Alison Presmanes Hill <a href="https://bookdown.org/yihui/blogdown/">blogdown: Creating Websites with R Markdown</a>.</p>
+<p>Several video tutorials are available to help new user in this case:</p>
+<ul>
+<li>The talk given by Yihui Xie at the rstudio::conf 2018, <a href="https://www.rstudio.com/resources/videos/create-and-maintain-websites-with-r-markdown-and-blogdown/">Create and maintain websites with R Markdown and blogdown</a>, is short and very well presented.</li>
+<li>The youtube tutorial by John Muschelli, <a href="https://www.youtube.com/watch?v=syWAKaj-4ck">Making a Website with Blogdown</a>, presents all the steps from building a website to publishing it on netlify.com.</li>
+</ul>
+</div>
+<div id="problem-solving" class="section level2">
+<h2>Problem solving</h2>
+<p>Even if the authors of <code>blogdown</code> made it very easy to publish a blog from Rstudio, some problem can be encountered while following the basic steps. Here is my experience in troubleshooting some of the problems that can happen.</p>
+<div id="prerequisite" class="section level3">
+<h3>Prerequisite</h3>
+<p>In order to avoid the majority of the problems that may happen, it is essential to have the latest versions of R, Rstudio, <code>blogdown</code> package (don’t hesitate to use its GitHub version <code>devtools::install_github(&quot;rstudio/blogdown&quot;)</code>) and Hugo (<code>blogdown::update_hugo()</code>). Like mine, <strong>if the process of publishing a blogdown takes several weeks, upgrading to the latest version for every try can slove a lot of problems</strong>.</p>
+</div>
+<div id="creating-a-github-connection" class="section level3">
+<h3>Creating a GitHub connection</h3>
+<p>If one wants to make blogdown live on the web, a GitHub integration is the way to go according to me. Two routes are possible:</p>
+<ol style="list-style-type: decimal">
+<li>Creating a blogdown project from Rstudio and then uploading the project on GitHub. Rstudio GUI is one of its main asset and creating a blogdown project from Rstudio is very easy but the connection with GitHub has to be done afterward which can lead to several problems when committing the changes.</li>
+<li>Creating an empty repo on GitHub, then creating a new project with version control on Rstudio and use the function <code>blogdown::build_site()</code> in this new project. <strong>This solution doesn’t look as straight forward but once it is done, the connection with GitHub is very stable</strong>.</li>
+</ol>
+</div>
+<div id="installing-a-new-theme" class="section level3">
+<h3>Installing a new theme</h3>
+<p>When it comes to build the site, it is possible to specify the theme you want to use with <code>blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;)</code>. Even if the default theme is nice, researchers and students can find the theme “academic” more suitable. But be sure to have installed a version of Hugo that corresponds with the theme version of Hugo.</p>
+<p>After this initial command, the template website should be displayed in Rstudio viewer. If you have to close the project it is possible to relaunch this view using the Serve Site shortcut in Rstudio Addins or by using <code>blogdown::serve_site()</code>. Next step is the uploading of this template website in GitHub.</p>
+</div>
+<div id="making-github-commit-and-push" class="section level3">
+<h3>Making GitHub commit and push</h3>
+<p>A big advantage of GitHub integration is that when your website is live on the web, any new post or new content is automatically uploaded with simple commit and push from Rstudio project. Rstudio provides a nice interface to do these commit and push to GitHub without using any command lines which is great for new coders and/or windows users. However with the initial commit and push of a blogdown I didn’t manage to use Rstudio GUI resulting of endless lags and multiple reboots. <strong>The solution is to use github commit and push from command lines</strong>.</p>
+<p>if you are new to command lines don’t be afraid, it is very easy:</p>
+<ol style="list-style-type: decimal">
+<li>If your project is linked with GitHub, that means Git is also installed and Git comes with a CMD prompt that can be used for manual commit and push to GitHub.</li>
+<li>Change the directory
+<ul>
+<li>from <code>C:\Users\MyName&gt;</code></li>
+<li>to <code>C:\Users\MyName\MyFolderName\MyBlogdownProjectName&gt;</code></li>
+<li>using <code>cd .\MyFolderName\MyBlogdownProjectName</code>.</li>
+</ul></li>
+<li>Add all changes with the command <code>git add -A</code>.</li>
+<li>Commit these changes with the command <code>git commit -m &quot;initial commit text&quot;</code>.</li>
+<li>Push these changes to GitHub with the command <code>git push</code>.</li>
+</ol>
+<p>Note: these commands are the most basic ones, it can me more complicated to add only specific files or to push from another branch but in these cases you can easily find the commands on the web.</p>
+</div>
+<div id="publishing-the-template-to-netlify" class="section level3">
+<h3>Publishing the template to Netlify</h3>
+<p>Once this initial commit is done, it is possible to make the template live on Netlify. I think it is a good idea to not modify the template yet in order to first check how Netlify is handling the template website.</p>
+<p>On Netlify, with GitHub login and password, it is easy to find you repo and to deploy the website. However Netlify will analyse the project and this can result in more errors and problems. The biggest problem that I had was solved very easily with the genius Mara Averick and her blog post <a href="https://maraaverick.rbind.io/2017/10/updating-blogdown-hugo-version-netlify/">Updating your version of Hugo for blogdown on Netlify</a>. I should create a blog dedicated to how amazing Mara is and as usual she solved a massive problem. Indeed, Hugo’s theme have specific minimum Hugo version to use but even Rstudio is using the latest version to build the website, Netlify needs to know which version to use. <strong>The correct version must be set as a New variable with the key to <code>HUGO_VERSION</code></strong>. Then the magic happens and the website is deployed to the world. the first URL address of the website is quite complicated but Netlify allows to change it for free.</p>
+</div>
+<div id="changing-the-content-of-the-template" class="section level3">
+<h3>Changing the content of the template</h3>
+<p>Last but not least, the website you have just published needs to be filled with your own content. The first step will be to replace all the lines in the sub-folder <code>home</code> with your own data and to delete all the posts, publications, citations, images, etc. inside the template. However it is still possible to broke the website by deleting a useful link. In this case I have two advice:</p>
+<ol style="list-style-type: decimal">
+<li>Keep a version of the template in case you need to get back one of the files and then understanding why deleting these information is braking the website.</li>
+<li>Do not delete the files called <code>_index.md</code>, they are very useful to create the public site of the website.</li>
+</ol>
+</div>
+</div>
+<div id="whats-next" class="section level2">
+<h2>What’s next?</h2>
+<p>The websites created with the <code>blogdown</code> package from the R and stats community are united in a project called <a href="https://github.com/rbind?tab=repositories">rbind</a>. I hope to be one day expert enough to be part of this community and hopefully with my tricks and tips, you will as well ;)</p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+
+    
+    <p class="powered-by">
+      <a href="/privacy/">Privacy Policy</a>
+    </p>
+    
+
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fas fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
+        messageStyle: 'none'
+      });
+    </script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+    
+    
+
+    
+    
+
+  </body>
+</html>
+
