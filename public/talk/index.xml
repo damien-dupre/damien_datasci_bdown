@@ -32,15 +32,6 @@ ABSTRACT: Automatic facial expression recognition systems can provide important 
     </item>
     
     <item>
-      <title>Example Talk</title>
-      <link>/talk/example-talk/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/talk/example-talk/</guid>
-      <description>Embed your slides or video here using shortcodes. Further details can easily be added using Markdown and $\rm \LaTeX$ math code.</description>
-    </item>
-    
-    <item>
       <title>Multivariate Body Area Network of Physiological Measures “In the Wild”: A case study with zipline activity</title>
       <link>/talk/2018-mb/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
