@@ -15,7 +15,7 @@ weight = 60
 
 +++
 
-I teached as main lecturer for the following courses at University Grenoble Alpes and Queen's Universty Belfast:
+I taught as main lecturer for the following courses at University Grenoble Alpes and Queen's Universty Belfast:
 
 - Introduction to R for data science – *Postgraduates*
 - Social cognition and emotions – *Master Psychology*

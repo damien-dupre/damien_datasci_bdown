@@ -1,0 +1,248 @@
+---
+title: Time series clustering with Dynamic Time Warping
+author: ''
+date: '2018-09-06'
+slug: time-series-clustering-with-dynamic-time-warp
+categories: []
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<p>Many solutions for clustering time series are available with R and as usual the web is full of nice tutorials like <a href="http://girke.bioinformatics.ucr.edu/GEN242/pages/mydoc/Rclustering.html">Thomas Girke’s blog post</a>, <a href="http://genomicsclass.github.io/book/pages/clustering_and_heatmaps.html">Rafael Irizarry and Michael Love’s book</a>, <a href="https://datawookie.netlify.com/blog/2017/04/clustering-time-series-data/">Andrew B. Collier’s blog post</a>, <a href="https://petolau.github.io/TSrepr-clustering-time-series-representations/">Peter Laurinec’s blog post</a>, <a href="http://www.stat.unc.edu/faculty/pipiras/timeseries/Multivariate_6_-_Classification_Clustering_-_Menu.html">Dylan Glotzer’s lecture</a> or <a href="http://rstudio-pubs-static.s3.amazonaws.com/398402_abe1a0343a4e4e03977de8f3791e96bb.html">Ana Rita Marques’s module</a>.</p>
+<p>Dynamic Time Warping (DTW) is one of these solutions. The main advantage of DTW is the possibility to group time series according their patterns or shapes even if these patterns are not synchronized (lag).</p>
+<p>As far as I know the two main packages which allow time series clustering with DTW are <code>TSclust</code> by <a href="https://cran.r-project.org/web/packages/TSclust/index.html">Pablo Montero Manso and José Antonio Vilar</a> and <code>dtwclust</code> by <a href="https://cran.r-project.org/web/packages/dtwclust/index.html">Alexis Sarda-Espinosa</a>. These packages are very simple but powerful tools to analyse time series. However when it comes to analyse real data, I found difficult to understand how the clustering is working. To make this process clearer I’m going to simulate two groups of time series and to check if whether or not the DTW clustering can differentiate them.</p>
+<div id="list-of-packages-needed" class="section level2">
+<h2>List of packages needed</h2>
+<pre class="r"><code>library(dplyr) # data wrangling
+library(ggplot2) # grammar of graphics
+library(gridExtra) # merge plots
+library(ggdendro) # dendrograms
+library(gplots) # heatmap
+library(tseries) # bootstrap
+library(TSclust) # cluster time series
+library(dtwclust) # cluster time series with dynamic time warping</code></pre>
+</div>
+<div id="data-simulation" class="section level2">
+<h2>Data simulation</h2>
+<p>Let’s imagine two people running a marathon, one had a classic run with a pace increasing with the time and the other had a very bad experience (e.g. “hitting the wall”) with a jump in the pace which indicates a significant slow down in the second part of the run. The best is to have real data to analyse but it can be very useful to simulate these pattern in order to assess the clustering efficiency.</p>
+<p>A simple way to simulate these time series is to use the <code>sine</code> function and to add a random noise in order to make it more credible.</p>
+<pre class="r"><code># classic run
+noise &lt;- runif(420) # random noise
+x &lt;- seq(1,420) # 42km with a measure every 100m
+pace_min &lt;- 5 # min/km (corresponds to fast run)
+
+ts_sim_classic_run &lt;- (sin(x/10)+x/100+noise+pace_min) %&gt;%
+  as.ts(.)
+
+ts.plot(ts_sim_classic_run, xlab = &quot;Distance [x100m]&quot;, ylab = &quot;Differential pace [min/km]&quot;, main = &quot;Example of classic run&quot;, ylim=c(0,25))
+
+# wall run
+noise &lt;- runif(210) # random noise
+x &lt;- seq(1,210) # 21km with a measure every 100m 
+pace_min &lt;- 5 # min/km (corresponds to fast run)
+pace_wall &lt;- 20 # min/km (corresponds to very slow run) 
+ts_sim_part1 &lt;- sin(x/5)+x/50+noise+pace_min
+ts_sim_part2 &lt;- sin(x/5)+noise+pace_wall
+
+ts_sim_wall_run &lt;- c(ts_sim_part1,ts_sim_part2) %&gt;%
+  as.ts(.)
+
+ts.plot(ts_sim_wall_run, xlab = &quot;Distance [x100m]&quot;, ylab = &quot;Differential pace [min/km]&quot;, main = &quot;Example of wall run&quot;, ylim=c(0,25))</code></pre>
+<p><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-2-1.png" width="384" /><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-2-2.png" width="384" /></p>
+<p>A much nicer way would be to use ARIMA with an auto regressive model (AR).</p>
+<pre class="r"><code>pace_min &lt;- 5 # min/km (corresponds to fast run)
+pace_wall &lt;- 20 # min/km (corresponds to very slow run) 
+
+# classic run
+ts_sim_classic_run &lt;- abs(arima.sim(n = 420, mean = 0.001, model = list(order = c(1,0,0), ar = 0.9))) + pace_min
+
+ts.plot(ts_sim_classic_run, xlab = &quot;Distance [x100m]&quot;, ylab = &quot;Differential pace [min/km]&quot;, main = &quot;Example of classic run&quot;, ylim=c(0,25))
+
+# wall run
+ts_sim_part1 &lt;- abs(arima.sim(n = 210, model = list(order = c(1,0,0), ar = 0.9))) + pace_min
+ts_sim_part2 &lt;- ts(arima.sim(n = 210, model = list(order = c(1,0,0), ar = 0.9)) + pace_wall, start = 211,end =420)
+
+ts_sim_wall_run &lt;- ts.union(ts_sim_part1,ts_sim_part2)
+ts_sim_wall_run&lt;- pmin(ts_sim_wall_run[,1], ts_sim_wall_run[,2], na.rm = TRUE)
+
+ts.plot(ts_sim_wall_run, xlab = &quot;Distance [x100m]&quot;, ylab = &quot;Differential pace [min/km]&quot;, main = &quot;Example of wall run&quot;, ylim=c(0,25))</code></pre>
+<p><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-3-1.png" width="384" /><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-3-2.png" width="384" /></p>
+</div>
+<div id="bootstrap" class="section level2">
+<h2>Bootstrap</h2>
+<p>Now we have two different runs, let’s bootstrap them (i.e. replicate with small differences) in order to have two groups of 5 individuals for each run type.</p>
+<pre class="r"><code>ts_sim_boot_classic &lt;- ts_sim_classic_run %&gt;%
+  tseries::tsbootstrap(., nb=5, b=200, type = &quot;block&quot;) %&gt;%
+  as.data.frame(.) %&gt;%
+  dplyr::rename_all(funs(c(paste0(&quot;classic_&quot;,.))))
+
+ts_sim_boot_wall &lt;- ts_sim_wall_run %&gt;%
+  tseries::tsbootstrap(., nb=5, b=350, type = &quot;block&quot;) %&gt;%
+  as.data.frame(.) %&gt;%
+  dplyr::rename_all(funs(c(paste0(&quot;wall_&quot;,.))))
+
+ts_sim_df &lt;- cbind(ts_sim_boot_classic,ts_sim_boot_wall)</code></pre>
+</div>
+<div id="heatmap-cluster" class="section level1">
+<h1>Heatmap cluster</h1>
+<p>Even if I’m a big fan of ggplot2 possibilities, some packages offer efficient ways to compute and plot data. For heatmaps I’m using the <code>gplots</code> package which displays time series with dendrograms is a single function. An overlook of all the heatmap possibilities can be found <a href="http://www.sthda.com/english/articles/28-hierarchical-clustering-essentials/93-heatmap-static-and-interactive-absolute-guide/">here</a></p>
+<pre class="r"><code>dtw_dist &lt;- function(x){dist(x, method=&quot;DTW&quot;)}
+
+ts_sim_df %&gt;%
+  as.matrix() %&gt;%
+  gplots::heatmap.2 (
+    # dendrogram control
+    distfun = dtw_dist,
+    hclustfun = hclust,
+    dendrogram = &quot;column&quot;,
+    Rowv = FALSE,
+    labRow = FALSE
+  )</code></pre>
+<p><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>We can already see an accurate clustering between classic and wall runs but we are interested in DTW analysis so let’s implement <code>TSclust</code> and <code>dtwclust</code> packages.</p>
+</div>
+<div id="dtw-cluster" class="section level1">
+<h1>DTW cluster</h1>
+<p>Both <code>TSclust</code> and <code>dtwclust</code> are following the same steps:</p>
+<ol style="list-style-type: decimal">
+<li>Calculating the difference between each time series using the DTW method (but many other distances can be calculated, see for example Montero &amp; Vilar, 2014).</li>
+<li>Calculating hierarchical cluster analysis over these dissimilarities.</li>
+<li>Plotting a dendrogram to visually assess the cluster accuracy. The solution to plot the time series with the dendrogram was taken from <a href="http://www.hanselsolutions.com/blog/clustering-time-series.html">Ian Hansel’s blog</a>.</li>
+</ol>
+<div id="using-tsclust" class="section level2">
+<h2>Using <code>TSclust</code></h2>
+<pre class="r"><code># cluster analysis
+dist_ts &lt;- TSclust::diss(SERIES = t(ts_sim_df), METHOD = &quot;DTW&quot;) # note the dataframe must be transposed
+hc &lt;- stats::hclust(dist_ts, method=&quot;complete&quot;) # meathod can be also &quot;average&quot; or diana (for DIvisive ANAlysis Clustering)
+# k for cluster which is 2 in our case (classic vs. wall)
+hclus &lt;- stats::cutree(hc, k = 2) %&gt;% # hclus &lt;- cluster::pam(dist_ts, k = 2)$clustering has a similar result
+  as.data.frame(.) %&gt;%
+  dplyr::rename(.,cluster_group = .) %&gt;%
+  tibble::rownames_to_column(&quot;type_col&quot;)
+
+hcdata &lt;- ggdendro::dendro_data(hc)
+names_order &lt;- hcdata$labels$label
+# Use the folloing to remove labels from dendogram so not doubling up - but good for checking hcdata$labels$label &lt;- &quot;&quot;
+
+p1 &lt;- hcdata %&gt;%
+  ggdendro::ggdendrogram(., rotate=TRUE, leaf_labels=FALSE)
+
+p2 &lt;- ts_sim_df %&gt;%
+  dplyr::mutate(index = 1:420) %&gt;%
+  tidyr::gather(key = type_col,value = value, -index) %&gt;%
+  dplyr::full_join(., hclus, by = &quot;type_col&quot;) %&gt;% 
+  mutate(type_col = factor(type_col, levels = rev(as.character(names_order)))) %&gt;% 
+  ggplot(aes(x = index, y = value, colour = cluster_group)) +
+  geom_line() +
+  facet_wrap(~type_col, ncol = 1, strip.position=&quot;left&quot;) + 
+  guides(color=FALSE) +
+  theme_bw() + 
+  theme(strip.background = element_blank(), strip.text = element_blank())
+
+gp1&lt;-ggplotGrob(p1)
+gp2&lt;-ggplotGrob(p2) 
+
+grid.arrange(gp2, gp1, ncol=2, widths=c(4,2))</code></pre>
+<p><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>As expected, The results of <code>TSclust</code>show two different groups, one with the classic runs and one with wall runs. However we can see that wall runs are not sorted perfectly according their shape. Let’s have a look at <code>dtwclust</code> to see if the results are similar.</p>
+</div>
+<div id="using-dtwclust" class="section level2">
+<h2>Using <code>dtwclust</code></h2>
+<p>The main asset of <code>dtwclust</code> is the possibility to customize the DTW clustering. For more details about all the possibilities, I suggest to have a look at the <code>dtwclust</code> package <a href="https://cran.r-project.org/web/packages/dtwclust/vignettes/dtwclust.pdf">vignette</a>.</p>
+<pre class="r"><code>cluster_dtw_h2 &lt;- dtwclust::tsclust(t(ts_sim_df), 
+                                    type = &quot;h&quot;, 
+                                    k = 2,  
+                                    distance = &quot;dtw&quot;, 
+                                    control = hierarchical_control(method = &quot;complete&quot;),
+                                    preproc = NULL, 
+                                    args = tsclust_args(dist = list(window.size = 5L)))
+
+hclus &lt;- stats::cutree(cluster_dtw_h2, k = 2) %&gt;% # hclus &lt;- cluster::pam(dist_ts, k = 2)$clustering has a similar result
+  as.data.frame(.) %&gt;%
+  dplyr::rename(.,cluster_group = .) %&gt;%
+  tibble::rownames_to_column(&quot;type_col&quot;)
+
+hcdata &lt;- ggdendro::dendro_data(cluster_dtw_h2)
+names_order &lt;- hcdata$labels$label
+# Use the folloing to remove labels from dendogram so not doubling up - but good for checking hcdata$labels$label &lt;- &quot;&quot;
+
+p1 &lt;- hcdata %&gt;%
+  ggdendro::ggdendrogram(., rotate=TRUE, leaf_labels=FALSE)
+
+p2 &lt;- ts_sim_df %&gt;%
+  dplyr::mutate(index = 1:420) %&gt;%
+  tidyr::gather(key = type_col,value = value, -index) %&gt;%
+  dplyr::full_join(., hclus, by = &quot;type_col&quot;) %&gt;% 
+  mutate(type_col = factor(type_col, levels = rev(as.character(names_order)))) %&gt;% 
+  ggplot(aes(x = index, y = value, colour = cluster_group)) +
+  geom_line() +
+  facet_wrap(~type_col, ncol = 1, strip.position=&quot;left&quot;) + 
+  guides(color=FALSE) +
+  theme_bw() + 
+  theme(strip.background = element_blank(), strip.text = element_blank())
+
+gp1&lt;-ggplotGrob(p1)
+gp2&lt;-ggplotGrob(p2) 
+
+grid.arrange(gp2, gp1, ncol=2, widths=c(4,2))</code></pre>
+<p><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Now with the cluster are well distributed between classic and wall runs but also inside the clusters where similar shapes appears to be grouped together.</p>
+<p>It is possible to modify some argument in order to perform this hierarchical DTW clustering based on z-scores with centroid based on the built-in “shape_extraction” function.</p>
+<pre class="r"><code>cluster_dtw_h2 &lt;- dtwclust::tsclust(t(ts_sim_df), type = &quot;h&quot;, k = 2L,
+                                    preproc = zscore,
+                                    distance = &quot;dtw&quot;, centroid = shape_extraction,
+                                    control = hierarchical_control(method = &quot;complete&quot;))
+
+hclus &lt;- stats::cutree(cluster_dtw_h2, k = 2) %&gt;% # hclus &lt;- cluster::pam(dist_ts, k = 2)$clustering has a similar result
+  as.data.frame(.) %&gt;%
+  dplyr::rename(.,cluster_group = .) %&gt;%
+  tibble::rownames_to_column(&quot;type_col&quot;)
+
+hcdata &lt;- ggdendro::dendro_data(cluster_dtw_h2)
+names_order &lt;- hcdata$labels$label
+# Use the folloing to remove labels from dendogram so not doubling up - but good for checking hcdata$labels$label &lt;- &quot;&quot;
+
+p1 &lt;- hcdata %&gt;%
+  ggdendro::ggdendrogram(., rotate=TRUE, leaf_labels=FALSE)
+
+p2 &lt;- ts_sim_df %&gt;%
+  dplyr::mutate(index = 1:420) %&gt;%
+  tidyr::gather(key = type_col,value = value, -index) %&gt;%
+  dplyr::full_join(., hclus, by = &quot;type_col&quot;) %&gt;% 
+  mutate(type_col = factor(type_col, levels = rev(as.character(names_order)))) %&gt;% 
+  ggplot(aes(x = index, y = value, colour = cluster_group)) +
+  geom_line() +
+  facet_wrap(~type_col, ncol = 1, strip.position=&quot;left&quot;) + 
+  guides(color=FALSE) +
+  theme_bw() + 
+  theme(strip.background = element_blank(), strip.text = element_blank())
+
+gp1&lt;-ggplotGrob(p1)
+gp2&lt;-ggplotGrob(p2) 
+
+grid.arrange(gp2, gp1, ncol=2, widths=c(4,2))</code></pre>
+<p><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Based on <code>dtwclust</code> package vignette, it is possible to register a new DTW function adapted to normalized and asymmetric DTW.</p>
+<pre class="r"><code># Normalized DTW
+ndtw &lt;- function(x, y, ...) {
+  dtw(x, y, ...,
+      step.pattern = asymmetric,
+      distance.only = TRUE)$normalizedDistance
+}
+# Register the distance with proxy
+proxy::pr_DB$set_entry(FUN = ndtw, names = c(&quot;nDTW&quot;),
+                       loop = TRUE, type = &quot;metric&quot;, distance = TRUE,
+                       description = &quot;Normalized, asymmetric DTW&quot;)
+# Partitional clustering
+cluster_dtw_h2 &lt;- dtwclust::tsclust(t(ts_sim_df), k = 2L,distance = &quot;nDTW&quot;)
+
+plot(cluster_dtw_h2)</code></pre>
+<p><img src="/post/2018-09-06-time-series-clustering-with-dynamic-time-warp_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Even if it looks great with <code>sine</code> simulated data, it is not very accurate with ARIMA models. Moreover I haven’t been able to extract the dendrogram from this last “cluster_dtw_h2” object because of the partitional clustering process but one can be interested in the distance matrix provided in “cluster_dtw_h2” object.</p>
+<p>After this short analysis with Dynamic Time Warping, the next steps will be to increase the difference between the time series to check the clustering accuracy and obviously to test it with real data.</p>
+</div>
+</div>

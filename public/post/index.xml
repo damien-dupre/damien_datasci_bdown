@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Time series clustering with Dynamic Time Warping</title>
+      <link>/post/time-series-clustering-with-dynamic-time-warp/</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/time-series-clustering-with-dynamic-time-warp/</guid>
+      <description>Many solutions for clustering time series are available with R and as usual the web is full of nice tutorials like Thomas Girke’s blog post, Rafael Irizarry and Michael Love’s book, Andrew B. Collier’s blog post, Peter Laurinec’s blog post, Dylan Glotzer’s lecture or Ana Rita Marques’s module.
+Dynamic Time Warping (DTW) is one of these solutions. The main advantage of DTW is the possibility to group time series according their patterns or shapes even if these patterns are not synchronized (lag).</description>
+    </item>
+    
+    <item>
       <title>Publishing blogdown, some insights from my own experience</title>
       <link>/post/publishing-blogdown-some-insights-from-my-own-experience/</link>
       <pubDate>Tue, 04 Sep 2018 00:00:00 +0000</pubDate>
