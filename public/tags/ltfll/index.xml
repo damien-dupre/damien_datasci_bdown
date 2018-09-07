@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Damien DataSci Blog</title>
-    <link>/project/</link>
-    <description>Recent content in Projects on Damien DataSci Blog</description>
+    <title>LTfLL on Damien DataSci Blog</title>
+    <link>/tags/ltfll/</link>
+    <description>Recent content in LTfLL on Damien DataSci Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ltfll/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>DynEmo</title>
-      <link>/project/dynemo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/project/dynemo/</guid>
-      <description>DynEmo is a database available to the scientific community (https://dynemo.univ-grenoble-alpes.fr/). It contains dynamic and natural emotional facial expressions (EFEs) displaying subjective affective states rated by both the expresser and observers. Methodological and contextual information is provided for each expression. This multimodal corpus meets psychological, ethical, and technical criteria. It is quite large, containing two sets of 233 and 125 recordings of EFE of ordinary Caucasian people (ages 25 to 65, 182 females and 176 males) filmed in natural but standardized conditions.</description>
-    </item>
     
     <item>
       <title>LTfLL</title>

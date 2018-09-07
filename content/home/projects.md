@@ -38,6 +38,10 @@ filter_default = 0
   tag = ".dynemo"
   
 [[filter]]
+  name = "LTfLL"
+  tag = ".ltfll"
+  
+[[filter]]
   name = "Other"
   tag = ".demo"
 
