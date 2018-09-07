@@ -6,7 +6,7 @@
 
 # The URL of your website.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-baseurl = "/"
+baseurl = "https://damien-datasci-blog.netlify.com/"
 
 # Title of your site
 title = "Damien DataSci Blog"
@@ -48,6 +48,9 @@ enableGitInfo = false
   smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
 [params]
+  # Add favicon.ico in static directory 
+  # favicon = "/favicon.png"
+  
   # Color theme.
   #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
   color_theme = "default"

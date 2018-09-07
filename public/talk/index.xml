@@ -23,6 +23,33 @@ ABSTRACT: Automatic facial expression recognition systems can provide important 
     </item>
     
     <item>
+      <title>Accuracy of three commercial automatic emotion recognition systems across different individuals and their facial expressions</title>
+      <link>/talk/2018-percom/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2018-percom/</guid>
+      <description>ABSTRACT:</description>
+    </item>
+    
+    <item>
+      <title>Are approach-avoidance relevant cues of the Emotional User eXperience? Case studies with innovative products</title>
+      <link>/talk/2014-cere/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2014-cere/</guid>
+      <description>ABSTRACT:</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Analysis of Automatic Emotion Recognition Using Generalized Additive Mixed Models</title>
+      <link>/talk/2017-aisb/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2017-aisb/</guid>
+      <description>ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts.</description>
+    </item>
+    
+    <item>
       <title>Dynamic Analysis of Automatic Facial Expressions Recognition ‘in the Wild’ Using Generalized Additive Mixed Models and Significant Zero Crossing of the Derivatives</title>
       <link>/talk/2018-bhci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
@@ -32,12 +59,93 @@ ABSTRACT: Automatic facial expression recognition systems can provide important 
     </item>
     
     <item>
+      <title>Dynamic Model of Athletes’ Emotions Based on Wearable Devices</title>
+      <link>/talk/2017-ahfe/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2017-ahfe/</guid>
+      <description>ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places that were previously impractical. This paper presents a new application that synchronizes the emotional patterns from these time-series in order to model athletes’ emotion during physical activity. This data analysis computes a best-fitting model for analyzing the patterns given by these measurements “in the wild”.</description>
+    </item>
+    
+    <item>
+      <title>Emotions triggered by innovative products, A multi-componential approach of emotions for User eXperience tools</title>
+      <link>/talk/2015-acii/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2015-acii/</guid>
+      <description>ABSTRACT: User eXperience studies with products, systems or services have significantly increased in companies in order to anticipate their commercial success. Among the user experience dimensions, emotions are predominant. However User eXperience studies used several concepts to refer to emotions and current measures still have some flaws. Consequently, this doctoral project aims firstly to provide a multi-componential approach of emotions based on a psychological view, and secondly to provide Affective Computing solutions in order to evaluate emotions in User eXperience studies.</description>
+    </item>
+    
+    <item>
+      <title>Etude de l’expérience utilisateur émotionnelle: Quels sont les impacts des émotions suscitées des produits innovants sur les perceptions des utilisateurs</title>
+      <link>/talk/2016-aiptlf/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2016-aiptlf/</guid>
+      <description>ABSTRACT:</description>
+    </item>
+    
+    <item>
+      <title>Interface faciale émotionnelle : Les effets des différentes modalités de presentation</title>
+      <link>/talk/2010-eiac/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2010-eiac/</guid>
+      <description>ABSTRACT: In supporting the visual-mediated emotional recognition, little research has centred on analysing the effect of presenting different combinatorial facial designs. Moreover, in the theoretical field of emotions, research on the recognition of emotional facial expressions (EFE) is mainly based on static and posed databases tested in unnatural contexts (explicit recognition task of an emotion). Our research has constructed and validated a database, DynEmo, with dynamic and spontaneous emotional facial expressions.</description>
+    </item>
+    
+    <item>
+      <title>Measuring emotional states and behavioral responses to innovative products</title>
+      <link>/talk/2012-de/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2012-de/</guid>
+      <description>ABSTRACT:</description>
+    </item>
+    
+    <item>
       <title>Multivariate Body Area Network of Physiological Measures “In the Wild”: A case study with zipline activity</title>
       <link>/talk/2018-mb/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/talk/2018-mb/</guid>
       <description>ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts.</description>
+    </item>
+    
+    <item>
+      <title>On-line recognition of dynamic and spontaneous facial expression</title>
+      <link>/talk/2010-cere/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2010-cere/</guid>
+      <description>ABSTRACT:</description>
+    </item>
+    
+    <item>
+      <title>Physiological correlates of Emotions “In The Wild”: A case study with mountain bikers</title>
+      <link>/talk/2017-isre/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2017-isre/</guid>
+      <description>ABSTRACT:</description>
+    </item>
+    
+    <item>
+      <title>Spontaneous and dynamic emotional facial expressions reflect action readiness</title>
+      <link>/talk/2014-wcfee/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2014-wcfee/</guid>
+      <description>ABSTRACT:</description>
+    </item>
+    
+    <item>
+      <title>Willingness to Share Emotion Information on Social Media: Influence of Personality and Social Context</title>
+      <link>/talk/2018-dsaa/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2018-dsaa/</guid>
+      <description>ABSTRACT: Sharing personal information is an important way of communicating on social media. Among the information possibly shared, new sensors and tools allow people to share emotion information via facial emotion recognition. This paper questions whether people are prepared to share personal information such as their own emotion on social media. In the current study we examined how factors such as felt emotion, motivation for sharing on social media as well as personality affected participants’ willingness to share self-reported emotion or facial expression online.</description>
     </item>
     
   </channel>

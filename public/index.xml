@@ -373,6 +373,36 @@ These results suggest that systems are not equivalent in their ability to detect
     </item>
     
     <item>
+      <title>Accuracy of three commercial automatic emotion recognition systems across different individuals and their facial expressions</title>
+      <link>/talk/2018-percom/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2018-percom/</guid>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Are approach-avoidance relevant cues of the Emotional User eXperience? Case studies with innovative products</title>
+      <link>/talk/2014-cere/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2014-cere/</guid>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Analysis of Automatic Emotion Recognition Using Generalized Additive Mixed Models</title>
+      <link>/talk/2017-aisb/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/2017-aisb/</guid>
+      <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts. This paper presents a workflow encompassing the whole process with the goal of obtaining a range of best fitting models to analyse the patterns given by these measurements “in the wild”.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Dynamic Analysis of Automatic Facial Expressions Recognition ‘in the Wild’ Using Generalized Additive Mixed Models and Significant Zero Crossing of the Derivatives</title>
       <link>/talk/2018-bhci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
@@ -383,77 +413,53 @@ These results suggest that systems are not equivalent in their ability to detect
     </item>
     
     <item>
-      <title>Multivariate Body Area Network of Physiological Measures “In the Wild”: A case study with zipline activity</title>
-      <link>/talk/2018-mb/</link>
+      <title>Dynamic Model of Athletes’ Emotions Based on Wearable Devices</title>
+      <link>/talk/2017-ahfe/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/talk/2018-mb/</guid>
-      <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts. This paper presents a workflow encompassing the whole process with the goal of obtaining a range of best fitting models to analyse the patterns given by these measurements “in the wild”.&lt;/p&gt;
+      <guid>/talk/2017-ahfe/</guid>
+      <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places that were previously impractical. This paper presents a new application that synchronizes the emotional patterns from these time-series in order to model athletes’ emotion during physical activity. This data analysis computes a best-fitting model for analyzing the patterns given by these measurements “in the wild”. The recording setup used to measure and synchronize multiple biometric physiological sensors can be called a BAN (Body Area Network) of personal measurements. By monitoring physical activity, it is now possible to calculate optimal patterns for managing athletes’ emotion. The data provided here are not restricted by a lab environment but close to the “ground truth” of ecologically valid physiological changes. The data allow the provision of accurate feedback to athletes about their emotion (e.g. in cases such as an unexpected increase or an expected decrease of physiological activity).&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>DynEmo</title>
-      <link>/project/dynemo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Emotions triggered by innovative products, A multi-componential approach of emotions for User eXperience tools</title>
+      <link>/talk/2015-acii/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/dynemo/</guid>
-      <description>&lt;p&gt;DynEmo is a database available to the scientific community (&lt;a href=&#34;https://dynemo.univ-grenoble-alpes.fr/&#34; target=&#34;_blank&#34;&gt;https://dynemo.univ-grenoble-alpes.fr/&lt;/a&gt;). It contains dynamic and natural emotional facial expressions (EFEs) displaying subjective affective states rated by both the expresser and observers. Methodological and contextual information is provided for each expression. This multimodal corpus meets psychological, ethical, and technical criteria. It is quite large, containing two sets of 233 and 125 recordings of EFE of ordinary Caucasian people (ages 25 to 65, 182 females and 176 males) filmed in natural but standardized conditions. In the Set 1, EFE recordings are associated with the affective state of the expresser (self-reported after the emotion inducing task, using dimensional, action readiness, and emotional labels items). In the Set 2, EFE recordings are both associated with the affective state of the expresser and with the time line (continuous annotations) of observers’ ratings of the emotions displayed throughout the recording. The time line allows any researcher interested in analysing non-verbal human behavior to segment the expressions into small emotion excerpts.&lt;/p&gt;
+      <guid>/talk/2015-acii/</guid>
+      <description>&lt;p&gt;ABSTRACT: User eXperience studies with products, systems or services have significantly increased in companies in order to anticipate their commercial success. Among the user experience dimensions, emotions are predominant. However User eXperience studies used several concepts to refer to emotions and current measures still have some flaws. Consequently, this doctoral project aims firstly to provide a multi-componential approach of emotions based on a psychological view, and secondly to provide Affective Computing solutions in order to evaluate emotions in User eXperience studies. Through a study using hand-gesture interface devices, three components of users&amp;rsquo; emotions were simultaneously measured with self-reports: the subjective, cognitive and motivational components. The results point out the possibility of measuring different components in order to gain a better understanding of emotions triggered by products. They also point out that self-reports measures could be improved with Affective Computing solutions. In this perspective, two emotion assessment tools were developed: Oudjat and EmoLyse.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Oudjat, a configurable and usable annotation tool for the study of emotional stimuli</title>
-      <link>/publication/2015-oudjat-ijhcs/</link>
-      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      <title>Etude de l’expérience utilisateur émotionnelle: Quels sont les impacts des émotions suscitées des produits innovants sur les perceptions des utilisateurs</title>
+      <link>/talk/2016-aiptlf/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/2015-oudjat-ijhcs/</guid>
-      <description></description>
+      <guid>/talk/2016-aiptlf/</guid>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Cadres et méthodes d’analyse des émotions suscitées par des produits innovants : Une revue bibliographique</title>
-      <link>/publication/2015-acceptabilite-innovatio/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <title>Interface faciale émotionnelle : Les effets des différentes modalités de presentation</title>
+      <link>/talk/2010-eiac/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/2015-acceptabilite-innovatio/</guid>
-      <description></description>
+      <guid>/talk/2010-eiac/</guid>
+      <description>&lt;p&gt;ABSTRACT: In supporting the visual-mediated emotional recognition, little research has centred on analysing the effect of presenting different combinatorial facial designs. Moreover, in the theoretical field of emotions, research on the recognition of emotional facial expressions (EFE) is mainly based on static and posed databases tested in unnatural contexts (explicit recognition task of an emotion). Our research has constructed and validated a database, DynEmo, with dynamic and spontaneous emotional facial expressions. So different facial interface designs (whole face, zoomed face, eyes + mouth, whole face + mouth, whole face + eyes, etc., n = 11) are experimentally compared to find their impact in terms of emotional recognition. The results show the facial interface design relevance in terms of emotional recognition. The application of this work is transferable to facial interfaces useful for video-mediated interaction.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>DynEmo: A video database of natural facial expressions of emotions</title>
-      <link>/publication/2013-dynemo-ijma/</link>
-      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <title>Measuring emotional states and behavioral responses to innovative products</title>
+      <link>/talk/2012-de/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/2013-dynemo-ijma/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>The influence of facial designs interfaces on dynamic emotional recognition</title>
-      <link>/publication/2013-interface-jmui/</link>
-      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/2013-interface-jmui/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Quelques critères d’utilisation d’un outil d’évaluation automatique de synthèses de cours à distance</title>
-      <link>/publication/2012-critere-re/</link>
-      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/2012-critere-re/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Un environnement personnel d&#39;apprentissage évaluant des distances épistémiques et dialogiques</title>
-      <link>/publication/2011-environement-ds/</link>
-      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/2011-environement-ds/</guid>
-      <description></description>
+      <guid>/talk/2012-de/</guid>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
   </channel>
