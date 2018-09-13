@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>A simple introduction to statistical test and statistical significance</title>
+      <link>/post/a-simple-introduction-to-statistical-test-and-statistical-significance/</link>
+      <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-simple-introduction-to-statistical-test-and-statistical-significance/</guid>
+      <description>Recently I was asked to make a short presentation about how to introduce the idea of statistical test and statistical significance to students in marketing. The timing was very good because I just had red a blog post written by Stephen B. Heard called Why do we make statistics so hard for our students? which is exactly the way to follow. So I taken the main idea of this post and made a short presentation with R that you can find here:</description>
+    </item>
+    
+    <item>
       <title>Time series clustering with Dynamic Time Warping</title>
       <link>/post/time-series-clustering-with-dynamic-time-warp/</link>
       <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>

@@ -1,0 +1,21 @@
+---
+title: A simple introduction to statistical test and statistical significance
+author: ''
+date: '2018-09-13'
+slug: a-simple-introduction-to-statistical-test-and-statistical-significance
+categories: []
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
+Recently I was asked to make a short presentation about how to introduce the idea of statistical test and statistical significance to students in marketing. The timing was very good because I just had red a blog post written by Stephen B. Heard called [Why do we make statistics so hard for our students?](https://scientistseessquirrel.wordpress.com/2015/10/06/why-do-we-make-statistics-so-hard-for-our-students/) which is exactly the way to follow. So I taken the main idea of this post and made a short presentation with R that you can find here:
+
+```{r echo=FALSE}
+knitr::include_url('https://damien-datasci-blog.netlify.com/slides/first_presentation#1')
+```
+
+I've also taken a simple meme which looks very trendy on the net. A great sentence by W. Edwards Deming "Without data you're just another person with an opinion". It's simple but it is the reason why Statistics are very important not only in academia but also in companies.
+
+PS: Special thanks to Tim Mastny for his blog post about [how to host R presentation in a blogdown](https://timmastny.rbind.io/blog/embed-slides-knitr-blogdown/)

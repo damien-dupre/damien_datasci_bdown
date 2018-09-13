@@ -1,4 +1,4 @@
-﻿+++
++++
 abstract = ""
 
 authors = ["Damien Dupré", "Mathieu Loiseau", "Hamad Salem", "Philipe Dessus", "Stephan Simonian"]
@@ -19,7 +19,7 @@ url_video = ""
 
 [[url_custom]]
 name = "View Journal Article"
-url = ""
+url = "https://journals.openedition.org/rechercheseducations/1231"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]

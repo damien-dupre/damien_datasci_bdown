@@ -1,4 +1,4 @@
-﻿+++
++++
 abstract = ""
 
 authors = ["Philipe Dessus", "S. Trausan-Matu", "F. Wild", "Damien Dupré", "Mathieu Loiseau", "T. Rebedea", "V. Zampa"]
@@ -19,7 +19,7 @@ url_video = ""
 
 [[url_custom]]
 name = "View Journal Article"
-url = ""
+url = "https://www.cairn.info/revue-distances-et-savoirs-2011-4-page-473.htm"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
