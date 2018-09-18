@@ -1,13 +1,13 @@
 ---
-title: Time series clustering with Dynamic Time Warping
+title: "Time series clustering with Dynamic Time Warping"
 author: ''
 date: '2018-09-06'
-slug: time-series-clustering-with-dynamic-time-warp
-categories: []
-tags: []
 header:
   caption: ''
   image: ''
+slug: time-series-clustering-with-dynamic-time-warp
+tags: []
+categories: []
 ---
 
 Many solutions for clustering time series are available with R and as usual the web is full of nice tutorials like [Thomas Girke's blog post](http://girke.bioinformatics.ucr.edu/GEN242/pages/mydoc/Rclustering.html), [Rafael Irizarry and Michael Love's book](http://genomicsclass.github.io/book/pages/clustering_and_heatmaps.html), [Andrew B. Collier's blog post](https://datawookie.netlify.com/blog/2017/04/clustering-time-series-data/), [Peter Laurinec's blog post](https://petolau.github.io/TSrepr-clustering-time-series-representations/), [Dylan Glotzer's lecture](http://www.stat.unc.edu/faculty/pipiras/timeseries/Multivariate_6_-_Classification_Clustering_-_Menu.html) or [Ana Rita Marques's module](http://rstudio-pubs-static.s3.amazonaws.com/398402_abe1a0343a4e4e03977de8f3791e96bb.html).
@@ -136,7 +136,7 @@ Both `TSclust` and `dtwclust` are following the same steps:
 
 ```{r}
 # cluster analysis
-dist_ts <- TSclust::diss(SERIES = t(ts_sim_df), METHOD = "DTW") # note the dataframe must be transposed
+dist_ts <- TSclust::diss(SERIES = t(ts_sim_df), METHOD = "DTWARP") # note the dataframe must be transposed
 hc <- stats::hclust(dist_ts, method="complete") # meathod can be also "average" or diana (for DIvisive ANAlysis Clustering)
 # k for cluster which is 2 in our case (classic vs. wall)
 hclus <- stats::cutree(hc, k = 2) %>% # hclus <- cluster::pam(dist_ts, k = 2)$clustering has a similar result

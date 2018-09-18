@@ -494,7 +494,7 @@ ts_sim_df %&gt;%
 <div id="using-tsclust" class="section level2">
 <h2>Using <code>TSclust</code></h2>
 <pre class="r"><code># cluster analysis
-dist_ts &lt;- TSclust::diss(SERIES = t(ts_sim_df), METHOD = &quot;DTW&quot;) # note the dataframe must be transposed
+dist_ts &lt;- TSclust::diss(SERIES = t(ts_sim_df), METHOD = &quot;DTWARP&quot;) # note the dataframe must be transposed
 hc &lt;- stats::hclust(dist_ts, method=&quot;complete&quot;) # meathod can be also &quot;average&quot; or diana (for DIvisive ANAlysis Clustering)
 # k for cluster which is 2 in our case (classic vs. wall)
 hclus &lt;- stats::cutree(hc, k = 2) %&gt;% # hclus &lt;- cluster::pam(dist_ts, k = 2)$clustering has a similar result
