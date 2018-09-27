@@ -88,7 +88,9 @@ labels_order &lt;- dtw_data$labels$label
 dtw_result &lt;- data.frame(label = names(plan_list), 
                          cluster = factor(stats::cutree(dtw_model, k = Nclust)))
 #
-dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)</code></pre>
+dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)
+dtw_result &lt;- dplyr::full_join(dtw_result,dtw_data$labels, by=c(&quot;label&quot;, &quot;cluster&quot;))%&gt;%
+  dplyr::arrange(x)</code></pre>
 </div>
 <div id="dtw-plot" class="section level3">
 <h3>DTW plot</h3>
@@ -96,21 +98,25 @@ dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_r
 cluster_box &lt;- data.frame(cluster_box$cluster,cluster_box$x)
 cluster_threshold &lt;- mean(dtw_model$height[length(dtw_model$height)-((Nclust-2):(Nclust-1))])
 #
+numColors &lt;- length(levels(dtw_result$cluster)) # How many colors you need
+getColors &lt;- scales::hue_pal() # Create a function that takes a number and returns a qualitative palette of that length (from the scales package)
+myPalette &lt;- getColors(numColors)
+names(myPalette) &lt;- levels(dtw_result$cluster) # Give every color an appropriate name
+
 p1 &lt;- ggplot() + 
-  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
-  geom_text(data=ggdendro::label(dtw_data), aes(x, -300, label=label, hjust=0.5, color=cluster), size=3) +
   geom_rect(data=cluster_box, aes(xmin=X1-.3, xmax=X2+.3, ymin=0, ymax=cluster_threshold, color=cluster_box.cluster), fill=NA)+
+  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
   coord_flip() + 
   scale_y_continuous(&quot;Distance&quot;) + 
+  scale_x_continuous(&quot;&quot;,breaks = 1:20, labels = labels_order) + 
   guides(color=FALSE, fill = FALSE)+
-  theme(panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(), # remove grids
-        panel.background = element_blank(), 
-        axis.line = element_line(colour = &quot;black&quot;),
-        axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
-        axis.line.y = element_blank())
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(), # remove grids
+    panel.background = element_blank(), 
+    axis.text.y = element_text(colour = myPalette[dtw_result$cluster],hjust=0.5),
+    axis.ticks.y=element_blank()
+  )
 #
 p2 &lt;- as.data.frame(matrix(unlist(plan_list), 
                            nrow=length(unlist(plan_list[1])), 
@@ -190,26 +196,32 @@ labels_order &lt;- dtw_data$labels$label
 dtw_result &lt;- data.frame(label = names(plan_seasonality), 
                          cluster = factor(stats::cutree(dtw_model, k = Nclust)))
 #
-dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)</code></pre>
+dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)
+dtw_result &lt;- dplyr::full_join(dtw_result,dtw_data$labels, by=c(&quot;label&quot;, &quot;cluster&quot;))%&gt;%
+  dplyr::arrange(x)</code></pre>
 <pre class="r"><code>cluster_box &lt;- aggregate(x~cluster, ggdendro::label(dtw_data), range)
 cluster_box &lt;- data.frame(cluster_box$cluster,cluster_box$x)
 cluster_threshold &lt;- mean(dtw_model$height[length(dtw_model$height)-((Nclust-2):(Nclust-1))])
 #
+numColors &lt;- length(levels(dtw_result$cluster)) # How many colors you need
+getColors &lt;- scales::hue_pal() # Create a function that takes a number and returns a qualitative palette of that length (from the scales package)
+myPalette &lt;- getColors(numColors)
+names(myPalette) &lt;- levels(dtw_result$cluster) # Give every color an appropriate name
+
 p1 &lt;- ggplot() + 
-  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
-  geom_text(data=ggdendro::label(dtw_data), aes(x, -300, label=label, hjust=0.5, color=cluster), size=3) +
   geom_rect(data=cluster_box, aes(xmin=X1-.3, xmax=X2+.3, ymin=0, ymax=cluster_threshold, color=cluster_box.cluster), fill=NA)+
+  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
   coord_flip() + 
   scale_y_continuous(&quot;Distance&quot;) + 
+  scale_x_continuous(&quot;&quot;,breaks = 1:20, labels = labels_order) + 
   guides(color=FALSE, fill = FALSE)+
-  theme(panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(), # remove grids
-        panel.background = element_blank(), 
-        axis.line = element_line(colour = &quot;black&quot;),
-        axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
-        axis.line.y = element_blank())
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(), # remove grids
+    panel.background = element_blank(), 
+    axis.text.y = element_text(colour = myPalette[dtw_result$cluster],hjust=0.5),
+    axis.ticks.y=element_blank()
+  )
 #
 p2 &lt;- as.data.frame(matrix(unlist(plan_seasonality), 
                            nrow=length(unlist(plan_seasonality[1])), 
@@ -283,26 +295,32 @@ labels_order &lt;- dtw_data$labels$label
 dtw_result &lt;- data.frame(label = names(plan_HMM), 
                          cluster = factor(stats::cutree(dtw_model, k = Nclust)))
 #
-dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)</code></pre>
+dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)
+dtw_result &lt;- dplyr::full_join(dtw_result,dtw_data$labels, by=c(&quot;label&quot;, &quot;cluster&quot;))%&gt;%
+  dplyr::arrange(x)</code></pre>
 <pre class="r"><code>cluster_box &lt;- aggregate(x~cluster, ggdendro::label(dtw_data), range)
 cluster_box &lt;- data.frame(cluster_box$cluster,cluster_box$x)
 cluster_threshold &lt;- mean(dtw_model$height[length(dtw_model$height)-((Nclust-2):(Nclust-1))])
 #
+numColors &lt;- length(levels(dtw_result$cluster)) # How many colors you need
+getColors &lt;- scales::hue_pal() # Create a function that takes a number and returns a qualitative palette of that length (from the scales package)
+myPalette &lt;- getColors(numColors)
+names(myPalette) &lt;- levels(dtw_result$cluster) # Give every color an appropriate name
+
 p1 &lt;- ggplot() + 
-  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
-  geom_text(data=ggdendro::label(dtw_data), aes(x, -10, label=label, hjust=0.5, color=cluster), size=3) +
   geom_rect(data=cluster_box, aes(xmin=X1-.3, xmax=X2+.3, ymin=0, ymax=cluster_threshold, color=cluster_box.cluster), fill=NA)+
+  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
   coord_flip() + 
   scale_y_continuous(&quot;Distance&quot;) + 
+  scale_x_continuous(&quot;&quot;,breaks = 1:20, labels = labels_order) + 
   guides(color=FALSE, fill = FALSE)+
-  theme(panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(), # remove grids
-        panel.background = element_blank(), 
-        axis.line = element_line(colour = &quot;black&quot;),
-        axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
-        axis.line.y = element_blank())
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(), # remove grids
+    panel.background = element_blank(), 
+    axis.text.y = element_text(colour = myPalette[dtw_result$cluster],hjust=0.5),
+    axis.ticks.y=element_blank()
+  )
 #
 p2 &lt;- as.data.frame(matrix(unlist(plan_HMM), 
                            nrow=length(unlist(plan_HMM[1])), 
@@ -368,26 +386,32 @@ labels_order &lt;- dtw_data$labels$label
 dtw_result &lt;- data.frame(label = names(plan_poweravge), 
                          cluster = factor(stats::cutree(dtw_model, k = Nclust)))
 #
-dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)</code></pre>
+dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)
+dtw_result &lt;- dplyr::full_join(dtw_result,dtw_data$labels, by=c(&quot;label&quot;, &quot;cluster&quot;))%&gt;%
+  dplyr::arrange(x)</code></pre>
 <pre class="r"><code>cluster_box &lt;- aggregate(x~cluster, ggdendro::label(dtw_data), range)
 cluster_box &lt;- data.frame(cluster_box$cluster,cluster_box$x)
 cluster_threshold &lt;- mean(dtw_model$height[length(dtw_model$height)-((Nclust-2):(Nclust-1))])
 #
+numColors &lt;- length(levels(dtw_result$cluster)) # How many colors you need
+getColors &lt;- scales::hue_pal() # Create a function that takes a number and returns a qualitative palette of that length (from the scales package)
+myPalette &lt;- getColors(numColors)
+names(myPalette) &lt;- levels(dtw_result$cluster) # Give every color an appropriate name
+
 p1 &lt;- ggplot() + 
-  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
-  geom_text(data=ggdendro::label(dtw_data), aes(x, -1, label=label, hjust=0.5, color=cluster), size=3) +
   geom_rect(data=cluster_box, aes(xmin=X1-.3, xmax=X2+.3, ymin=0, ymax=cluster_threshold, color=cluster_box.cluster), fill=NA)+
+  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
   coord_flip() + 
   scale_y_continuous(&quot;Distance&quot;) + 
+  scale_x_continuous(&quot;&quot;,breaks = 1:20, labels = labels_order) + 
   guides(color=FALSE, fill = FALSE)+
-  theme(panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(), # remove grids
-        panel.background = element_blank(), 
-        axis.line = element_line(colour = &quot;black&quot;),
-        axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
-        axis.line.y = element_blank())
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(), # remove grids
+    panel.background = element_blank(), 
+    axis.text.y = element_text(colour = myPalette[dtw_result$cluster],hjust=0.5),
+    axis.ticks.y=element_blank()
+  )
 #
 p2 &lt;- as.data.frame(matrix(unlist(plan_poweravge), 
                            nrow=length(unlist(plan_poweravge[1])), 
