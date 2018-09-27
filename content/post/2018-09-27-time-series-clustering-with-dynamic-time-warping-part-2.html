@@ -1,0 +1,420 @@
+---
+title: Time series clustering with Dynamic Time Warping (Part 2)
+author: ''
+date: '2018-09-27'
+slug: time-series-clustering-with-dynamic-time-warping-part-2
+categories: []
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<p>Like every good movies, my previous blog post “Time series clustering with Dynamic Time Warping” deserves a sequel. In this Part 2, I will have a look at the athletes’ training plan for a marathon. Because marathons are such a demanding performance, most of athletes have a specific training plan to follow in order to be prepared. Many different training plan can be found on the web such as <a href="https://www.runireland.com/wp-content/uploads/2018/01/Training_for_marathon.pdf">this one</a> from the website www.runireland.com.</p>
+<p>In this blog post I will try to cluster different simulated athlete training plans with Dynamic Time Warping and some seasonality, states and power band extractions.</p>
+<div id="list-of-packages-needed" class="section level2">
+<h2>List of packages needed</h2>
+<pre class="r"><code># data wrangling
+library(dplyr) # data wrangling
+library(tidyr) # datawrangling
+# analysis
+library(dtwclust) # dynamic time warpping
+library(depmixS4) # Hidden Markov Model
+library(WaveletComp) # Wavelet Analysis
+# graphics
+library(ggplot2) # grammar of graphics
+library(ggdendro) # grammar of dendrograms
+library(gtable) # plot organisation
+library(grid) # plot organisation
+library(gridExtra) # plot organisation</code></pre>
+</div>
+<div id="data-simulation" class="section level2">
+<h2>Data simulation</h2>
+<p>For this purpose, I will create a data frame of 20 athlete training plans with 10 of them with a random plan and 10 with a repeated pattern non synchronized on their date and intensity. The main variable is the distance they have ran of every day since 25 weeks (175 days) before the marathon.</p>
+<pre class="r"><code>date_marathon &lt;- as.Date(&quot;2015-10-26&quot;)
+#
+df &lt;- NULL
+# random training plan with runs from 5 to 40km with a high proability of non run days (between 25% and 75% depending on athletes)
+for (i in 1:10){
+  random_proba &lt;- runif(8)
+  random_proba &lt;- random_proba/sum(random_proba)
+  value &lt;- base::sample(
+    x = seq(from = 0, to = 40, by = 5), 
+    size = 175, 
+    replace = TRUE, 
+    prob = c(runif(1, 0.25, 0.75),random_proba)
+  )
+  athlete &lt;- paste0(&quot;athlete_rand_&quot;,i)
+  new_df &lt;- data.frame(athlete = athlete, value = value, rundate = seq.Date(date_marathon-175, date_marathon-1, by=&quot;day&quot;))
+  df &lt;- rbind(df,new_df)
+}
+# training plan with a reapeated pattern with can change according the weeks and with a different intensity according athletes
+for (i in 11:20){
+  value &lt;- rep_len(
+    x = c(rep(x = 0, sample(1:3, 1)),10,0,15,20,30)*runif(1, 0.5, 1.5),
+    length.out = 175
+  )
+  athlete &lt;- paste0(&quot;athlete_plan_&quot;,i)
+  new_df &lt;- data.frame(athlete = athlete, value = value, rundate = seq.Date(date_marathon-175, date_marathon-1, by=&quot;day&quot;))
+  df &lt;- rbind(df,new_df)
+}</code></pre>
+<p>Once we have the data generated, a key trick will be to convert this data frame into a list of time series. The reason behind this choice is the possibility to implement a multivariate DTW analysis in the future (maybe in a Part 3).</p>
+<pre class="r"><code>plan_list &lt;- df %&gt;% 
+  tidyr::spread(athlete,value) %&gt;%
+  dplyr::select(-rundate) %&gt;%
+  purrr::map(~(.))</code></pre>
+</div>
+<div id="dtw-cluster-on-raw-data" class="section level1">
+<h1>DTW cluster on raw data</h1>
+<p>After creating the list of data, let’s implement a simple DTW clustering on the raw data to see if we can identify our two groups.</p>
+<div id="dtw-model" class="section level3">
+<h3>DTW model</h3>
+<pre class="r"><code>Nclust &lt;- 2
+dtw_model &lt;- dtwclust::tsclust(series = plan_list, 
+                               type = &quot;h&quot;, 
+                               k = Nclust,  
+                               distance = &quot;dtw_basic&quot;, 
+                               control = hierarchical_control(method = &quot;complete&quot;),
+                               preproc = NULL, 
+                               #args = tsclust_args(dist = list(window.size = 5L)),
+                               trace = TRUE)
+#
+dtw_data &lt;- ggdendro::dendro_data(dtw_model, type=&quot;rectangle&quot;)
+#
+labels_order &lt;- dtw_data$labels$label
+#
+dtw_result &lt;- data.frame(label = names(plan_list), 
+                         cluster = factor(stats::cutree(dtw_model, k = Nclust)))
+#
+dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)</code></pre>
+</div>
+<div id="dtw-plot" class="section level3">
+<h3>DTW plot</h3>
+<pre class="r"><code>cluster_box &lt;- aggregate(x~cluster, ggdendro::label(dtw_data), range)
+cluster_box &lt;- data.frame(cluster_box$cluster,cluster_box$x)
+cluster_threshold &lt;- mean(dtw_model$height[length(dtw_model$height)-((Nclust-2):(Nclust-1))])
+#
+p1 &lt;- ggplot() + 
+  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
+  geom_text(data=ggdendro::label(dtw_data), aes(x, -300, label=label, hjust=0.5, color=cluster), size=3) +
+  geom_rect(data=cluster_box, aes(xmin=X1-.3, xmax=X2+.3, ymin=0, ymax=cluster_threshold, color=cluster_box.cluster), fill=NA)+
+  coord_flip() + 
+  scale_y_continuous(&quot;Distance&quot;) + 
+  guides(color=FALSE, fill = FALSE)+
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), # remove grids
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.line.y = element_blank())
+#
+p2 &lt;- as.data.frame(matrix(unlist(plan_list), 
+                           nrow=length(unlist(plan_list[1])), 
+                           dimnames = list(c(),names(plan_list)))) %&gt;%
+  dplyr::mutate(rundatelocal = seq.Date(date_marathon-175, date_marathon-1, by=&quot;day&quot;)) %&gt;%
+  tidyr::gather(key = label,value = value, -rundatelocal) %&gt;%
+  dplyr::mutate(label = as.factor(label)) %&gt;%
+  dplyr::full_join(., dtw_result, by = &quot;label&quot;) %&gt;% 
+  mutate(label = factor(label, levels = rev(as.character(labels_order)))) %&gt;%
+  ggplot(aes(x = rundatelocal, y = value, colour = as.factor(cluster))) +
+  geom_line() +
+  geom_area(aes(fill = as.factor(cluster))) +
+  coord_cartesian(ylim = c(0,50)) +
+  scale_y_continuous(name = &quot;Total distance per day [km]&quot;, breaks = seq(0, 50, by = 50)) +
+  scale_x_date(name = &quot;Run Date&quot;, date_breaks = &quot;4 week&quot;, date_labels = &quot;%b %d&quot;) +
+  facet_wrap(~label, ncol = 1, strip.position=&quot;left&quot;) + 
+  guides(color=FALSE, fill = FALSE) +
+  theme_bw() + 
+  theme(strip.background = element_blank(), strip.text = element_blank())
+#
+plt_list &lt;- list(p2, p1)
+plt_layout &lt;- rbind(c(NA, 2),
+                    c(1, 2),
+                    c(NA, 2))
+#
+grid.arrange(grobs = plt_list, layout_matrix = plt_layout, heights = c(0.04, 1, 0.05))</code></pre>
+<p><img src="/post/2018-09-27-time-series-clustering-with-dynamic-time-warping-part-2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>I think I get a nice plot thanks to the solutions provided on Stack Overflow graphically speaking (except some overlap with the labels but I’m working on it). The results are not too bad but some of the random plan can be included in the repeated pattern plan. Well randomness can be expected and can create some nice patterns sometimes. Another interesting result is the necessity to increase the cluster number in order to have a clean clustering.</p>
+</div>
+<div id="centroids" class="section level3">
+<h3>Centroids</h3>
+<p>We can also have a look at the centroids to see with plans are the most representative of the clusters. Obviously with only two clusters, it is not very useful but it can be a key element to distinguish between many different training plans.</p>
+<pre class="r"><code>dtw_model_centroids &lt;- data.frame(dtw_model@centroids, rundatelocal = seq.Date(date_marathon-175, date_marathon-1, by=&quot;day&quot;)) %&gt;%
+  tidyr::gather(label, totaldistancekm, starts_with(&quot;athlete&quot;)) %&gt;%
+  dplyr::left_join(., dtw_result, by = &quot;label&quot;) %&gt;% 
+  dplyr::mutate(label = factor(label, levels = rev(labels_order)))
+#
+dtw_model_centroids %&gt;%
+  ggplot(aes(rundatelocal,totaldistancekm, color = cluster, fill = cluster)) +
+  geom_line() +
+  geom_area() +
+  facet_wrap(~ label + cluster, ncol = 1, strip.position=&quot;right&quot;, labeller=labeller(.rows = label_both)) +
+  scale_y_continuous(name = &quot;Total distance per day [km]&quot;) +
+  scale_x_date(name = &quot;Run Date&quot;, date_breaks = &quot;4 week&quot;, date_labels = &quot;%b %d&quot;) +
+  guides(color=FALSE, fill = FALSE) +
+  theme_bw()</code></pre>
+<p><img src="/post/2018-09-27-time-series-clustering-with-dynamic-time-warping-part-2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>The main problem with raw data is the noise. In order to extract recurrent patterns, the randomness of the noise can sometimes simulate non meaningful pattern and then change the cluster structure. Because we are interested in classification of recurrent pattern, a nice thing would be to remove the noise. Noise removal analyses are probably the most important contribution of signal treatment research and many can be applied here such as seasonality decomposition, Hidden Markov Models and power spectrum analysis.</p>
+</div>
+<div id="dtw-cluster-with-seasonality-decomposition" class="section level2">
+<h2>DTW cluster with seasonality decomposition</h2>
+<p>R for time series analysis have some unavoidable packages and functions. If you are interested in time series analysis, you probably cannot work without <code>zoo::zoo()</code>, <code>xts::xts()</code> or <code>tibbletime::as_tbl_time()</code>. However for time series analysis, the <code>stats</code> package have one of the most used and nice function: <code>stl()</code>. Stl allows a Seasonal Decomposition of Time Series by Loess which is powerful in order to extract time series noise, trend and seasonality (i.e periods). In our case we will try to use <code>stl()</code> in order to extract training plan seasonality over one week and then to cluster the results with the DTW method.</p>
+<p>So first let’s apply the <code>stl()</code> decomposition to every time series in our master list.</p>
+<pre class="r"><code>extract_seasonality &lt;- function(x, robust){
+  x_ts = ts(as.numeric(unlist(x)), frequency = 7)
+  stl_test = stl(x_ts, s.window = 7, robust)
+  return(stl_test$time.series[,1])
+}
+#
+plan_seasonality &lt;- plan_list %&gt;%
+  purrr::map(~extract_seasonality(., robust = TRUE))</code></pre>
+<p>and then let’s process our model and to plot the results.</p>
+<pre class="r"><code>Nclust &lt;- 2
+dtw_model &lt;- dtwclust::tsclust(series = plan_seasonality, 
+                               type = &quot;h&quot;, 
+                               k = Nclust,  
+                               distance = &quot;dtw_basic&quot;, 
+                               control = hierarchical_control(method = &quot;complete&quot;),
+                               preproc = NULL, 
+                               #args = tsclust_args(dist = list(window.size = 5L)),
+                               trace = TRUE)
+#
+dtw_data &lt;- ggdendro::dendro_data(dtw_model, type=&quot;rectangle&quot;)
+#
+labels_order &lt;- dtw_data$labels$label
+#
+dtw_result &lt;- data.frame(label = names(plan_seasonality), 
+                         cluster = factor(stats::cutree(dtw_model, k = Nclust)))
+#
+dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)</code></pre>
+<pre class="r"><code>cluster_box &lt;- aggregate(x~cluster, ggdendro::label(dtw_data), range)
+cluster_box &lt;- data.frame(cluster_box$cluster,cluster_box$x)
+cluster_threshold &lt;- mean(dtw_model$height[length(dtw_model$height)-((Nclust-2):(Nclust-1))])
+#
+p1 &lt;- ggplot() + 
+  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
+  geom_text(data=ggdendro::label(dtw_data), aes(x, -300, label=label, hjust=0.5, color=cluster), size=3) +
+  geom_rect(data=cluster_box, aes(xmin=X1-.3, xmax=X2+.3, ymin=0, ymax=cluster_threshold, color=cluster_box.cluster), fill=NA)+
+  coord_flip() + 
+  scale_y_continuous(&quot;Distance&quot;) + 
+  guides(color=FALSE, fill = FALSE)+
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), # remove grids
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.line.y = element_blank())
+#
+p2 &lt;- as.data.frame(matrix(unlist(plan_seasonality), 
+                           nrow=length(unlist(plan_seasonality[1])), 
+                           dimnames = list(c(),names(plan_seasonality)))) %&gt;%
+  dplyr::mutate(rundatelocal = seq.Date(date_marathon-175, date_marathon-1, by=&quot;day&quot;)) %&gt;%
+  tidyr::gather(key = label,value = value, -rundatelocal) %&gt;%
+  dplyr::mutate(label = as.factor(label)) %&gt;%
+  dplyr::full_join(., dtw_result, by = &quot;label&quot;) %&gt;% 
+  mutate(label = factor(label, levels = rev(as.character(labels_order)))) %&gt;%
+  ggplot(aes(x = rundatelocal, y = value, colour = as.factor(cluster))) +
+  geom_line() +
+  geom_area(aes(fill = as.factor(cluster))) +
+  coord_cartesian(ylim = c(-25,25)) +
+  scale_y_continuous(name = &quot;Seasonal distance per day [km]&quot;, breaks = seq(-25, 25, by = 50)) +
+  scale_x_date(name = &quot;Run Date&quot;, date_breaks = &quot;4 week&quot;, date_labels = &quot;%b %d&quot;) +
+  facet_wrap(~label, ncol = 1, strip.position=&quot;left&quot;) + 
+  guides(color=FALSE, fill = FALSE) +
+  theme_bw() + 
+  theme(strip.background = element_blank(), strip.text = element_blank())
+#
+plt_list &lt;- list(p2, p1)
+plt_layout &lt;- rbind(c(NA, 2),
+                    c(1, 2),
+                    c(NA, 2))
+#
+grid.arrange(grobs = plt_list, layout_matrix = plt_layout, heights = c(0.04, 1, 0.05))</code></pre>
+<p><img src="/post/2018-09-27-time-series-clustering-with-dynamic-time-warping-part-2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Well that’s an epic fail I think but let’s have a look why. Different reasons can explain why we have a first cluster with only 3 time series and as second with all the 17 remaining ones:</p>
+<ol style="list-style-type: decimal">
+<li>I am using only 2 clusters. In the real life (and in real randomness) a large amount of pattern is possible thus increasing the number of clusters can make the clustering more efficient (if an evaluation of the best fit with cluster number is performed).</li>
+<li>By removing the noise in the random plan, I made them not random at all and we can see now the repetition of the patterns. This is exactly what I want in my research with real data but here it made a mess.</li>
+</ol>
+<p>So let’s try another method!</p>
+</div>
+<div id="dtw-cluster-with-hidden-markov-model" class="section level2">
+<h2>DTW cluster with Hidden Markov Model</h2>
+<p>I’m not a perfect expert in Hidden Markov Model (HMM) and after having a look at the book <a href="https://www.crcpress.com/p/book/9781482253832">Hidden Markov Models for Time Series An Introduction Using R</a> by Walter Zucchini, Iain L. MacDonald and Roland Langrock, I can surely say that it is a complicated question. However in a nutshell HMM are clustering the values according their probability to be part of a “state”. In our case, let’s say that we have three states possible per day “no run”, “medium run” and “long run”. By using HMM it is possible to create new time series based on states instead on distance. It’s a qualitative transformation without any prior assumption about the states boundaries (almost).</p>
+<pre class="r"><code>plan_HMM &lt;- as.data.frame(matrix(unlist(plan_list), 
+                           nrow=length(unlist(plan_list[1])), 
+                           dimnames = list(c(),names(plan_list)))) %&gt;%
+  dplyr::mutate(rundatelocal = seq.Date(date_marathon-175, date_marathon-1, by=&quot;day&quot;)) %&gt;%
+  tidyr::gather(key = label,value = value, -rundatelocal) %&gt;%
+  dplyr::mutate(label = as.factor(label)) %&gt;%
+  dplyr::mutate(value = as.integer(value))
+#
+mod &lt;- depmixS4::depmix(value~label, family = poisson(link = &quot;log&quot;), nstates = 3, data = plan_HMM)
+#
+fm  &lt;- depmixS4::fit(mod, verbose = FALSE)
+#
+probs &lt;- depmixS4::posterior(fm)
+#
+plan_HMM &lt;- cbind(plan_HMM,probs) %&gt;%
+  dplyr::select(rundatelocal,label,state) %&gt;%
+  tidyr::spread(label,state) %&gt;%
+  dplyr::select(-rundatelocal) %&gt;%
+  purrr::map(~(.))</code></pre>
+<pre class="r"><code>Nclust &lt;- 2
+dtw_model &lt;- dtwclust::tsclust(series = plan_HMM, 
+                               type = &quot;h&quot;, 
+                               k = Nclust,  
+                               distance = &quot;dtw_basic&quot;, 
+                               control = hierarchical_control(method = &quot;complete&quot;),
+                               preproc = NULL, 
+                               #args = tsclust_args(dist = list(window.size = 5L)),
+                               trace = TRUE)
+#
+dtw_data &lt;- ggdendro::dendro_data(dtw_model, type=&quot;rectangle&quot;)
+#
+labels_order &lt;- dtw_data$labels$label
+#
+dtw_result &lt;- data.frame(label = names(plan_HMM), 
+                         cluster = factor(stats::cutree(dtw_model, k = Nclust)))
+#
+dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)</code></pre>
+<pre class="r"><code>cluster_box &lt;- aggregate(x~cluster, ggdendro::label(dtw_data), range)
+cluster_box &lt;- data.frame(cluster_box$cluster,cluster_box$x)
+cluster_threshold &lt;- mean(dtw_model$height[length(dtw_model$height)-((Nclust-2):(Nclust-1))])
+#
+p1 &lt;- ggplot() + 
+  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
+  geom_text(data=ggdendro::label(dtw_data), aes(x, -10, label=label, hjust=0.5, color=cluster), size=3) +
+  geom_rect(data=cluster_box, aes(xmin=X1-.3, xmax=X2+.3, ymin=0, ymax=cluster_threshold, color=cluster_box.cluster), fill=NA)+
+  coord_flip() + 
+  scale_y_continuous(&quot;Distance&quot;) + 
+  guides(color=FALSE, fill = FALSE)+
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), # remove grids
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.line.y = element_blank())
+#
+p2 &lt;- as.data.frame(matrix(unlist(plan_HMM), 
+                           nrow=length(unlist(plan_HMM[1])), 
+                           dimnames = list(c(),names(plan_HMM)))) %&gt;%
+  dplyr::mutate(rundatelocal = seq.Date(date_marathon-175, date_marathon-1, by=&quot;day&quot;)) %&gt;%
+  tidyr::gather(key = label,value = value, -rundatelocal) %&gt;%
+  dplyr::mutate(label = as.factor(label)) %&gt;%
+  dplyr::full_join(., dtw_result, by = &quot;label&quot;) %&gt;% 
+  mutate(label = factor(label, levels = rev(as.character(labels_order)))) %&gt;%
+  ggplot(aes(x = rundatelocal, y = value, colour = as.factor(cluster))) +
+  geom_line() +
+  geom_area(aes(fill = as.factor(cluster))) +
+  coord_cartesian(ylim = c(0,4)) +
+  scale_y_continuous(name = &quot;States per day [km]&quot;, breaks = seq(0, 4, by = 4)) +
+  scale_x_date(name = &quot;Run Date&quot;, date_breaks = &quot;4 week&quot;, date_labels = &quot;%b %d&quot;) +
+  facet_wrap(~label, ncol = 1, strip.position=&quot;left&quot;) + 
+  guides(color=FALSE, fill = FALSE) +
+  theme_bw() + 
+  theme(strip.background = element_blank(), strip.text = element_blank())
+#
+plt_list &lt;- list(p2, p1)
+plt_layout &lt;- rbind(c(NA, 2),
+                    c(1, 2),
+                    c(NA, 2))
+#
+grid.arrange(grobs = plt_list, layout_matrix = plt_layout, heights = c(0.04, 1, 0.05))</code></pre>
+<p><img src="/post/2018-09-27-time-series-clustering-with-dynamic-time-warping-part-2_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Good news this time, the clusters are almost equally distributed, bad news random plans and pattern plans are mixed together. However we can see that the HMM is creating surprisingly nice pattern which can be easily clustered with a higher number of cluster. The drawback is the low distance between each time series which can make the clustering method more complicated.</p>
+</div>
+<div id="dtw-cluster-by-power-spectral-density" class="section level2">
+<h2>DTW cluster by power spectral density</h2>
+<p>Last but not least, the probable best approach to evaluate seasonality/frequency in training plan pattern can be the power spectrum analysis. By identifying the underlying frequencies of each time series it is possible to cluster them according their pattern. A nice new package <code>WaveletComp</code> can be used for this purpose. <code>WaveletComp</code> is analyzing the frequency structure of uni- and bivariate time series using the Morlet wavelet.</p>
+<pre class="r"><code>extract_poweravg &lt;- function(x){
+  x &lt;- as.data.frame(x)
+  power_spectrum &lt;- WaveletComp::analyze.wavelet(
+    my.data = x,
+    my.series = 1,
+    loess.span = 0,
+    dt = 1,
+    verbose = FALSE
+  )
+  max_period &lt;- max(power_spectrum$Period)
+  dat &lt;- spline(power_spectrum$Power.avg, n = max_period)$y # WARNING:power band starts at 2 not 1
+  return(dat)
+}
+plan_poweravge &lt;- plan_list %&gt;%
+  purrr::map(~extract_poweravg(.))</code></pre>
+<pre class="r"><code>Nclust &lt;- 2
+dtw_model &lt;- dtwclust::tsclust(series = plan_poweravge, 
+                               type = &quot;h&quot;, 
+                               k = Nclust,  
+                               distance = &quot;dtw_basic&quot;, 
+                               control = hierarchical_control(method = &quot;complete&quot;),
+                               preproc = NULL, 
+                               #args = tsclust_args(dist = list(window.size = 5L)),
+                               trace = TRUE)
+#
+
+dtw_data &lt;- ggdendro::dendro_data(dtw_model, type=&quot;rectangle&quot;)
+#
+labels_order &lt;- dtw_data$labels$label
+#
+dtw_result &lt;- data.frame(label = names(plan_poweravge), 
+                         cluster = factor(stats::cutree(dtw_model, k = Nclust)))
+#
+dtw_data[[&quot;labels&quot;]] &lt;- merge(dtw_data[[&quot;labels&quot;]], dtw_result, by=&quot;label&quot;)</code></pre>
+<pre class="r"><code>cluster_box &lt;- aggregate(x~cluster, ggdendro::label(dtw_data), range)
+cluster_box &lt;- data.frame(cluster_box$cluster,cluster_box$x)
+cluster_threshold &lt;- mean(dtw_model$height[length(dtw_model$height)-((Nclust-2):(Nclust-1))])
+#
+p1 &lt;- ggplot() + 
+  geom_segment(data=ggdendro::segment(dtw_data), aes(x=x, y=y, xend=xend, yend=yend)) + 
+  geom_text(data=ggdendro::label(dtw_data), aes(x, -1, label=label, hjust=0.5, color=cluster), size=3) +
+  geom_rect(data=cluster_box, aes(xmin=X1-.3, xmax=X2+.3, ymin=0, ymax=cluster_threshold, color=cluster_box.cluster), fill=NA)+
+  coord_flip() + 
+  scale_y_continuous(&quot;Distance&quot;) + 
+  guides(color=FALSE, fill = FALSE)+
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), # remove grids
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.line.y = element_blank())
+#
+p2 &lt;- as.data.frame(matrix(unlist(plan_poweravge), 
+                           nrow=length(unlist(plan_poweravge[1])), 
+                           dimnames = list(c(),names(plan_poweravge)))) %&gt;%
+  dplyr::mutate(rundatelocal = 1:n()) %&gt;%
+  tidyr::gather(key = label,value = value, -rundatelocal) %&gt;%
+  dplyr::mutate(label = as.factor(label)) %&gt;%
+  dplyr::full_join(., dtw_result, by = &quot;label&quot;) %&gt;% 
+  mutate(label = factor(label, levels = rev(as.character(labels_order)))) %&gt;%
+  ggplot(aes(x = rundatelocal, y = value, colour = as.factor(cluster))) +
+  geom_line() +
+  geom_area(aes(fill = as.factor(cluster))) +
+  coord_cartesian(ylim = c(0,1)) +
+  scale_y_continuous(name = &quot;Average power density&quot;, breaks = seq(0, 1, by = 1)) +
+  scale_x_continuous(name = &quot;Period (days)&quot;) +
+  facet_wrap(~label, ncol = 1, strip.position=&quot;left&quot;) + 
+  guides(color=FALSE, fill = FALSE) +
+  theme_bw() + 
+  theme(strip.background = element_blank(), strip.text = element_blank())
+#
+plt_list &lt;- list(p2, p1)
+plt_layout &lt;- rbind(c(NA, 2),
+                    c(1, 2),
+                    c(NA, 2))
+#
+grid.arrange(grobs = plt_list, layout_matrix = plt_layout, heights = c(0.04, 1, 0.05))</code></pre>
+<p><img src="/post/2018-09-27-time-series-clustering-with-dynamic-time-warping-part-2_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>This frequency decomposition looks amazing but be careful because the power frequency are average and as stated in <a href="http://www.hs-stat.com/projects/WaveletComp/WaveletComp_guided_tour.pdf">“WaveletComp 1.1:A guided tour through the R package”</a>, “The average power plot cannot distinguish between consecutive periods and overlapping periods”. This is annoying but average power is definitely a first step toward a nice classification of training plan patterns.</p>
+</div>
+</div>

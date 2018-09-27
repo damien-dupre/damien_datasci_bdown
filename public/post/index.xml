@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Time series clustering with Dynamic Time Warping (Part 2)</title>
+      <link>/post/time-series-clustering-with-dynamic-time-warping-part-2/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/time-series-clustering-with-dynamic-time-warping-part-2/</guid>
+      <description>Like every good movies, my previous blog post “Time series clustering with Dynamic Time Warping” deserves a sequel. In this Part 2, I will have a look at the athletes’ training plan for a marathon. Because marathons are such a demanding performance, most of athletes have a specific training plan to follow in order to be prepared. Many different training plan can be found on the web such as this one from the website www.</description>
+    </item>
+    
+    <item>
       <title>A simple introduction to statistical test and statistical significance</title>
       <link>/post/a-simple-introduction-to-statistical-test-and-statistical-significance/</link>
       <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
