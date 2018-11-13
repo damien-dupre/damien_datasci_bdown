@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/post/how-to-organise-a-wedding-with-r-google-search-api-google-drive-web-scraping-and-automatic-emails/</loc>
+      <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/time-series-clustering-with-dynamic-time-warping-part-2/</loc>
       <lastmod>2018-09-27T00:00:00+00:00</lastmod>
     </url>
@@ -294,15 +302,6 @@
     
     <url>
     
-      <loc>/tags/dynemo/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/ltfll/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -331,6 +330,15 @@
     <url>
     
       <loc>/tags/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/dynemo/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

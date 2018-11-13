@@ -11,12 +11,28 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>How to organise a wedding with R: google search API, google drive, web scraping and automatic emails</title>
+      <link>/post/how-to-organise-a-wedding-with-r-google-search-api-google-drive-web-scraping-and-automatic-emails/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how-to-organise-a-wedding-with-r-google-search-api-google-drive-web-scraping-and-automatic-emails/</guid>
+      <description>
+
+
+&lt;p&gt;xxxxxxxxxxxxxxxxxxxx&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Time series clustering with Dynamic Time Warping (Part 2)</title>
       <link>/post/time-series-clustering-with-dynamic-time-warping-part-2/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/time-series-clustering-with-dynamic-time-warping-part-2/</guid>
-      <description>&lt;p&gt;Like every good movies, my previous blog post “Time series clustering with Dynamic Time Warping” deserves a sequel. In this Part 2, I will have a look at the athletes’ training plan for a marathon. Because marathons are such a demanding performance, most of athletes have a specific training plan to follow in order to be prepared. Many different training plan can be found on the web such as &lt;a href=&#34;https://www.runireland.com/wp-content/uploads/2018/01/Training_for_marathon.pdf&#34;&gt;this one&lt;/a&gt; from the website www.runireland.com.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Like every good movies, my previous blog post “Time series clustering with Dynamic Time Warping” deserves a sequel. In this Part 2, I will have a look at the athletes’ training plan for a marathon. Because marathons are such a demanding performance, most of athletes have a specific training plan to follow in order to be prepared. Many different training plan can be found on the web such as &lt;a href=&#34;https://www.runireland.com/wp-content/uploads/2018/01/Training_for_marathon.pdf&#34;&gt;this one&lt;/a&gt; from the website www.runireland.com.&lt;/p&gt;
 &lt;p&gt;In this blog post I will try to cluster different simulated athlete training plans with Dynamic Time Warping and some seasonality, states and power band extractions.&lt;/p&gt;
 &lt;div id=&#34;list-of-packages-needed&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;List of packages needed&lt;/h2&gt;
@@ -455,7 +471,10 @@ grid.arrange(grobs = plt_list, layout_matrix = plt_layout, heights = c(0.04, 1, 
       <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/a-simple-introduction-to-statistical-test-and-statistical-significance/</guid>
-      <description>&lt;p&gt;Recently I was asked to make a short presentation about how to introduce the idea of statistical test and statistical significance to students in marketing. The timing was very good because I just had red a blog post written by Stephen B. Heard called &lt;a href=&#34;https://scientistseessquirrel.wordpress.com/2015/10/06/why-do-we-make-statistics-so-hard-for-our-students/&#34;&gt;Why do we make statistics so hard for our students?&lt;/a&gt; which is exactly the way to follow. So I taken the main idea of this post and made a short presentation with R that you can find here:&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Recently I was asked to make a short presentation about how to introduce the idea of statistical test and statistical significance to students in marketing. The timing was very good because I just had red a blog post written by Stephen B. Heard called &lt;a href=&#34;https://scientistseessquirrel.wordpress.com/2015/10/06/why-do-we-make-statistics-so-hard-for-our-students/&#34;&gt;Why do we make statistics so hard for our students?&lt;/a&gt; which is exactly the way to follow. So I taken the main idea of this post and made a short presentation with R that you can find here:&lt;/p&gt;
 &lt;iframe src=&#34;https://damien-datasci-blog.netlify.com/slides/DCU_presentation&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;
 &lt;/iframe&gt;
 &lt;p&gt;I’ve also taken a simple meme which looks very trendy on the net. A great sentence by W. Edwards Deming “Without data you’re just another person with an opinion”. It’s simple but it is the reason why Statistics are very important not only in academia but also in companies.&lt;/p&gt;
@@ -469,7 +488,10 @@ grid.arrange(grobs = plt_list, layout_matrix = plt_layout, heights = c(0.04, 1, 
       <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/time-series-clustering-with-dynamic-time-warp/</guid>
-      <description>&lt;p&gt;Many solutions for clustering time series are available with R and as usual the web is full of nice tutorials like &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/pages/mydoc/Rclustering.html&#34;&gt;Thomas Girke’s blog post&lt;/a&gt;, &lt;a href=&#34;http://genomicsclass.github.io/book/pages/clustering_and_heatmaps.html&#34;&gt;Rafael Irizarry and Michael Love’s book&lt;/a&gt;, &lt;a href=&#34;https://datawookie.netlify.com/blog/2017/04/clustering-time-series-data/&#34;&gt;Andrew B. Collier’s blog post&lt;/a&gt;, &lt;a href=&#34;https://petolau.github.io/TSrepr-clustering-time-series-representations/&#34;&gt;Peter Laurinec’s blog post&lt;/a&gt;, &lt;a href=&#34;http://www.stat.unc.edu/faculty/pipiras/timeseries/Multivariate_6_-_Classification_Clustering_-_Menu.html&#34;&gt;Dylan Glotzer’s lecture&lt;/a&gt; or &lt;a href=&#34;http://rstudio-pubs-static.s3.amazonaws.com/398402_abe1a0343a4e4e03977de8f3791e96bb.html&#34;&gt;Ana Rita Marques’s module&lt;/a&gt;.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Many solutions for clustering time series are available with R and as usual the web is full of nice tutorials like &lt;a href=&#34;http://girke.bioinformatics.ucr.edu/GEN242/pages/mydoc/Rclustering.html&#34;&gt;Thomas Girke’s blog post&lt;/a&gt;, &lt;a href=&#34;http://genomicsclass.github.io/book/pages/clustering_and_heatmaps.html&#34;&gt;Rafael Irizarry and Michael Love’s book&lt;/a&gt;, &lt;a href=&#34;https://datawookie.netlify.com/blog/2017/04/clustering-time-series-data/&#34;&gt;Andrew B. Collier’s blog post&lt;/a&gt;, &lt;a href=&#34;https://petolau.github.io/TSrepr-clustering-time-series-representations/&#34;&gt;Peter Laurinec’s blog post&lt;/a&gt;, &lt;a href=&#34;http://www.stat.unc.edu/faculty/pipiras/timeseries/Multivariate_6_-_Classification_Clustering_-_Menu.html&#34;&gt;Dylan Glotzer’s lecture&lt;/a&gt; or &lt;a href=&#34;http://rstudio-pubs-static.s3.amazonaws.com/398402_abe1a0343a4e4e03977de8f3791e96bb.html&#34;&gt;Ana Rita Marques’s module&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Dynamic Time Warping (DTW) is one of these solutions. The main advantage of DTW is the possibility to group time series according their patterns or shapes even if these patterns are not synchronized (lag).&lt;/p&gt;
 &lt;p&gt;As far as I know the two main packages which allow time series clustering with DTW are &lt;code&gt;TSclust&lt;/code&gt; by &lt;a href=&#34;https://cran.r-project.org/web/packages/TSclust/index.html&#34;&gt;Pablo Montero Manso and José Antonio Vilar&lt;/a&gt; and &lt;code&gt;dtwclust&lt;/code&gt; by &lt;a href=&#34;https://cran.r-project.org/web/packages/dtwclust/index.html&#34;&gt;Alexis Sarda-Espinosa&lt;/a&gt;. These packages are very simple but powerful tools to analyse time series. However when it comes to analyse real data, I found difficult to understand how the clustering is working. To make this process clearer I’m going to simulate two groups of time series and to check if whether or not the DTW clustering can differentiate them.&lt;/p&gt;
 &lt;div id=&#34;list-of-packages-needed&#34; class=&#34;section level2&#34;&gt;
@@ -712,7 +734,10 @@ plot(cluster_dtw_h2)&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Tue, 04 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/publishing-blogdown-some-insights-from-my-own-experience/</guid>
-      <description>&lt;p&gt;Finally! My first post to my website is about to be live on the web! I’m always amazed by the possibilities offered by R and Rstudio and my first lines will thank this huge community which make the awesomeness real. However it’s not always easy to use and to apply these magnificent tools. Publishing a blogdown is a good example of a process that looks easy on the first sight but which can be tricky. Here are some insights from my experience in publishing a research blog from blogdown.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Finally! My first post to my website is about to be live on the web! I’m always amazed by the possibilities offered by R and Rstudio and my first lines will thank this huge community which make the awesomeness real. However it’s not always easy to use and to apply these magnificent tools. Publishing a blogdown is a good example of a process that looks easy on the first sight but which can be tricky. Here are some insights from my experience in publishing a research blog from blogdown.&lt;/p&gt;
 &lt;div id=&#34;first-steps-with-blogdown&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;First steps with blogdown&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;blogdown&lt;/code&gt; package is very well documented and if you are intended to publish your own websites the best approach is to have a look at the bookdown made by Yihui Xie, Amber Thomas and Alison Presmanes Hill &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;blogdown: Creating Websites with R Markdown&lt;/a&gt;.&lt;/p&gt;
@@ -882,16 +907,6 @@ These results suggest that systems are not equivalent in their ability to detect
       
       <guid>/talk/2015-acii/</guid>
       <description>&lt;p&gt;ABSTRACT: User eXperience studies with products, systems or services have significantly increased in companies in order to anticipate their commercial success. Among the user experience dimensions, emotions are predominant. However User eXperience studies used several concepts to refer to emotions and current measures still have some flaws. Consequently, this doctoral project aims firstly to provide a multi-componential approach of emotions based on a psychological view, and secondly to provide Affective Computing solutions in order to evaluate emotions in User eXperience studies. Through a study using hand-gesture interface devices, three components of users&amp;rsquo; emotions were simultaneously measured with self-reports: the subjective, cognitive and motivational components. The results point out the possibility of measuring different components in order to gain a better understanding of emotions triggered by products. They also point out that self-reports measures could be improved with Affective Computing solutions. In this perspective, two emotion assessment tools were developed: Oudjat and EmoLyse.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Etude de l’expérience utilisateur émotionnelle: Quels sont les impacts des émotions suscitées des produits innovants sur les perceptions des utilisateurs</title>
-      <link>/talk/2016-aiptlf/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/talk/2016-aiptlf/</guid>
-      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
 </description>
     </item>
     
