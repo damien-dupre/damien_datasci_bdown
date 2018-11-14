@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 2.4.0">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.48" />
   <meta name="author" content="Damien Dupré">
 
   
@@ -390,10 +390,7 @@ Dynamic Time Warping (DTW) is one of these solutions. The main advantage of DTW 
 
 
     <div class="article-style" itemprop="articleBody">
-      
-
-
-<p>Many solutions for clustering time series are available with R and as usual the web is full of nice tutorials like <a href="http://girke.bioinformatics.ucr.edu/GEN242/pages/mydoc/Rclustering.html">Thomas Girke’s blog post</a>, <a href="http://genomicsclass.github.io/book/pages/clustering_and_heatmaps.html">Rafael Irizarry and Michael Love’s book</a>, <a href="https://datawookie.netlify.com/blog/2017/04/clustering-time-series-data/">Andrew B. Collier’s blog post</a>, <a href="https://petolau.github.io/TSrepr-clustering-time-series-representations/">Peter Laurinec’s blog post</a>, <a href="http://www.stat.unc.edu/faculty/pipiras/timeseries/Multivariate_6_-_Classification_Clustering_-_Menu.html">Dylan Glotzer’s lecture</a> or <a href="http://rstudio-pubs-static.s3.amazonaws.com/398402_abe1a0343a4e4e03977de8f3791e96bb.html">Ana Rita Marques’s module</a>.</p>
+      <p>Many solutions for clustering time series are available with R and as usual the web is full of nice tutorials like <a href="http://girke.bioinformatics.ucr.edu/GEN242/pages/mydoc/Rclustering.html">Thomas Girke’s blog post</a>, <a href="http://genomicsclass.github.io/book/pages/clustering_and_heatmaps.html">Rafael Irizarry and Michael Love’s book</a>, <a href="https://datawookie.netlify.com/blog/2017/04/clustering-time-series-data/">Andrew B. Collier’s blog post</a>, <a href="https://petolau.github.io/TSrepr-clustering-time-series-representations/">Peter Laurinec’s blog post</a>, <a href="http://www.stat.unc.edu/faculty/pipiras/timeseries/Multivariate_6_-_Classification_Clustering_-_Menu.html">Dylan Glotzer’s lecture</a> or <a href="http://rstudio-pubs-static.s3.amazonaws.com/398402_abe1a0343a4e4e03977de8f3791e96bb.html">Ana Rita Marques’s module</a>.</p>
 <p>Dynamic Time Warping (DTW) is one of these solutions. The main advantage of DTW is the possibility to group time series according their patterns or shapes even if these patterns are not synchronized (lag).</p>
 <p>As far as I know the two main packages which allow time series clustering with DTW are <code>TSclust</code> by <a href="https://cran.r-project.org/web/packages/TSclust/index.html">Pablo Montero Manso and José Antonio Vilar</a> and <code>dtwclust</code> by <a href="https://cran.r-project.org/web/packages/dtwclust/index.html">Alexis Sarda-Espinosa</a>. These packages are very simple but powerful tools to analyse time series. However when it comes to analyse real data, I found difficult to understand how the clustering is working. To make this process clearer I’m going to simulate two groups of time series and to check if whether or not the DTW clustering can differentiate them.</p>
 <div id="list-of-packages-needed" class="section level2">
