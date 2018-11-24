@@ -67,7 +67,7 @@ list_city <- read.csv(
 
 ## Querying google place API
 
-Once the list of cities obtained, I made a loop to query google place for these cities. A tricky part is to get the search results from other pages. If a "next_page_token" is found, an while statement is querying for this new page. If no result is found the loop goes to the next city.
+Once the list of cities obtained, I made a loop to query Google place for these cities. A tricky part is to get the search results from other pages. If a "next_page_token" is found, an while statement is querying for this new page. If no result is found the loop goes to the next city.
 
 ```{r}
 df_places_final <- NULL
@@ -124,7 +124,7 @@ leaflet() %>%
 
 ## Obtaining venues' website
 
-`googleway::google_place()` is great to find places with their addresses, GPS coordinates and types but the first loop doesn't provide their website URLs. In order to get them we have to query the google place API using venues "places_id" with `googleway::google_place_details()` by applying a small function to with `purrr`.
+`googleway::google_place()` is great to find places with their addresses, GPS coordinates and types but the first loop doesn't provide their website URLs. In order to get them we have to query the Google place API using venues "places_id" with `googleway::google_place_details()` by applying a small function to with `purrr`.
 
 ```{r}
 get_website <- function(place_id){
@@ -141,7 +141,7 @@ website_list <- df_places_filtered$place_id %>%
 df_places_filtered$website <- website_list
 ```
 
-For the next stages of the process I'm going to remove the venues without website URL but if like me you are organizing your wedding I suggest to manually contact them. Most of the URL are clean but sometimes some errors are possible so it is possible to remove them with a `gsub()` for example. I'm creating a new variable called "website_contact" which will be used as well for web scrapping.
+For the next stages of the process I'm going to remove the venues without website URL but if like me you are organizing your wedding I suggest to manually contact them. Most of the URL are clean but sometimes some errors are possible so it is possible to remove them with a `gsub()` for example. I'm creating a new variable called "website_contact" which will be used as well for web scraping.
 
 ```{r}
 df_places_filtered <- df_places_filtered %>%
@@ -151,11 +151,11 @@ df_places_filtered <- df_places_filtered %>%
   dplyr::mutate(website_contact = paste0(website,"contact"))
 ```
 
-The list of venues is now "clean" we can start the web scrapping to obtain venues' emails.
+The list of venues is now "clean" we can start the web scraping to obtain venues' emails.
 
-# Website scrapping for emails
+# Website scraping for emails
 
-I already said that google place is great but as far as I know it doesn' provides venues emails. However we won't stop here and R is providing some excellent tool like `rvest` package in order to get information for the web. Thankfully, venues websites made their emails very easy to get on their home page or on their contact page so the idea is to web scrap these pages to see if we can find venues emails in a very short function. The function contains `trycatch` to check the URL before scrapping for emails.
+I already said that Google place is great but as far as I know it doesn' provides venues emails. However we won't stop here and R is providing some excellent tool like `rvest` package in order to get information for the web. Thankfully, venues websites made their emails very easy to get on their home page or on their contact page so the idea is to web scrap these pages to see if we can find venues emails in a very short function. The function contains `trycatch` to check the URL before scraping for emails.
 
 ```{r}
 extract_email <- function(website){
@@ -172,12 +172,12 @@ extract_email <- function(website){
     return(email_text[1])
   }
 }
-# web scrapping home page
+# web scraping home page
 email_list <- df_places_filtered$website %>%
   purrr::map(extract_email) %>%
   unlist()
 df_places_filtered$email <- email_list
-# web scrapping contact page
+# web scraping contact page
 email_list <- df_places_filtered$website_contact %>%
   purrr::map(extract_email) %>%
   unlist()
@@ -199,9 +199,9 @@ Excellent we obtained a list of some venues to email!
 
 # google drive and automatic emails
 
-A classic advice for wedding planning is to setup a specific email only dedicated to this task. One advantage of google is not only very easy email setup but also the access to a google drive to store your documents in order to keep track. Of course it's possible to store it locally but I found google drive nice for sharing with your partner.
+A classic advice for wedding planning is to setup a specific email only dedicated to this task. One advantage of Google is not only very easy email setup but also the access to a Google drive to store your documents in order to keep track. Of course it's possible to store it locally but I found Google drive nice for sharing with your partner.
 
-Once it's done, google drive documents are easily accessed with the package `googledrive` (see https://googledrive.tidyverse.org/index.html for some information about `googledrive`).
+Once it's done, Google drive documents are easily accessed with the package `googledrive` (see https://googledrive.tidyverse.org/index.html for some information about `googledrive`).
 
 ## Upload list of venues to google drive
 
@@ -232,7 +232,7 @@ list_venues <- read.csv("list_venues.csv",row.names = NULL) %>%
 
 ## Select email to be send
 
-Now the list of venues is stored in google drive it's time to send our emails with R. Because it is easier for me, I've set up another for loop (yes it's not great but very re insuring at least). For each row of the data frame we are going to extract the venue name and email and send the same text ask for availability at a certain date.
+Now the list of venues is stored in Google drive it's time to send our emails with R. Because it is easier for me, I've set up another for loop (yes it's not great but very re insuring at least). For each row of the data frame we are going to extract the venue name and email and send the same text ask for availability at a certain date.
 
 An important thing to be able to send emails from R is to [*allow less secure app: Yes*](https://support.google.com/accounts/answer/6010255?hl=en) in gmail settings.
 
