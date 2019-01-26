@@ -1,0 +1,34 @@
+---
+title: '`dplyrshortcut` package: How to create keyboard shortcuts for dplyr functions
+  on RStudio IDE '
+author: ''
+date: '2019-01-26'
+slug: dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide
+categories: []
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<p>People are saying that if you are repeating a code more than twice, then make a function for it. The idea of <code>dplyrshortcut</code> is that if you are using a function more than twice, then use a keyboard shortcut.</p>
+<div id="installation" class="section level1">
+<h1>Installation</h1>
+<p>You can install the development version of <code>dplyrshortcut</code> with the devtools package.</p>
+<pre class="r"><code># install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;damien-dupre/dplyrshortcut&quot;)</code></pre>
+</div>
+<div id="use" class="section level1">
+<h1>Use</h1>
+<p><code>dplyrshortcut</code> add functions in RStudio IDE’s Addins section.</p>
+<p>Then, in order to add the shortcut to your keyboard, use the Rstudio IDE: <code>Tools&gt;Modify Keyboard Shortcuts...</code> and associate the keyboard shortcut you prefer, such as:</p>
+<ul>
+<li>Ctrl+Shift+F for “dplyr::filter(”</li>
+<li>Ctrl+Shift+M for “dplyr::mutate(”</li>
+<li>Ctrl+Shift+G for “dplyr::group_by(”</li>
+<li>Ctrl+Shift+S for “dplyr::select(”</li>
+</ul>
+<p>and modify Insert Pipe Operator with Ctrl+Shift+P.</p>
+</div>

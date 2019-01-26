@@ -13,6 +13,18 @@
     
     
     <item>
+      <title>`dplyrshortcut` package: How to create keyboard shortcuts for dplyr functions on RStudio IDE </title>
+      <link>/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide/</guid>
+      <description>People are saying that if you are repeating a code more than twice, then make a function for it. The idea of dplyrshortcut is that if you are using a function more than twice, then use a keyboard shortcut.
+InstallationYou can install the development version of dplyrshortcut with the devtools package.
+# install.packages(&amp;quot;devtools&amp;quot;)devtools::install_github(&amp;quot;damien-dupre/dplyrshortcut&amp;quot;)Usedplyrshortcut add functions in RStudio IDE’s Addins section.
+Then, in order to add the shortcut to your keyboard, use the Rstudio IDE: Tools&amp;gt;Modify Keyboard Shortcuts.</description>
+    </item>
+    
+    <item>
       <title>How to organize a wedding with R: google place API, google drive, web scraping and automatic emails</title>
       <link>/post/how-to-organise-a-wedding-with-r-google-search-api-google-drive-web-scraping-and-automatic-emails/</link>
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>

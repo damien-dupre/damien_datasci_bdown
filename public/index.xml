@@ -11,6 +11,37 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>`dplyrshortcut` package: How to create keyboard shortcuts for dplyr functions on RStudio IDE </title>
+      <link>/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide/</guid>
+      <description>
+
+
+&lt;p&gt;People are saying that if you are repeating a code more than twice, then make a function for it. The idea of &lt;code&gt;dplyrshortcut&lt;/code&gt; is that if you are using a function more than twice, then use a keyboard shortcut.&lt;/p&gt;
+&lt;div id=&#34;installation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;p&gt;You can install the development version of &lt;code&gt;dplyrshortcut&lt;/code&gt; with the devtools package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# install.packages(&amp;quot;devtools&amp;quot;)
+devtools::install_github(&amp;quot;damien-dupre/dplyrshortcut&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;use&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Use&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;dplyrshortcut&lt;/code&gt; add functions in RStudio IDE’s Addins section.&lt;/p&gt;
+&lt;p&gt;Then, in order to add the shortcut to your keyboard, use the Rstudio IDE: &lt;code&gt;Tools&amp;gt;Modify Keyboard Shortcuts...&lt;/code&gt; and associate the keyboard shortcut you prefer, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ctrl+Shift+F for “dplyr::filter(”&lt;/li&gt;
+&lt;li&gt;Ctrl+Shift+M for “dplyr::mutate(”&lt;/li&gt;
+&lt;li&gt;Ctrl+Shift+G for “dplyr::group_by(”&lt;/li&gt;
+&lt;li&gt;Ctrl+Shift+S for “dplyr::select(”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;and modify Insert Pipe Operator with Ctrl+Shift+P.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How to organize a wedding with R: google place API, google drive, web scraping and automatic emails</title>
       <link>/post/how-to-organise-a-wedding-with-r-google-search-api-google-drive-web-scraping-and-automatic-emails/</link>
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
@@ -1153,16 +1184,6 @@ These results suggest that systems are not equivalent in their ability to detect
       
       <guid>/talk/2017-ahfe/</guid>
       <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places that were previously impractical. This paper presents a new application that synchronizes the emotional patterns from these time-series in order to model athletes’ emotion during physical activity. This data analysis computes a best-fitting model for analyzing the patterns given by these measurements “in the wild”. The recording setup used to measure and synchronize multiple biometric physiological sensors can be called a BAN (Body Area Network) of personal measurements. By monitoring physical activity, it is now possible to calculate optimal patterns for managing athletes’ emotion. The data provided here are not restricted by a lab environment but close to the “ground truth” of ecologically valid physiological changes. The data allow the provision of accurate feedback to athletes about their emotion (e.g. in cases such as an unexpected increase or an expected decrease of physiological activity).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Emotions triggered by innovative products, A multi-componential approach of emotions for User eXperience tools</title>
-      <link>/talk/2015-acii/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/talk/2015-acii/</guid>
-      <description>&lt;p&gt;ABSTRACT: User eXperience studies with products, systems or services have significantly increased in companies in order to anticipate their commercial success. Among the user experience dimensions, emotions are predominant. However User eXperience studies used several concepts to refer to emotions and current measures still have some flaws. Consequently, this doctoral project aims firstly to provide a multi-componential approach of emotions based on a psychological view, and secondly to provide Affective Computing solutions in order to evaluate emotions in User eXperience studies. Through a study using hand-gesture interface devices, three components of users&amp;rsquo; emotions were simultaneously measured with self-reports: the subjective, cognitive and motivational components. The results point out the possibility of measuring different components in order to gain a better understanding of emotions triggered by products. They also point out that self-reports measures could be improved with Affective Computing solutions. In this perspective, two emotion assessment tools were developed: Oudjat and EmoLyse.&lt;/p&gt;
 </description>
     </item>
     
