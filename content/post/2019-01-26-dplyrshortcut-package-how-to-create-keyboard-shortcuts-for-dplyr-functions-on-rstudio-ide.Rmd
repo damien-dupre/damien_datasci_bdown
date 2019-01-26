@@ -26,6 +26,8 @@ devtools::install_github("damien-dupre/dplyrshortcut")
 
 `dplyrshortcut` add functions in RStudio IDE's Addins section.
 
+![](/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide_files/img_01.png)
+
 Then, in order to add the shortcut to your keyboard, use the Rstudio IDE: `Tools>Modify Keyboard Shortcuts...` and associate the keyboard shortcut you prefer, such as:
 
 * Ctrl+Shift+F for "dplyr::filter("
@@ -34,3 +36,10 @@ Then, in order to add the shortcut to your keyboard, use the Rstudio IDE: `Tools
 * Ctrl+Shift+S for "dplyr::select("
 
 and modify Insert Pipe Operator with Ctrl+Shift+P.
+
+![](/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide_files/img_02.png)
+
+And here you go! Data wrangling as fast as light speed! 
+
+![](/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide_files/gif_us.gif)
+
