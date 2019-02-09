@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0200</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -1110,7 +1110,7 @@ plot(cluster_dtw_h2)&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Privacy Policy</title>
       <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0200</pubDate>
       
       <guid>/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
@@ -1138,7 +1138,7 @@ plot(cluster_dtw_h2)&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>A Comparison of Three Commercial Systems for Automatic Recognition of Spontaneous Facial Expressions</title>
       <link>/talk/2018-cere/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>/talk/2018-cere/</guid>
       <description>&lt;p&gt;SYMPOSIUM 2: Affect Recognition in Humans versus Machines: Current Issues and Future Challenges
@@ -1153,7 +1153,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Accuracy of three commercial automatic emotion recognition systems across different individuals and their facial expressions</title>
       <link>/talk/2018-percom/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>/talk/2018-percom/</guid>
       <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
@@ -1163,7 +1163,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Are approach-avoidance relevant cues of the Emotional User eXperience? Case studies with innovative products</title>
       <link>/talk/2014-cere/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>/talk/2014-cere/</guid>
       <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
@@ -1173,7 +1173,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Dynamic Analysis of Automatic Emotion Recognition Using Generalized Additive Mixed Models</title>
       <link>/talk/2017-aisb/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>/talk/2017-aisb/</guid>
       <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts. This paper presents a workflow encompassing the whole process with the goal of obtaining a range of best fitting models to analyse the patterns given by these measurements “in the wild”.&lt;/p&gt;
@@ -1183,7 +1183,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Dynamic Analysis of Automatic Facial Expressions Recognition ‘in the Wild’ Using Generalized Additive Mixed Models and Significant Zero Crossing of the Derivatives</title>
       <link>/talk/2018-bhci/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>/talk/2018-bhci/</guid>
       <description>&lt;p&gt;ABSTRACT: The analysis of facial expressions is currently a favoured method of inferring experienced emotion, and consequently significant efforts are currently being made to develop improved facial expression recognition techniques. Among these new techniques, those which allow the automatic recognition of facial expression appear to be most promising. This paper presents a new method of facial expression analysis with a focus on the continuous evolution of emotions using Generalized Additive Mixed Models (GAMM) and Significant Zero Crossing of the Derivatives (SiZer). The time-series analysis of the emotions experienced by participants watching a series of three different online videos suggests that analysis of facial expressions at the overall level may lead to misinterpretation of the emotional experience whereas non-linear analysis allows the significant expressive sequences to be identified.&lt;/p&gt;
@@ -1193,7 +1193,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Dynamic Model of Athletes’ Emotions Based on Wearable Devices</title>
       <link>/talk/2017-ahfe/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>/talk/2017-ahfe/</guid>
       <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places that were previously impractical. This paper presents a new application that synchronizes the emotional patterns from these time-series in order to model athletes’ emotion during physical activity. This data analysis computes a best-fitting model for analyzing the patterns given by these measurements “in the wild”. The recording setup used to measure and synchronize multiple biometric physiological sensors can be called a BAN (Body Area Network) of personal measurements. By monitoring physical activity, it is now possible to calculate optimal patterns for managing athletes’ emotion. The data provided here are not restricted by a lab environment but close to the “ground truth” of ecologically valid physiological changes. The data allow the provision of accurate feedback to athletes about their emotion (e.g. in cases such as an unexpected increase or an expected decrease of physiological activity).&lt;/p&gt;

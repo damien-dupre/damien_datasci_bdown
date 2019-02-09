@@ -42,4 +42,4 @@ Ph.D in Social and Experimental Psychology from the University Grenoble-Alpes, F
 
 Whereas my thesis aimed to evaluate Emotional User eXperience of innovative technologies and designs for the company Ixiade (www.ixiade.com), I have collaborated with Queen's University and Sensum Ltd (www.sensum.co) to analyse emotions with physiological sensors and automatic facial expression recognition. I also worked at University College Dublin's Insight Centre for Data Analytics in order to process and understand physiological measurements from marathon runners.
 
-Now Assitant Professor of Business Research Methods at Dublin College University, my domain of expertise relies in multivariate time series analysis and trend extraction for supervised or unsupervised machine learning classification. 
+Now Assistant Professor of Business Research Methods at Dublin City University, my domain of expertise relies in multivariate time series analysis and trend extraction for supervised or unsupervised machine learning classification. 
