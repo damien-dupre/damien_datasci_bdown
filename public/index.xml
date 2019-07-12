@@ -1151,6 +1151,16 @@ These results suggest that systems are not equivalent in their ability to detect
     </item>
     
     <item>
+      <title>Accuracy of Automatic Emotion Recognition from Voice</title>
+      <link>/talk/2019-isre/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      
+      <guid>/talk/2019-isre/</guid>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Accuracy of three commercial automatic emotion recognition systems across different individuals and their facial expressions</title>
       <link>/talk/2018-percom/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
@@ -1187,16 +1197,6 @@ These results suggest that systems are not equivalent in their ability to detect
       
       <guid>/talk/2018-bhci/</guid>
       <description>&lt;p&gt;ABSTRACT: The analysis of facial expressions is currently a favoured method of inferring experienced emotion, and consequently significant efforts are currently being made to develop improved facial expression recognition techniques. Among these new techniques, those which allow the automatic recognition of facial expression appear to be most promising. This paper presents a new method of facial expression analysis with a focus on the continuous evolution of emotions using Generalized Additive Mixed Models (GAMM) and Significant Zero Crossing of the Derivatives (SiZer). The time-series analysis of the emotions experienced by participants watching a series of three different online videos suggests that analysis of facial expressions at the overall level may lead to misinterpretation of the emotional experience whereas non-linear analysis allows the significant expressive sequences to be identified.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Dynamic Model of Athletes’ Emotions Based on Wearable Devices</title>
-      <link>/talk/2017-ahfe/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
-      
-      <guid>/talk/2017-ahfe/</guid>
-      <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places that were previously impractical. This paper presents a new application that synchronizes the emotional patterns from these time-series in order to model athletes’ emotion during physical activity. This data analysis computes a best-fitting model for analyzing the patterns given by these measurements “in the wild”. The recording setup used to measure and synchronize multiple biometric physiological sensors can be called a BAN (Body Area Network) of personal measurements. By monitoring physical activity, it is now possible to calculate optimal patterns for managing athletes’ emotion. The data provided here are not restricted by a lab environment but close to the “ground truth” of ecologically valid physiological changes. The data allow the provision of accurate feedback to athletes about their emotion (e.g. in cases such as an unexpected increase or an expected decrease of physiological activity).&lt;/p&gt;
 </description>
     </item>
     
