@@ -28,7 +28,7 @@ ABSTRACT: Automatic facial expression recognition systems can provide important 
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>/talk/2019-isre/</guid>
-      <description>ABSTRACT:</description>
+      <description>ABSTRACT: Voice is one of the main communicative sources of evidence in interpreting the expression of emotion. Affective computing aims to create systems and algorithms that automatically analyse people&amp;rsquo;s emotional state. Consequently, several companies such as Affectiva, Beyond Verbal and Audeering have developed automatic systems to analyse the vocal expression of emotions. However, little is known about the accuracy of such systems. To evaluate the accuracy of automatic emotion recognition from voice, we processed vocal expressions from the GEMEP database with &amp;ldquo;SensAI Emotion&amp;rdquo; developed by Audeering.</description>
     </item>
     
     <item>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Accuracy of Automatic Emotion Recognition from Voice</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Damien Dupré &amp; Gary McKeown" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Accuracy of Automatic Emotion Recognition from Voice
+## International Society for Research on Emotion
+### Damien Dupré &amp; Gary McKeown
+### Amsterdam, July 11th 2019
+
+---
+
+
+
+
+# Automatic Emotion Recognition
+
+Since the 1970's, automatic systems has been developed to recognize individual emotions.
+
+With the advancement of Machine Learning techniques, multiple companies are now providing solution for automatic emotion recognition for diverse applications such as marketing, automotive, activity and health care monitoring.
+
+Automatic emotion recognition systems can use:
+ - physiological sensors and brain activity measurements
+ - textual expression for sentiment analysis
+ - visual capture of facial expressions and postures
+ - audio capture of vocal expressions
+
+---
+
+# Automatic Voice Recognition Systems
+
+Voice is one of the most important channel to communicate emotions not only thought the word used but also thought the tonality used to pronounce these words.
+
+* First academic paper presenting an automatic system in 1996 (Dellaert, Polzin &amp; Waibel, 1996)
+* To date, 18 public repositories on GitHub https://github.com/topics/speech-emotion-recognition
+
+Several companies are providing emotion recognition systems from voice:
+
+* AudEERING
+* Affectiva
+* Neurodata Labs
+* Amazon Alexa (in development)
+* Cogito
+* ...
+
+---
+class: inverse, center, middle
+
+# Method
+
+---
+
+# Database
+
+In order to evaluate the accuracy to recognise emotion from voice tonality we have extracted the audio track from the videos of the GEMEP-CS database (Bänziger &amp; Scherer, 2010; Bänziger, Mortillaro &amp; Scherer, 2012).
+
+The Geneva Multimodal Emotion Portrayals Core Set (GEMEP-CS) database is made of video recording of:
+- 10 professional French speaking theater actors (5 females and 5 males, *M*&lt;sub&gt;age&lt;/sub&gt; = 37.1)
+- they had to enact up to 18 emotion categories (facial expression, posture and voice)
+- for each enactment they had to pronounce a pseudosentence that sounds like an unknown real language, consisting of meaningless words constituted by phonemes from several languages
+
+&lt;img src="https://www.researchgate.net/profile/Marc_Mehu/publication/228071481/figure/fig1/AS:302181455548416@1449057081082/Example-of-the-GEMEP-FERA-data-set-One-of-the-actors-displaying-an-expression-associated.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Why GEMEP?
+
+* language words and sentences can be emotionally tainted
+
+* the way words are pronounce can biased by their emotional meaning
+
+* pseudosentence aims to remove this potential bias
+
+---
+
+# Emotion Categories
+
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Key &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Emotion &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Valence &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Arousal &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Amu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Amusement &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pri &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pride &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joy &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Elated Joy &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Rel &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Relief &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Int &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Interest &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ple &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pleasure &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ang &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hot anger (rage) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Fea &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; (Panic) Fear &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Des &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Despair &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; + &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Irr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Irritation (coldanger) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Anx &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Anxiety &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sadness &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Adm &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Admiration &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Amu &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Amusement &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ten &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tenderness &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dis &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Disgust &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Con &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Contempt &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Surprise &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Additional Emotion &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Let's Play a Game!
+
+
+&lt;html&gt;
+&lt;audio controls&gt;
+  &lt;source src="./sample/01amu_Gemep.mp3" type="audio/mpeg"/&gt;
+&lt;/audio&gt;&lt;/html&gt;
+
+--
+
+**Amusement!**
+
+--
+
+&lt;audio controls&gt;
+  &lt;source src="./sample/01ang_Gemep.mp3" type="audio/mpeg"/&gt;
+&lt;/audio&gt;
+
+--
+
+**Anger!**
+
+--
+
+&lt;audio controls&gt;
+  &lt;source src="./sample/01anx_Gemep.mp3" type="audio/mpeg"/&gt;
+&lt;/audio&gt;
+
+--
+
+**Anxiety!**
+
+--
+
+&lt;audio controls&gt;
+  &lt;source src="./sample/01con_Gemep.mp3" type="audio/mpeg"/&gt;
+&lt;/audio&gt;
+
+--
+
+**Contempt!**
+
+---
+
+# System
+
+AudEERING is a German company founded in 2012.
+
+They provide openSMILE, an open-source system to perform audio feature spaces in real time as well as Emotion Recognition
+https://github.com/naxingyu/opensmile
+
+They also have developped SensAI, an API solution to analyse emotions from voice features (Eyben, Huber, Marchi, Schuller, &amp; Schuller, 2015).
+
+Emotions are recognized thank to a Long short-term memory (LSTM) recurrent neural network (RNN) based on sometimes more than 1000 acoustic features.
+
+---
+
+# System
+
+More precisely SensAI can recognize:
+1. Overall emotion
+2. Probability of expressing emotion categories: passion, panic, nervousness, **disgust**, **contentment**, affection, **fear**, **irritation**, satisfaction, frustration, enthusiasm, worry, boredom, **interest**, tension, **joy**, depression, stress, **pride**, excitement, **sadness**, **anger**, relaxation, happiness
+3. Probability of expressing emotion dimensions: valence, activation, dominance
+
+***bold labels** correspond to emotions matching with those expressed in the GEMEP
+
+---
+class: inverse, center, middle
+
+# Results
+
+---
+
+# Matching Overall Emotion Recognized
+
+
+
+The average proportion of correct overall recognition by SensAI among these emotions is 7.45%
+
+&lt;img src="ISRE_presentation_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Matching the Highest Emotion Label
+
+
+
+The average proportion of correct highest label matching recognition by SensAI among these emotions is 0%
+
+
+
+The average proportion of correct highest selected label matching recognition by SensAI among these emotions is 18.2% (CI95%[11.5%,26.7%], *p* = 0.9944).
+
+&lt;img src="ISRE_presentation_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Matching Dimensional Emotion: Valence 
+
+
+
+The average proportion of correct valence matching recognition by SensAI among these emotions is 57.3% (CI95%[48.8%,65.6%], *p* = 0.9495).
+
+&lt;img src="ISRE_presentation_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+#Matching Dimensional Emotion: Arousal 
+
+The average proportion of correct arousal matching recognition by SensAI among these emotions is 74.8% (CI95%[66.9%,81.7%], *p* = 0.0288).
+
+&lt;img src="ISRE_presentation_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Discussion
+
+* The categorical recognition of emotion remains a challenge:
+  * diversity of affective states
+  * heterogeneity of categories inside a language and between languages
+  * overlap of categories
+
+* However, the accuracy of a system like SensAI Emotion provides promising results in the recognition of valence and arousal
+
+* The results of this automatic recognition system needs to be compared with other systems in order to evaluate their relative accuracy
+
+* Different databases need to be investigated as well:
+  * Sentences *vs.* Pseudosentences
+  * Posed vocal expressions *vs.* Spontaneous vocal expressions
+  
+* Vocal expression of emotions or social message?
+
+---
+
+class: inverse, center, middle
+
+# Thanks for your attention!
+
+*Accuracy of Automatic Emotion Recognition from Voice*
+
+.pull-left[
+Damien Dupré
+
+Dublin City University
+
+damien.dupre@dcu.ie
+]
+
+.pull-right[
+Gary McKeown
+
+Queen's University Belfast
+
+g.mckeown@qub.ac.uk
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
