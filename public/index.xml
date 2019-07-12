@@ -11,6 +11,25 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>My Data Analytics for Behavioural Research presentation: Theory, Introduction to R and Data Processing</title>
+      <link>/post/my-data-analytics-for-behavioural-research-presentation-theory-introduction-to-r-and-data-processing/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/my-data-analytics-for-behavioural-research-presentation-theory-introduction-to-r-and-data-processing/</guid>
+      <description>
+
+
+&lt;p&gt;I was recently asked to give a 3 sessions lecture about Data Analytics for Behavioural Research. As it is difficult to have a broader topic, I’ve decied to present my favorite research topic: the data science of emotions. These three different lecture present very quickly:
+1. the current theories of emotions
+2. how to use R
+3. how to use R for emotion data processing&lt;/p&gt;
+&lt;p&gt;You will find my slides and code on my github or hereafter. Enjoy!&lt;/p&gt;
+&lt;iframe src=&#34;https://damien-datasci-blog.netlify.com/slides/slides_summer_school&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;
+&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
       <title>`dplyrshortcut` package: How to create keyboard shortcuts for dplyr functions on RStudio IDE </title>
       <link>/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
@@ -1187,16 +1206,6 @@ These results suggest that systems are not equivalent in their ability to detect
       
       <guid>/talk/2017-aisb/</guid>
       <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts. This paper presents a workflow encompassing the whole process with the goal of obtaining a range of best fitting models to analyse the patterns given by these measurements “in the wild”.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Dynamic Analysis of Automatic Facial Expressions Recognition ‘in the Wild’ Using Generalized Additive Mixed Models and Significant Zero Crossing of the Derivatives</title>
-      <link>/talk/2018-bhci/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
-      
-      <guid>/talk/2018-bhci/</guid>
-      <description>&lt;p&gt;ABSTRACT: The analysis of facial expressions is currently a favoured method of inferring experienced emotion, and consequently significant efforts are currently being made to develop improved facial expression recognition techniques. Among these new techniques, those which allow the automatic recognition of facial expression appear to be most promising. This paper presents a new method of facial expression analysis with a focus on the continuous evolution of emotions using Generalized Additive Mixed Models (GAMM) and Significant Zero Crossing of the Derivatives (SiZer). The time-series analysis of the emotions experienced by participants watching a series of three different online videos suggests that analysis of facial expressions at the overall level may lead to misinterpretation of the emotional experience whereas non-linear analysis allows the significant expressive sequences to be identified.&lt;/p&gt;
 </description>
     </item>
     

@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>My Data Analytics for Behavioural Research presentation: Theory, Introduction to R and Data Processing</title>
+      <link>/post/my-data-analytics-for-behavioural-research-presentation-theory-introduction-to-r-and-data-processing/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/my-data-analytics-for-behavioural-research-presentation-theory-introduction-to-r-and-data-processing/</guid>
+      <description>I was recently asked to give a 3 sessions lecture about Data Analytics for Behavioural Research. As it is difficult to have a broader topic, I’ve decied to present my favorite research topic: the data science of emotions. These three different lecture present very quickly:1. the current theories of emotions2. how to use R3. how to use R for emotion data processing
+You will find my slides and code on my github or hereafter.</description>
+    </item>
+    
+    <item>
       <title>`dplyrshortcut` package: How to create keyboard shortcuts for dplyr functions on RStudio IDE </title>
       <link>/post/dplyrshortcut-package-how-to-create-keyboard-shortcuts-for-dplyr-functions-on-rstudio-ide/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
