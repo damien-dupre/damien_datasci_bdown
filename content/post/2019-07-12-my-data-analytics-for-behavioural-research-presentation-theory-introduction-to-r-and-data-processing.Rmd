@@ -20,5 +20,5 @@ I was recently asked to give a 3 sessions lecture about Data Analytics for Behav
 You will find my slides and code on my github or hereafter. Enjoy!
 
 ```{r echo=FALSE}
-knitr::include_url('https://damien-datasci-blog.netlify.com/slides/slides_summer_school')
+knitr::include_url('https://damien-dupre.github.io/data_analytics_for_behavioural_research/slides_summer_school.html')
 ```
