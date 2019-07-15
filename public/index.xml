@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0100</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -1129,7 +1129,7 @@ plot(cluster_dtw_h2)&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Privacy Policy</title>
       <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
       
       <guid>/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
@@ -1157,7 +1157,7 @@ plot(cluster_dtw_h2)&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>A Comparison of Three Commercial Systems for Automatic Recognition of Spontaneous Facial Expressions</title>
       <link>/talk/2018-cere/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/talk/2018-cere/</guid>
       <description>&lt;p&gt;SYMPOSIUM 2: Affect Recognition in Humans versus Machines: Current Issues and Future Challenges
@@ -1172,7 +1172,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Accuracy of Automatic Emotion Recognition from Voice</title>
       <link>/talk/2019-isre/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/talk/2019-isre/</guid>
       <description>&lt;p&gt;ABSTRACT: Voice is one of the main communicative sources of evidence in interpreting the expression of emotion. Affective computing aims to create systems and algorithms that automatically analyse people&amp;rsquo;s emotional state. Consequently, several companies such as Affectiva, Beyond Verbal and Audeering have developed automatic systems to analyse the vocal expression of emotions. However, little is known about the accuracy of such systems. To evaluate the accuracy of automatic emotion recognition from voice, we processed vocal expressions from the GEMEP database with &amp;ldquo;SensAI Emotion&amp;rdquo; developed by Audeering. The GEMEP database contains audio-video recordings from 10 actors performing 17 different emotional scenarios (Bänziger &amp;amp; Scherer, 2010). SensAI Emotion analyses emotions from speech and renders a value for 23 affective states and for valence and arousal dimensions (Eyben, Scherer, &amp;amp; Schuller, 2018). In terms of category recognition, the accuracy of SensAI labeling GEMEP vocal expressions of emotion is 6.67%. However, this low result is partly due to the high number of different affective state labels recognized. To bypass this label matching bias, we compared the recognition accuracy for valence and arousal dimensions. The results show an accuracy of 0.56 (CI95%[0.46,0.65]) for valence and 0.73 (CI95%[0.64,0.81]) for arousal recognition. Vocal automatic emotion recognition is a growing research area in affective computing. The categorical recognition of emotion remains a challenge due to the diversity of affective states. However, the accuracy of a system like SensAI Emotion provides promising results in the recognition of valence and arousal.&lt;/p&gt;
@@ -1182,7 +1182,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Accuracy of three commercial automatic emotion recognition systems across different individuals and their facial expressions</title>
       <link>/talk/2018-percom/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/talk/2018-percom/</guid>
       <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
@@ -1192,7 +1192,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Are approach-avoidance relevant cues of the Emotional User eXperience? Case studies with innovative products</title>
       <link>/talk/2014-cere/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/talk/2014-cere/</guid>
       <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
@@ -1202,7 +1202,7 @@ These results suggest that systems are not equivalent in their ability to detect
     <item>
       <title>Dynamic Analysis of Automatic Emotion Recognition Using Generalized Additive Mixed Models</title>
       <link>/talk/2017-aisb/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/talk/2017-aisb/</guid>
       <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts. This paper presents a workflow encompassing the whole process with the goal of obtaining a range of best fitting models to analyse the patterns given by these measurements “in the wild”.&lt;/p&gt;
