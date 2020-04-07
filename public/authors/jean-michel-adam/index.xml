@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jean-Michel Adam | Damien DataSci Blog</title>
+    <link>/authors/jean-michel-adam/</link>
+      <atom:link href="/authors/jean-michel-adam/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jean-Michel Adam</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020</copyright><lastBuildDate>Sun, 01 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/profile</url>
+      <title>Jean-Michel Adam</title>
+      <link>/authors/jean-michel-adam/</link>
+    </image>
+    
+    <item>
+      <title>Oudjat, a configurable and usable annotation tool for the study of emotional stimuli</title>
+      <link>/publication/2015-oudjat-ijhcs/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/2015-oudjat-ijhcs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DynEmo: A video database of natural facial expressions of emotions</title>
+      <link>/publication/2013-dynemo-ijma/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/2013-dynemo-ijma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The influence of facial designs interfaces on dynamic emotional recognition</title>
+      <link>/publication/2013-interface-jmui/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/2013-interface-jmui/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

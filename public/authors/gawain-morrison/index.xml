@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gawain Morrison | Damien DataSci Blog</title>
+    <link>/authors/gawain-morrison/</link>
+      <atom:link href="/authors/gawain-morrison/index.xml" rel="self" type="application/rss+xml" />
+    <description>Gawain Morrison</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020</copyright><lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/profile</url>
+      <title>Gawain Morrison</title>
+      <link>/authors/gawain-morrison/</link>
+    </image>
+    
+    <item>
+      <title>The effect of personality and social context on willingness to share emotion information on social media</title>
+      <link>/publication/2018-socialmedia-psyarxiv/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/2018-socialmedia-psyarxiv/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

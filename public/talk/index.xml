@@ -1,160 +1,164 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recent &amp; Upcoming Talks on Damien DataSci Blog</title>
+    <title>Recent &amp; Upcoming Talks | Damien DataSci Blog</title>
     <link>/talk/</link>
-    <description>Recent content in Recent &amp; Upcoming Talks on Damien DataSci Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020</copyright><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/profile</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/talk/</link>
+    </image>
     
     <item>
       <title>A Comparison of Three Commercial Systems for Automatic Recognition of Spontaneous Facial Expressions</title>
       <link>/talk/2018-cere/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2018-cere/</guid>
-      <description>SYMPOSIUM 2: Affect Recognition in Humans versus Machines: Current Issues and Future Challenges Convener: Eva Krumhuber, University College London, UK
-ABSTRACT: Automatic facial expression recognition systems can provide important information about our emotions and how they change over time. While the use of automatic systems has seen a steady increase over the last years, their classification results have not yet been systematically compared. The aim of this research was to test commercial software packages from Affectiva, Kairos and Microsoft companies in terms of their recognition accuracy.</description>
+      <description>&lt;p&gt;SYMPOSIUM 2: Affect Recognition in Humans versus Machines: Current Issues and Future Challenges
+&lt;em&gt;Convener: Eva Krumhuber, University College London, UK&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;ABSTRACT: Automatic facial expression recognition systems can provide important information about our emotions and how they change over time. While the use of automatic systems has seen a steady increase over the last years, their classification results have not yet been systematically compared. The aim of this research was to test commercial software packages from Affectiva, Kairos and Microsoft companies in terms of their recognition accuracy. For this, we focused on spontaneous and dynamic facial expressions as provided by the DynEmo database –Disgust, Fear, Joy, and Surprise. In order to compare the classification results, we calculated the systems’ ratio of True positives (only the target label is recognised), False positives (the target label as well as a non-target label is recognised), True negatives (no label is recognised) and False negatives (target label is not recognised whereas a non-target label is).
+The results of the comparison between the systems showed comparable detection rates in term of True positives and False positives. However, their detection rates of False negatives and True negatives significantly differed between the different recognition systems. Specifically, systems were not equal in their tendency to detect non-target labels erroneously as well as in their tendency to not detect any emotion label. When examining emotion recognition accuracy for each video/emotion, videos with higher recognition accuracy were those that depicted as joyful facial expression. Other facial expressions resulted in a proportion of target emotion detection statistically equal or lower than the detection of non-target emotion.
+These results suggest that systems are not equivalent in their ability to detect specific spontaneous emotions. Therefore, users of such systems have to be aware of the strengths as well as of the potential limits of the data provided by automatic emotion recognition systems.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Accuracy of Automatic Emotion Recognition from Voice</title>
       <link>/talk/2019-isre/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2019-isre/</guid>
-      <description>ABSTRACT: Voice is one of the main communicative sources of evidence in interpreting the expression of emotion. Affective computing aims to create systems and algorithms that automatically analyse people&amp;rsquo;s emotional state. Consequently, several companies such as Affectiva, Beyond Verbal and Audeering have developed automatic systems to analyse the vocal expression of emotions. However, little is known about the accuracy of such systems. To evaluate the accuracy of automatic emotion recognition from voice, we processed vocal expressions from the GEMEP database with &amp;ldquo;SensAI Emotion&amp;rdquo; developed by Audeering.</description>
+      <description>&lt;p&gt;ABSTRACT: Voice is one of the main communicative sources of evidence in interpreting the expression of emotion. Affective computing aims to create systems and algorithms that automatically analyse people&amp;rsquo;s emotional state. Consequently, several companies such as Affectiva, Beyond Verbal and Audeering have developed automatic systems to analyse the vocal expression of emotions. However, little is known about the accuracy of such systems. To evaluate the accuracy of automatic emotion recognition from voice, we processed vocal expressions from the GEMEP database with &amp;ldquo;SensAI Emotion&amp;rdquo; developed by Audeering. The GEMEP database contains audio-video recordings from 10 actors performing 17 different emotional scenarios (Bänziger &amp;amp; Scherer, 2010). SensAI Emotion analyses emotions from speech and renders a value for 23 affective states and for valence and arousal dimensions (Eyben, Scherer, &amp;amp; Schuller, 2018). In terms of category recognition, the accuracy of SensAI labeling GEMEP vocal expressions of emotion is 6.67%. However, this low result is partly due to the high number of different affective state labels recognized. To bypass this label matching bias, we compared the recognition accuracy for valence and arousal dimensions. The results show an accuracy of 0.56 (CI95%[0.46,0.65]) for valence and 0.73 (CI95%[0.64,0.81]) for arousal recognition. Vocal automatic emotion recognition is a growing research area in affective computing. The categorical recognition of emotion remains a challenge due to the diversity of affective states. However, the accuracy of a system like SensAI Emotion provides promising results in the recognition of valence and arousal.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Accuracy of three commercial automatic emotion recognition systems across different individuals and their facial expressions</title>
       <link>/talk/2018-percom/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2018-percom/</guid>
-      <description>ABSTRACT:</description>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Are approach-avoidance relevant cues of the Emotional User eXperience? Case studies with innovative products</title>
       <link>/talk/2014-cere/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2014-cere/</guid>
-      <description>ABSTRACT:</description>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Dynamic Analysis of Automatic Emotion Recognition Using Generalized Additive Mixed Models</title>
       <link>/talk/2017-aisb/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2017-aisb/</guid>
-      <description>ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts.</description>
+      <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts. This paper presents a workflow encompassing the whole process with the goal of obtaining a range of best fitting models to analyse the patterns given by these measurements “in the wild”.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Dynamic Analysis of Automatic Facial Expressions Recognition ‘in the Wild’ Using Generalized Additive Mixed Models and Significant Zero Crossing of the Derivatives</title>
       <link>/talk/2018-bhci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2018-bhci/</guid>
-      <description>ABSTRACT: The analysis of facial expressions is currently a favoured method of inferring experienced emotion, and consequently significant efforts are currently being made to develop improved facial expression recognition techniques. Among these new techniques, those which allow the automatic recognition of facial expression appear to be most promising. This paper presents a new method of facial expression analysis with a focus on the continuous evolution of emotions using Generalized Additive Mixed Models (GAMM) and Significant Zero Crossing of the Derivatives (SiZer).</description>
+      <description>&lt;p&gt;ABSTRACT: The analysis of facial expressions is currently a favoured method of inferring experienced emotion, and consequently significant efforts are currently being made to develop improved facial expression recognition techniques. Among these new techniques, those which allow the automatic recognition of facial expression appear to be most promising. This paper presents a new method of facial expression analysis with a focus on the continuous evolution of emotions using Generalized Additive Mixed Models (GAMM) and Significant Zero Crossing of the Derivatives (SiZer). The time-series analysis of the emotions experienced by participants watching a series of three different online videos suggests that analysis of facial expressions at the overall level may lead to misinterpretation of the emotional experience whereas non-linear analysis allows the significant expressive sequences to be identified.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Dynamic Model of Athletes’ Emotions Based on Wearable Devices</title>
       <link>/talk/2017-ahfe/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2017-ahfe/</guid>
-      <description>ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places that were previously impractical. This paper presents a new application that synchronizes the emotional patterns from these time-series in order to model athletes’ emotion during physical activity. This data analysis computes a best-fitting model for analyzing the patterns given by these measurements “in the wild”.</description>
+      <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places that were previously impractical. This paper presents a new application that synchronizes the emotional patterns from these time-series in order to model athletes’ emotion during physical activity. This data analysis computes a best-fitting model for analyzing the patterns given by these measurements “in the wild”. The recording setup used to measure and synchronize multiple biometric physiological sensors can be called a BAN (Body Area Network) of personal measurements. By monitoring physical activity, it is now possible to calculate optimal patterns for managing athletes’ emotion. The data provided here are not restricted by a lab environment but close to the “ground truth” of ecologically valid physiological changes. The data allow the provision of accurate feedback to athletes about their emotion (e.g. in cases such as an unexpected increase or an expected decrease of physiological activity).&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Emotions triggered by innovative products, A multi-componential approach of emotions for User eXperience tools</title>
       <link>/talk/2015-acii/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2015-acii/</guid>
-      <description>ABSTRACT: User eXperience studies with products, systems or services have significantly increased in companies in order to anticipate their commercial success. Among the user experience dimensions, emotions are predominant. However User eXperience studies used several concepts to refer to emotions and current measures still have some flaws. Consequently, this doctoral project aims firstly to provide a multi-componential approach of emotions based on a psychological view, and secondly to provide Affective Computing solutions in order to evaluate emotions in User eXperience studies.</description>
+      <description>&lt;p&gt;ABSTRACT: User eXperience studies with products, systems or services have significantly increased in companies in order to anticipate their commercial success. Among the user experience dimensions, emotions are predominant. However User eXperience studies used several concepts to refer to emotions and current measures still have some flaws. Consequently, this doctoral project aims firstly to provide a multi-componential approach of emotions based on a psychological view, and secondly to provide Affective Computing solutions in order to evaluate emotions in User eXperience studies. Through a study using hand-gesture interface devices, three components of users&amp;rsquo; emotions were simultaneously measured with self-reports: the subjective, cognitive and motivational components. The results point out the possibility of measuring different components in order to gain a better understanding of emotions triggered by products. They also point out that self-reports measures could be improved with Affective Computing solutions. In this perspective, two emotion assessment tools were developed: Oudjat and EmoLyse.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Etude de l’expérience utilisateur émotionnelle: Quels sont les impacts des émotions suscitées des produits innovants sur les perceptions des utilisateurs</title>
       <link>/talk/2016-aiptlf/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2016-aiptlf/</guid>
-      <description>ABSTRACT:</description>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Interface faciale émotionnelle : Les effets des différentes modalités de presentation</title>
       <link>/talk/2010-eiac/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2010-eiac/</guid>
-      <description>ABSTRACT: In supporting the visual-mediated emotional recognition, little research has centred on analysing the effect of presenting different combinatorial facial designs. Moreover, in the theoretical field of emotions, research on the recognition of emotional facial expressions (EFE) is mainly based on static and posed databases tested in unnatural contexts (explicit recognition task of an emotion). Our research has constructed and validated a database, DynEmo, with dynamic and spontaneous emotional facial expressions.</description>
+      <description>&lt;p&gt;ABSTRACT: In supporting the visual-mediated emotional recognition, little research has centred on analysing the effect of presenting different combinatorial facial designs. Moreover, in the theoretical field of emotions, research on the recognition of emotional facial expressions (EFE) is mainly based on static and posed databases tested in unnatural contexts (explicit recognition task of an emotion). Our research has constructed and validated a database, DynEmo, with dynamic and spontaneous emotional facial expressions. So different facial interface designs (whole face, zoomed face, eyes + mouth, whole face + mouth, whole face + eyes, etc., n = 11) are experimentally compared to find their impact in terms of emotional recognition. The results show the facial interface design relevance in terms of emotional recognition. The application of this work is transferable to facial interfaces useful for video-mediated interaction.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Measuring emotional states and behavioral responses to innovative products</title>
       <link>/talk/2012-de/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2012-de/</guid>
-      <description>ABSTRACT:</description>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Multivariate Body Area Network of Physiological Measures “In the Wild”: A case study with zipline activity</title>
       <link>/talk/2018-mb/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2018-mb/</guid>
-      <description>ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts.</description>
+      <description>&lt;p&gt;ABSTRACT: With the development of wearable sensors, it is now possible to assess the dynamic progression of physiological rhythms such as heart rate, breathing rate or galvanic skin response in ways and places and during certain activities that were previously not possible due to cost and reliability. This paper investigates the physiological changes when participating in a zipline activity. Despite the advances in sensor technology, the statistical analysis of such physiological signals remains a challenge for data analysts. This paper presents a workflow encompassing the whole process with the goal of obtaining a range of best fitting models to analyse the patterns given by these measurements “in the wild”.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>On-line recognition of dynamic and spontaneous facial expression</title>
       <link>/talk/2010-cere/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2010-cere/</guid>
-      <description>ABSTRACT:</description>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Physiological correlates of Emotions “In The Wild”: A case study with mountain bikers</title>
       <link>/talk/2017-isre/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2017-isre/</guid>
-      <description>ABSTRACT:</description>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Spontaneous and dynamic emotional facial expressions reflect action readiness</title>
       <link>/talk/2014-wcfee/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2014-wcfee/</guid>
-      <description>ABSTRACT:</description>
+      <description>&lt;p&gt;ABSTRACT:&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Willingness to Share Emotion Information on Social Media: Influence of Personality and Social Context</title>
       <link>/talk/2018-dsaa/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>/talk/2018-dsaa/</guid>
-      <description>ABSTRACT: Sharing personal information is an important way of communicating on social media. Among the information possibly shared, new sensors and tools allow people to share emotion information via facial emotion recognition. This paper questions whether people are prepared to share personal information such as their own emotion on social media. In the current study we examined how factors such as felt emotion, motivation for sharing on social media as well as personality affected participants’ willingness to share self-reported emotion or facial expression online.</description>
+      <description>&lt;p&gt;ABSTRACT: Sharing personal information is an important way of communicating on social media. Among the information possibly shared, new sensors and tools allow people to share emotion information via facial emotion recognition. This paper questions whether people are prepared to share personal information such as their own emotion on social media. In the current study we examined how factors such as felt emotion,
+motivation for sharing on social media as well as personality affected participants’ willingness to share self-reported emotion or facial expression online. By carrying out a Generalized Linear Mixed Model analysis, this study found that participants’ willingness to share self-reported emotion and facial expressions was influenced by their personality traits and the motivation for sharing their emotion information that they were given. From our results we can conclude that the estimated level of privacy for certain emotional information, such as facial expression, is influenced by the motivation for sharing the information online.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

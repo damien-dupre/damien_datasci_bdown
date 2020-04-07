@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathieu Loiseau | Damien DataSci Blog</title>
+    <link>/authors/mathieu-loiseau/</link>
+      <atom:link href="/authors/mathieu-loiseau/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mathieu Loiseau</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020</copyright><lastBuildDate>Thu, 01 Nov 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/profile</url>
+      <title>Mathieu Loiseau</title>
+      <link>/authors/mathieu-loiseau/</link>
+    </image>
+    
+    <item>
+      <title>Quelques critères d’utilisation d’un outil d’évaluation automatique de synthèses de cours à distance</title>
+      <link>/publication/2012-critere-re/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/2012-critere-re/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Un environnement personnel d&#39;apprentissage évaluant des distances épistémiques et dialogiques</title>
+      <link>/publication/2011-environement-ds/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/2011-environement-ds/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

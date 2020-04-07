@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nadine Mandran | Damien DataSci Blog</title>
+    <link>/authors/nadine-mandran/</link>
+      <atom:link href="/authors/nadine-mandran/index.xml" rel="self" type="application/rss+xml" />
+    <description>Nadine Mandran</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020</copyright><lastBuildDate>Fri, 01 Nov 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/profile</url>
+      <title>Nadine Mandran</title>
+      <link>/authors/nadine-mandran/</link>
+    </image>
+    
+    <item>
+      <title>DynEmo: A video database of natural facial expressions of emotions</title>
+      <link>/publication/2013-dynemo-ijma/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/2013-dynemo-ijma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The influence of facial designs interfaces on dynamic emotional recognition</title>
+      <link>/publication/2013-interface-jmui/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/2013-interface-jmui/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

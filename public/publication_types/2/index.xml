@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2 on Damien DataSci Blog</title>
+    <title>2 | Damien DataSci Blog</title>
     <link>/publication_types/2/</link>
-    <description>Recent content in 2 on Damien DataSci Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <description>2</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020</copyright><lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/profile</url>
+      <title>2</title>
+      <link>/publication_types/2/</link>
+    </image>
     
     <item>
       <title>The effect of personality and social context on willingness to share emotion information on social media</title>
       <link>/publication/2018-socialmedia-psyarxiv/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2018-socialmedia-psyarxiv/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>Role of emotions in product acceptance: Evaluation of the cognitive, motivational and subjective component</title>
       <link>/publication/2017-acceptance-pto/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2017-acceptance-pto/</guid>
       <description></description>
     </item>
@@ -34,7 +32,6 @@
       <title>Oudjat, a configurable and usable annotation tool for the study of emotional stimuli</title>
       <link>/publication/2015-oudjat-ijhcs/</link>
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2015-oudjat-ijhcs/</guid>
       <description></description>
     </item>
@@ -43,7 +40,6 @@
       <title>Cadres et méthodes d’analyse des émotions suscitées par des produits innovants : Une revue bibliographique</title>
       <link>/publication/2015-acceptabilite-innovatio/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2015-acceptabilite-innovatio/</guid>
       <description></description>
     </item>
@@ -52,7 +48,6 @@
       <title>DynEmo: A video database of natural facial expressions of emotions</title>
       <link>/publication/2013-dynemo-ijma/</link>
       <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2013-dynemo-ijma/</guid>
       <description></description>
     </item>
@@ -61,7 +56,6 @@
       <title>The influence of facial designs interfaces on dynamic emotional recognition</title>
       <link>/publication/2013-interface-jmui/</link>
       <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2013-interface-jmui/</guid>
       <description></description>
     </item>
@@ -70,7 +64,6 @@
       <title>Quelques critères d’utilisation d’un outil d’évaluation automatique de synthèses de cours à distance</title>
       <link>/publication/2012-critere-re/</link>
       <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2012-critere-re/</guid>
       <description></description>
     </item>
@@ -79,7 +72,6 @@
       <title>Un environnement personnel d&#39;apprentissage évaluant des distances épistémiques et dialogiques</title>
       <link>/publication/2011-environement-ds/</link>
       <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2011-environement-ds/</guid>
       <description></description>
     </item>
