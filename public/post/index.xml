@@ -65,7 +65,7 @@ The {learnr} package is very nice but it has a major problem, the learners need 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://noamross.github.io/gams-in-r-course/&#34;&gt;Generalized Additive Models in R&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/noamross&#34;&gt;Noam Ross&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://supervised-ml-course.netlify.com/&#34;&gt;Supervised Machine Learning Case Studies in R&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/juliasilge&#34;&gt;Julia Silge&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://r-bootcamp.netlify.com&#34;&gt;R-Bootcamp&lt;/a&gt;by &lt;a href=&#34;https://twitter.com/tladeras&#34;&gt;Ted Laderas&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/datapointier&#34;&gt;Jessica Minnier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://r-bootcamp.netlify.com&#34;&gt;R-Bootcamp&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/tladeras&#34;&gt;Ted Laderas&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/datapointier&#34;&gt;Jessica Minnier&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;By following Florencia’s it is possible to create an interactive R tutorial for free very easily! The procedure described by Florencia and the three interactive tutorials examples as well as mine, are using the framework developed by &lt;a href=&#34;https://twitter.com/_inesmontani&#34;&gt;Ines Montani&lt;/a&gt; called Juniper which will make the interface between the Binder docker R environment back end and the tutorial front end. Speaking of front end, Ines is providing a very fancy template using node.js and being deployed with Gatsby. At this point I’m throwing computer science jargon but my understanding of them is very limited. The most important is that it is working very well!&lt;/p&gt;
 &lt;p&gt;It’s not a perfect solution, &lt;a href=&#34;https://education.rstudio.com/blog/2020/03/r-bootcamp/&#34;&gt;see this blog post describing pros and cons for this solution&lt;/a&gt;, however it is working and for free.&lt;/p&gt;
@@ -74,12 +74,12 @@ The {learnr} package is very nice but it has a major problem, the learners need 
 &lt;h2&gt;Interactive {blogdown} using ThebeLab’s Framework&lt;/h2&gt;
 &lt;p&gt;Even if Juniper’s framework is amazing, the content published is based on markdown files. I have nothing against markdown files but I do love Rmarkdown and I really missed them while publishing the tutorials. For this reason I googled “blogdown” + “binder” and found two very interesting discussions:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The first that I found was initiated &lt;a href=&#34;https://gitmemory.com/issue/rstudio/bookdown/851/595159119&#34;&gt;here in a question about the interactivity of bookdown documents&lt;/a&gt;. Someone came across the activity of &lt;a href=&#34;https://thebelab.readthedocs.io/en/latest/&#34;&gt;ThebeLab&lt;/a&gt; which is providing interfaces to binder for python code (see examples &lt;a href=&#34;https://jupyterbook.org/01/3/plotting_the_classics&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://thebelab.readthedocs.io/en/latest/_static/activate_button.html&#34;&gt;here&lt;/a&gt;. This question was answered by &lt;a href=&#34;https://twitter.com/chrisderv&#34;&gt;Christophe Dervieux&lt;/a&gt; saying that binder was not supporting R at this time. Christophe definitely made some progress when he shared in this &lt;a href=&#34;https://twitter.com/chrisderv/status/1235668163741839373&#34;&gt;tweet&lt;/a&gt; his &lt;a href=&#34;https://rpubs.com/cderv/581740&#34;&gt;success in creating an interactive .Rmd&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;The second &lt;a href=&#34;https://gitter.im/jupyterhub/binder?at=5dbdd8f33d669b28a0228191&#34;&gt;discussion was on gitter.com&lt;/a&gt; initiated by &lt;a href=&#34;https://twitter.com/RaoOfPhysics&#34;&gt;Achintya Rao&lt;/a&gt; saying that he successfully managed to create an &lt;a href=&#34;https://raoofphysics.gitlab.io/blog-test/2015/07/23/hello-r-markdown/&#34;&gt;interactive blogdown&lt;/a&gt;.
-After being in contact with Achintya and by seeing Christophe’s code, it is possible to identify the essential component to make magic happened:&lt;/li&gt;
+&lt;li&gt;The first that I found was initiated &lt;a href=&#34;https://github.com/rstudio/bookdown/issues/851&#34;&gt;here in a question about the interactivity of bookdown documents&lt;/a&gt;. Someone came across the activity of &lt;a href=&#34;https://thebelab.readthedocs.io/en/latest/&#34;&gt;ThebeLab&lt;/a&gt; which is providing interfaces to binder for python code (see examples &lt;a href=&#34;https://jupyterbook.org/01/3/plotting_the_classics&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://thebelab.readthedocs.io/en/latest/_static/activate_button.html&#34;&gt;here&lt;/a&gt;. This question was answered by &lt;a href=&#34;https://twitter.com/chrisderv&#34;&gt;Christophe Dervieux&lt;/a&gt; saying that binder was not supporting R at this time. Christophe definitely made some progress when he shared in this &lt;a href=&#34;https://twitter.com/chrisderv/status/1235668163741839373&#34;&gt;tweet&lt;/a&gt; his &lt;a href=&#34;https://rpubs.com/cderv/581740&#34;&gt;success in creating an interactive .Rmd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The second &lt;a href=&#34;https://gitter.im/jupyterhub/binder?at=5dbdd8f33d669b28a0228191&#34;&gt;discussion was on gitter.com&lt;/a&gt; initiated by &lt;a href=&#34;https://twitter.com/RaoOfPhysics&#34;&gt;Achintya Rao&lt;/a&gt; saying that he successfully managed to create an &lt;a href=&#34;https://raoofphysics.gitlab.io/blog-test/2015/07/23/hello-r-markdown/&#34;&gt;interactive blogdown&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;After being in contact with Achintya and by seeing Christophe’s code, it is possible to identify the essential component to make magic happened:&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;The blogdown theme/ Rmd file need to include a code linking it to 1/the repository connected to the binder docker R environment and 2/ the package thebelab which is interacting between both.&lt;/li&gt;
+&lt;li&gt;The blogdown theme or the .Rmd file need to include a code linking it to the repository connected to the binder docker R environment and to the package thebelab which is interacting between both.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;In Christophe’s code, this html code is included directly in the .Rmd file:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;!-- Some stuff from thebelab required for the magic --&amp;gt;
@@ -99,7 +99,7 @@ After being in contact with Achintya and by seeing Christophe’s code, it is po
 
 &amp;lt;!-- script for thebelab --&amp;gt;
 &amp;lt;script src=&amp;quot;https://unpkg.com/thebelab@latest/lib/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Whereas for Achintya’s blogdown, the following code is included in a specific file ./themes/hugo-lithium/layouts/partials/head_custom.html:&lt;/p&gt;
+&lt;p&gt;Whereas for Achintya’s blogdown, the following code is included in a specific file &lt;code&gt;./themes/hugo-lithium/layouts/partials/head_custom.html&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;!-- Configure and load Thebe !--&amp;gt;
 &amp;lt;script type=&amp;quot;text/x-thebe-config&amp;quot;&amp;gt;
     {
@@ -133,7 +133,7 @@ var bootstrapThebe = function() {
     thebelab.bootstrap();
 }
 document.querySelector(&amp;quot;#activateButton&amp;quot;).addEventListener(&amp;#39;click&amp;#39;, bootstrapThebe)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For Achintya’s blogdown, the code to create the button is included in a specific file ./themes/hugo-lithium/layouts/shortcodes/code.html and the code to trigger the bootstrapThebe is included in a specific file ./themes/hugo-lithium/layouts/partials/code.html . But to link these html files with the Rmd, each blogdown blog post have to include the following code:&lt;/p&gt;
+&lt;p&gt;For Achintya’s blogdown, the code to create the button is included in a specific file &lt;code&gt;./themes/hugo-lithium/layouts/shortcodes/code.html&lt;/code&gt; and the code to trigger the &lt;code&gt;bootstrapThebe&lt;/code&gt; is included in a specific file &lt;code&gt;./themes/hugo-lithium/layouts/partials/code.html&lt;/code&gt;. But to link these html files with the Rmd, each blogdown blog post have to include the following code:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::opts_chunk$set(collapse = TRUE, 
                       attr.source=&amp;quot;data-executable=&amp;#39;true&amp;#39;&amp;quot;,
                       eval = FALSE)&lt;/code&gt;&lt;/pre&gt;
@@ -150,6 +150,37 @@ document.querySelector(&amp;quot;#activateButton&amp;quot;).addEventListener(&am
 The you just need to go to binder.org fill your repository url and branch (if not master) and this is it!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can have a look at this &lt;a href=&#34;https://kind-raman-74e497.netlify.com/2015/07/23/hello-r-markdown/&#34;&gt;blogdown test containing interactive code chunks here&lt;/a&gt; (this blogdown works in the same way as Achintya’s so but it is hosted on my &lt;a href=&#34;https://github.com/damien-dupre/blog-test-damien&#34;&gt;github repository&lt;/a&gt; and uses a binder docker image connected to my &lt;a href=&#34;https://github.com/damien-dupre/thebelabr&#34;&gt;github repository&lt;/a&gt; as well).&lt;/p&gt;
+And this his what Christope’s setup looks like:
+&lt;!-- Some stuff from thebelab required for the magic --&gt;
+&lt;!-- Configure and load Thebe !--&gt;
+&lt;script type=&#34;text/x-thebe-config&#34;&gt;
+  {
+    requestKernel: true,
+    binderOptions: {
+      repo: &#34;binder-examples/r&#34;,
+    },
+    kernelOptions: {
+      name: &#34;R&#34;,
+      kernelName: &#34;ir&#34;,
+    },
+  }
+&lt;/script&gt;
+&lt;!-- script for thebelab --&gt;
+&lt;script src=&#34;https://unpkg.com/thebelab@latest/lib/index.js&#34;&gt;&lt;/script&gt;
+&lt;blockquote&gt;
+&lt;p&gt;clicking the below button will also launch the kernel and that could take some
+times to strat. Be patient…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;button id=&#34;activateButton&#34; style=&#34;width: 150px; height: 50px; font-size: 1.5em;&#34;&gt;Activate&lt;/button&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+// thebelab js script
+var bootstrapThebe = function() {
+    thebelab.bootstrap();
+}
+document.querySelector(&#34;#activateButton&#34;).addEventListener(&#39;click&#39;, bootstrapThebe)
+&lt;/script&gt;
+&lt;p&gt;Here is a chunk, not evaluated on purpose by Rmarkdown, and to be executed interactively, directly in this document.&lt;/p&gt;
+&lt;pre class=&#34;r&#34; data-executable=&#34;true&#34; data-language=&#34;r&#34;&gt;&lt;code&gt;print(&amp;quot;Hello&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;next-steps&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Next steps&lt;/h2&gt;
