@@ -55,6 +55,153 @@
     </item>
     
     <item>
+      <title>How to make an interactive tutorial to teach R?</title>
+      <link>/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/</guid>
+      <description>
+
+
+&lt;p&gt;Learning is changing quickly, very quickly. With the advancement of technologies and with the help of unexpected game changer events, the future of learning is becoming online rather than onsite. This is particularly true for learning how to code (&lt;a href=&#34;https://datascienceineducation.com&#34;&gt;here is a nice book about Education in Data Science with R&lt;/a&gt;) . Coding languages such as R or Python require a combination of contextual situations to be efficiently practiced:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Learners need to see the output of running code. Classic slides lectures are good for general ideas but nothing can replace the direct feedback of run a code and comparing its output with expected results.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Learners need to practice. Because the first will generally not produce the expected results, learners have to use the good old “die and retry” strategy to understand their errors. However it takes time and auto determination.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Learners need to follow their own rhythm. Depending on learners’ previous experiences, the basics will be learnt faster or slower. All learners have their own pace.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Consequently, online learning is perfect for these 3 points. In the R community, I imagine that most people have actually learnt R online, at least it is my case.&lt;/p&gt;
+&lt;div id=&#34;learning-r-online&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Learning R online&lt;/h2&gt;
+&lt;p&gt;There is a lot of amazing tutorials out there which can be accessed for free on coursera or udermy platforms for example or using blogs and online books. It is also very easy to create your own tutorial using {blogdown} or {bookdown} for example. A great talk entitled “How to Get Your Materials Online With R Markdown” recently introduced the different possibilities to share your own tutorial online (here are the &lt;a href=&#34;https://resources.rstudio.com/webinars/sharing-on-short-notice-how-to-get-your-materials-online-with-r-markdown&#34;&gt;video&lt;/a&gt; and the &lt;a href=&#34;https://rstudio-education.github.io/sharing-short-notice/&#34;&gt;slides&lt;/a&gt;).
+However, few of these solutions are satisfying the first criteria. The ability to let the learners running the code by themselves usually imply that the learner has to run the code on a machine with the code and IDE required already installed.&lt;/p&gt;
+&lt;p&gt;One of these online learning platform is different, it allows the learner to watch a video or to read some slides and then to run the code via some exercises. I learnt a lot from this platform but the access of the tutorials is not free and therefore not suitable for students.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;interactive-tutorials-r-packages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Interactive tutorials R packages&lt;/h2&gt;
+&lt;p&gt;The community around R has developed some amazing tools to create tutorials which allow learners to run their own code. There are maybe more of them but I am thinking of the {learnr} and {RTutor} packages (&lt;a href=&#34;https://swirlstats.com&#34;&gt;the {swirl} package&lt;/a&gt; also creates tutorials but these have to be used inside an IDE).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://rstudio.github.io/learnr&#34;&gt;The {learnr} package is amazing&lt;/a&gt;. It helps to create very neat interactive tutorials from a .Rmd file. Because I love Rmarkdown, I have created some of them already for my students:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://damien-dupre.shinyapps.io/learnr_dcu_warm_up&#34;&gt;WaRm Up!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://damien-dupre.shinyapps.io/learnr_dcu_data_transformation&#34;&gt;Data Transformation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://damien-dupre.shinyapps.io/learnr_dcu_data_visualisation&#34;&gt;Data Visualisation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://damien-dupre.shinyapps.io/learnr_dcu_linear_regression&#34;&gt;Linear Regression&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is also possible to &lt;a href=&#34;https://desiree.rbind.io/post/2020/learnr-iframes&#34;&gt;integrate the {learnr} package into a blogdown website&lt;/a&gt; and to create beautiful visualisation such as the &lt;a href=&#34;https://tinystats.github.io/teacups-giraffes-and-statistics&#34;&gt;giraffe project to learn statistics&lt;/a&gt;.
+I have never used the {RTutor} package but I’m assuming it has a lot of similarities with the {learnr} package as indicated in &lt;a href=&#34;https://skranz.github.io//r/2019/04/29/RTutor_vs_Learnr.html&#34;&gt;this blog post&lt;/a&gt;.
+The {learnr} package is very nice but it has a major problem, the learners need to have their own and unique shiny session. To run a .Rmd file using the {learnr} package, this Rmarkdown has to be deployed on a shiny server and I currently know only two solutions to host a shiny app:&lt;/p&gt;
+&lt;div id=&#34;with-rstudios-shinyapps.io&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1. With RStudio’s shinyapps.io&lt;/h3&gt;
+&lt;p&gt;This option is super easy and fast to deploy a shiny app and has a free option to deploy 5 shiny apps (that I currently use for my {learnr} tutorials). However, this free option also only includes 5 users in the same time. This is great for the test of specific shiny apps but for parallel learning, it is definitely not enough.&lt;/p&gt;
+&lt;p&gt;There is the possibility to increase the number of parallel users but it is not free I’m afraid.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;with-a-cloud-instance-using-shiny-server&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;2. With a cloud instance using shiny server&lt;/h3&gt;
+&lt;p&gt;The second solution involves creating a cloud instance on AWS or DigitalOcean for example and installing the shiny server to host the Rmarkdown with {learnr}. This solution involves some patience, a bit of knowledge in shell coding and is basically not free (some providers give a free tiers but only for a limited period of time). About the scalability of these solutions, it is apparently possible to scale it to multiple learners in parallel, but I never used them for this purpose so I can’t tell more about how to do it and how many parallel users can use the shiny app.&lt;/p&gt;
+&lt;p&gt;From what I know, there are two solutions to run a shiny app online which can scale up more than 5 users in the same time and unfortunately none of them are completely free (however I need to explore this AWS free tier solution).&lt;/p&gt;
+&lt;p&gt;I’m sure that there are alternative solutions and hacks that I am not aware of. For example AWS has &lt;a href=&#34;https://aws.amazon.com/blogs/opensource/getting-started-with-r-on-amazon-web-services/&#34;&gt;so many different services&lt;/a&gt; that are a mystery to me. Would it be possible to set a shiny app in an AWS ECS container or to create a lambda with a R environment? My knowledge in AWS competitors such as DigitalOcean, Microsoft Azure or Google Cloud is not good enough to suggest alternative free awesome solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;scale-docker-containers-with-binder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Scale Docker containers with Binder&lt;/h2&gt;
+&lt;p&gt;I recently came across the post of by &lt;a href=&#34;https://florencia.netlify.com/2020/03/cooking-your-first-tutorial.en-us/&#34;&gt;Florencia d’Andrea&lt;/a&gt; explaining how to create an interactive tutorial with Binder, a free service which creates a scalable docker R environment attached to a github/gitlab repository. According to binder, the limit is 100 users simultaneously with is perfect for teaching!&lt;/p&gt;
+&lt;p&gt;In fact, I was already aware of online tutorial using this setup without knowing how they worked:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://noamross.github.io/gams-in-r-course/&#34;&gt;Generalized Additive Models in R&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/noamross&#34;&gt;Noam Ross&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://supervised-ml-course.netlify.com/&#34;&gt;Supervised Machine Learning Case Studies in R&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/juliasilge&#34;&gt;Julia Silge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://r-bootcamp.netlify.com&#34;&gt;R-Bootcamp&lt;/a&gt;by &lt;a href=&#34;https://twitter.com/tladeras&#34;&gt;Ted Laderas&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/datapointier&#34;&gt;Jessica Minnier&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By following Florencia’s it is possible to create an interactive R tutorial for free very easily! The procedure described by Florencia and the three interactive tutorials examples as well as mine, are using the framework developed by &lt;a href=&#34;https://twitter.com/_inesmontani&#34;&gt;Ines Montani&lt;/a&gt; called Juniper which will make the interface between the Binder docker R environment back end and the tutorial front end. Speaking of front end, Ines is providing a very fancy template using node.js and being deployed with Gatsby. At this point I’m throwing computer science jargon but my understanding of them is very limited. The most important is that it is working very well!&lt;/p&gt;
+&lt;p&gt;It’s not a perfect solution, &lt;a href=&#34;https://education.rstudio.com/blog/2020/03/r-bootcamp/&#34;&gt;see this blog post describing pros and cons for this solution&lt;/a&gt;, however it is working and for free.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;interactive-blogdown-using-thebelabs-framework&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Interactive {blogdown} using ThebeLab’s Framework&lt;/h2&gt;
+&lt;p&gt;Even if Juniper’s framework is amazing, the content published is based on markdown files. I have nothing against markdown files but I do love Rmarkdown and I really missed them while publishing the tutorials. For this reason I googled “blogdown” + “binder” and found two very interesting discussions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The first that I found was initiated &lt;a href=&#34;https://gitmemory.com/issue/rstudio/bookdown/851/595159119&#34;&gt;here in a question about the interactivity of bookdown documents&lt;/a&gt;. Someone came across the activity of &lt;a href=&#34;https://thebelab.readthedocs.io/en/latest/&#34;&gt;ThebeLab&lt;/a&gt; which is providing interfaces to binder for python code (see examples &lt;a href=&#34;https://jupyterbook.org/01/3/plotting_the_classics&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://thebelab.readthedocs.io/en/latest/_static/activate_button.html&#34;&gt;here&lt;/a&gt;. This question was answered by &lt;a href=&#34;https://twitter.com/chrisderv&#34;&gt;Christophe Dervieux&lt;/a&gt; saying that binder was not supporting R at this time. Christophe definitely made some progress when he shared in this &lt;a href=&#34;https://twitter.com/chrisderv/status/1235668163741839373&#34;&gt;tweet&lt;/a&gt; his &lt;a href=&#34;https://rpubs.com/cderv/581740&#34;&gt;success in creating an interactive .Rmd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The second &lt;a href=&#34;https://gitter.im/jupyterhub/binder?at=5dbdd8f33d669b28a0228191&#34;&gt;discussion was on gitter.com&lt;/a&gt; initiated by &lt;a href=&#34;https://twitter.com/RaoOfPhysics&#34;&gt;Achintya Rao&lt;/a&gt; saying that he successfully managed to create an &lt;a href=&#34;https://raoofphysics.gitlab.io/blog-test/2015/07/23/hello-r-markdown/&#34;&gt;interactive blogdown&lt;/a&gt;.
+After being in contact with Achintya and by seeing Christophe’s code, it is possible to identify the essential component to make magic happened:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;The blogdown theme/ Rmd file need to include a code linking it to 1/the repository connected to the binder docker R environment and 2/ the package thebelab which is interacting between both.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In Christophe’s code, this html code is included directly in the .Rmd file:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- Some stuff from thebelab required for the magic --&amp;gt;
+&amp;lt;!-- Configure and load Thebe !--&amp;gt;
+&amp;lt;script type=&amp;quot;text/x-thebe-config&amp;quot;&amp;gt;
+  {
+    requestKernel: true,
+    binderOptions: {
+      repo: &amp;#39;github_username/github_reponame,
+    },
+    kernelOptions: {
+      name: &amp;quot;R&amp;quot;,
+      kernelName: &amp;quot;ir&amp;quot;,
+    },
+  }
+&amp;lt;/script&amp;gt;
+
+&amp;lt;!-- script for thebelab --&amp;gt;
+&amp;lt;script src=&amp;quot;https://unpkg.com/thebelab@latest/lib/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Whereas for Achintya’s blogdown, the following code is included in a specific file ./themes/hugo-lithium/layouts/partials/head_custom.html:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- Configure and load Thebe !--&amp;gt;
+&amp;lt;script type=&amp;quot;text/x-thebe-config&amp;quot;&amp;gt;
+    {
+        bootstrap: false,
+        requestKernel: true,
+        binderOptions: {
+            repo: &amp;#39;github_username/github_reponame,
+            ref: &amp;#39;master&amp;#39;,
+            repoProvider: &amp;#39;github&amp;#39;,
+        },
+        kernelOptions: {
+            name: &amp;#39;ir&amp;#39;,
+        }
+    }
+&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://unpkg.com/thebelab@0.4.0/lib/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Both document are including a button to activate the code.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In Christophe’s code the button code and its action on the &lt;code&gt;bootstrapThebe&lt;/code&gt; function are directly included in the Rmd file:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ad a button
+htmltools::tags$button(
+  id = &amp;quot;activateButton&amp;quot;,
+  style=&amp;quot;width: 100px; height: 50px; font-size: 1.5em;&amp;quot;, 
+  &amp;quot;Activate&amp;quot;
+)
+
+# js chunk
+// thebelab js script
+var bootstrapThebe = function() {
+    thebelab.bootstrap();
+}
+document.querySelector(&amp;quot;#activateButton&amp;quot;).addEventListener(&amp;#39;click&amp;#39;, bootstrapThebe)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For Achintya’s blogdown, the code to create the button is included in a specific file ./themes/hugo-lithium/layouts/shortcodes/code.html and the code to trigger the bootstrapThebe is included in a specific file ./themes/hugo-lithium/layouts/partials/code.html . But to link these html files with the Rmd, each blogdown blog post have to include the following code:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::opts_chunk$set(collapse = TRUE, 
+                      attr.source=&amp;quot;data-executable=&amp;#39;true&amp;#39;&amp;quot;,
+                      eval = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;adding-the-link-to-the-repository-connected-to-binder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Adding the link to the repository connected to binder&lt;/h2&gt;
+&lt;p&gt;I have hidden it to make it more generic and explicit but Christophe used the demo repo connected to binder &lt;a href=&#34;https://github.com/binder-examples/r&#34; class=&#34;uri&#34;&gt;https://github.com/binder-examples/r&lt;/a&gt; whereas Achintya has linked his blogdown to a repository hosted on his github.&lt;/p&gt;
+&lt;p&gt;In fact, the necessity of connecting a repository to binder and to indicate the link to this repository is also used in Juniper in a very similar way. However, instead of having a separated repository, Ines was connecting a branch of the same repository used for the deployment. From my github beginner experience, I think a distinct repository is easier to manage.&lt;/p&gt;
+&lt;p&gt;The necessity of having a distinct branch or repository is explained by Ines as follow in &lt;a href=&#34;https://github.com/ines/course-starter-r&#34;&gt;the readme of her template&lt;/a&gt;: “The reason they’re different is that binder forces a Docker container rebuild when a branch is updated. So, if we served our container out of master, it would rebuild every time we modified a chapter.md or an exercise.”&lt;/p&gt;
+&lt;p&gt;To build this binder docker image from a repository it is super easy, you just need two files on the root of the repository:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a R script which contains all the package to install in order to run the code in your interactive chunks&lt;/li&gt;
+&lt;li&gt;a text file containing YYYY-MM-DD snapshot at MRAN that will be used for installing libraries. &lt;a href=&#34;https://github.com/binder-examples/r&#34;&gt;See here&lt;/a&gt; for details.
+The you just need to go to binder.org fill your repository url and branch (if not master) and this is it!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can have a look at this &lt;a href=&#34;https://kind-raman-74e497.netlify.com/2015/07/23/hello-r-markdown/&#34;&gt;blogdown test containing interactive code chunks here&lt;/a&gt; (this blogdown works in the same way as Achintya’s so but it is hosted on my &lt;a href=&#34;https://github.com/damien-dupre/blog-test-damien&#34;&gt;github repository&lt;/a&gt; and uses a binder docker image connected to my &lt;a href=&#34;https://github.com/damien-dupre/thebelabr&#34;&gt;github repository&lt;/a&gt; as well).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;next-steps&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Next steps&lt;/h2&gt;
+&lt;p&gt;For the moment, thanks to Achintya and Christophe’s work, I have a blog test will 2 code chunks that are interactive. The next move will be to convert my Juniper-mardown-node.js tutorial to a thebelab –rmarkdown-blogdown.&lt;/p&gt;
+&lt;p&gt;Another interesting part would be to integrate a code evaluation system like {gradethis} for example. I’m also wondering if {learnr} would work as well!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>My Data Analytics for Behavioural Research presentation: Theory, Introduction to R and Data Processing</title>
       <link>/post/my-data-analytics-for-behavioural-research-presentation-theory-introduction-to-r-and-data-processing/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>

@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Damien Dupré">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Learning is changing quickly, very quickly. With the advancement of technologies and with the help of unexpected game changer events, the future of learning is becoming online rather than onsite.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@damien_dupre">
+  <meta property="twitter:creator" content="@damien_dupre">
+  
+  <meta property="og:site_name" content="Damien DataSci Blog">
+  <meta property="og:url" content="/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/">
+  <meta property="og:title" content="How to make an interactive tutorial to teach R? | Damien DataSci Blog">
+  <meta property="og:description" content="Learning is changing quickly, very quickly. With the advancement of technologies and with the help of unexpected game changer events, the future of learning is becoming online rather than onsite."><meta property="og:image" content="/img/profile">
+  <meta property="twitter:image" content="/img/profile"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-04-08T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-04-08T17:52:44&#43;01:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/"
+  },
+  "headline": "How to make an interactive tutorial to teach R?",
+  
+  "datePublished": "2020-04-08T00:00:00Z",
+  "dateModified": "2020-04-08T17:52:44+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Damien Dupré"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Damien DataSci Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Learning is changing quickly, very quickly. With the advancement of technologies and with the help of unexpected game changer events, the future of learning is becoming online rather than onsite."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>How to make an interactive tutorial to teach R? | Damien DataSci Blog</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Damien DataSci Blog</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Damien DataSci Blog</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>How to make an interactive tutorial to teach R?</h1>
+
+  
+  <p class="page-subtitle">An overview</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    08/04/2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<p>Learning is changing quickly, very quickly. With the advancement of technologies and with the help of unexpected game changer events, the future of learning is becoming online rather than onsite. This is particularly true for learning how to code (<a href="https://datascienceineducation.com">here is a nice book about Education in Data Science with R</a>) . Coding languages such as R or Python require a combination of contextual situations to be efficiently practiced:</p>
+<ol style="list-style-type: decimal">
+<li><p>Learners need to see the output of running code. Classic slides lectures are good for general ideas but nothing can replace the direct feedback of run a code and comparing its output with expected results.</p></li>
+<li><p>Learners need to practice. Because the first will generally not produce the expected results, learners have to use the good old “die and retry” strategy to understand their errors. However it takes time and auto determination.</p></li>
+<li><p>Learners need to follow their own rhythm. Depending on learners’ previous experiences, the basics will be learnt faster or slower. All learners have their own pace.</p></li>
+</ol>
+<p>Consequently, online learning is perfect for these 3 points. In the R community, I imagine that most people have actually learnt R online, at least it is my case.</p>
+<div id="learning-r-online" class="section level2">
+<h2>Learning R online</h2>
+<p>There is a lot of amazing tutorials out there which can be accessed for free on coursera or udermy platforms for example or using blogs and online books. It is also very easy to create your own tutorial using {blogdown} or {bookdown} for example. A great talk entitled “How to Get Your Materials Online With R Markdown” recently introduced the different possibilities to share your own tutorial online (here are the <a href="https://resources.rstudio.com/webinars/sharing-on-short-notice-how-to-get-your-materials-online-with-r-markdown">video</a> and the <a href="https://rstudio-education.github.io/sharing-short-notice/">slides</a>).
+However, few of these solutions are satisfying the first criteria. The ability to let the learners running the code by themselves usually imply that the learner has to run the code on a machine with the code and IDE required already installed.</p>
+<p>One of these online learning platform is different, it allows the learner to watch a video or to read some slides and then to run the code via some exercises. I learnt a lot from this platform but the access of the tutorials is not free and therefore not suitable for students.</p>
+</div>
+<div id="interactive-tutorials-r-packages" class="section level2">
+<h2>Interactive tutorials R packages</h2>
+<p>The community around R has developed some amazing tools to create tutorials which allow learners to run their own code. There are maybe more of them but I am thinking of the {learnr} and {RTutor} packages (<a href="https://swirlstats.com">the {swirl} package</a> also creates tutorials but these have to be used inside an IDE).</p>
+<p><a href="https://rstudio.github.io/learnr">The {learnr} package is amazing</a>. It helps to create very neat interactive tutorials from a .Rmd file. Because I love Rmarkdown, I have created some of them already for my students:</p>
+<ul>
+<li><a href="https://damien-dupre.shinyapps.io/learnr_dcu_warm_up">WaRm Up!</a></li>
+<li><a href="https://damien-dupre.shinyapps.io/learnr_dcu_data_transformation">Data Transformation</a></li>
+<li><a href="https://damien-dupre.shinyapps.io/learnr_dcu_data_visualisation">Data Visualisation</a></li>
+<li><a href="https://damien-dupre.shinyapps.io/learnr_dcu_linear_regression">Linear Regression</a></li>
+</ul>
+<p>It is also possible to <a href="https://desiree.rbind.io/post/2020/learnr-iframes">integrate the {learnr} package into a blogdown website</a> and to create beautiful visualisation such as the <a href="https://tinystats.github.io/teacups-giraffes-and-statistics">giraffe project to learn statistics</a>.
+I have never used the {RTutor} package but I’m assuming it has a lot of similarities with the {learnr} package as indicated in <a href="https://skranz.github.io//r/2019/04/29/RTutor_vs_Learnr.html">this blog post</a>.
+The {learnr} package is very nice but it has a major problem, the learners need to have their own and unique shiny session. To run a .Rmd file using the {learnr} package, this Rmarkdown has to be deployed on a shiny server and I currently know only two solutions to host a shiny app:</p>
+<div id="with-rstudios-shinyapps.io" class="section level3">
+<h3>1. With RStudio’s shinyapps.io</h3>
+<p>This option is super easy and fast to deploy a shiny app and has a free option to deploy 5 shiny apps (that I currently use for my {learnr} tutorials). However, this free option also only includes 5 users in the same time. This is great for the test of specific shiny apps but for parallel learning, it is definitely not enough.</p>
+<p>There is the possibility to increase the number of parallel users but it is not free I’m afraid.</p>
+</div>
+<div id="with-a-cloud-instance-using-shiny-server" class="section level3">
+<h3>2. With a cloud instance using shiny server</h3>
+<p>The second solution involves creating a cloud instance on AWS or DigitalOcean for example and installing the shiny server to host the Rmarkdown with {learnr}. This solution involves some patience, a bit of knowledge in shell coding and is basically not free (some providers give a free tiers but only for a limited period of time). About the scalability of these solutions, it is apparently possible to scale it to multiple learners in parallel, but I never used them for this purpose so I can’t tell more about how to do it and how many parallel users can use the shiny app.</p>
+<p>From what I know, there are two solutions to run a shiny app online which can scale up more than 5 users in the same time and unfortunately none of them are completely free (however I need to explore this AWS free tier solution).</p>
+<p>I’m sure that there are alternative solutions and hacks that I am not aware of. For example AWS has <a href="https://aws.amazon.com/blogs/opensource/getting-started-with-r-on-amazon-web-services/">so many different services</a> that are a mystery to me. Would it be possible to set a shiny app in an AWS ECS container or to create a lambda with a R environment? My knowledge in AWS competitors such as DigitalOcean, Microsoft Azure or Google Cloud is not good enough to suggest alternative free awesome solutions.</p>
+</div>
+</div>
+<div id="scale-docker-containers-with-binder" class="section level2">
+<h2>Scale Docker containers with Binder</h2>
+<p>I recently came across the post of by <a href="https://florencia.netlify.com/2020/03/cooking-your-first-tutorial.en-us/">Florencia d’Andrea</a> explaining how to create an interactive tutorial with Binder, a free service which creates a scalable docker R environment attached to a github/gitlab repository. According to binder, the limit is 100 users simultaneously with is perfect for teaching!</p>
+<p>In fact, I was already aware of online tutorial using this setup without knowing how they worked:</p>
+<ul>
+<li><a href="https://noamross.github.io/gams-in-r-course/">Generalized Additive Models in R</a> by <a href="https://twitter.com/noamross">Noam Ross</a></li>
+<li><a href="https://supervised-ml-course.netlify.com/">Supervised Machine Learning Case Studies in R</a> by <a href="https://twitter.com/juliasilge">Julia Silge</a></li>
+<li><a href="https://r-bootcamp.netlify.com">R-Bootcamp</a>by <a href="https://twitter.com/tladeras">Ted Laderas</a> and <a href="https://twitter.com/datapointier">Jessica Minnier</a></li>
+</ul>
+<p>By following Florencia’s it is possible to create an interactive R tutorial for free very easily! The procedure described by Florencia and the three interactive tutorials examples as well as mine, are using the framework developed by <a href="https://twitter.com/_inesmontani">Ines Montani</a> called Juniper which will make the interface between the Binder docker R environment back end and the tutorial front end. Speaking of front end, Ines is providing a very fancy template using node.js and being deployed with Gatsby. At this point I’m throwing computer science jargon but my understanding of them is very limited. The most important is that it is working very well!</p>
+<p>It’s not a perfect solution, <a href="https://education.rstudio.com/blog/2020/03/r-bootcamp/">see this blog post describing pros and cons for this solution</a>, however it is working and for free.</p>
+</div>
+<div id="interactive-blogdown-using-thebelabs-framework" class="section level2">
+<h2>Interactive {blogdown} using ThebeLab’s Framework</h2>
+<p>Even if Juniper’s framework is amazing, the content published is based on markdown files. I have nothing against markdown files but I do love Rmarkdown and I really missed them while publishing the tutorials. For this reason I googled “blogdown” + “binder” and found two very interesting discussions:</p>
+<ul>
+<li>The first that I found was initiated <a href="https://gitmemory.com/issue/rstudio/bookdown/851/595159119">here in a question about the interactivity of bookdown documents</a>. Someone came across the activity of <a href="https://thebelab.readthedocs.io/en/latest/">ThebeLab</a> which is providing interfaces to binder for python code (see examples <a href="https://jupyterbook.org/01/3/plotting_the_classics">here</a> and <a href="https://thebelab.readthedocs.io/en/latest/_static/activate_button.html">here</a>. This question was answered by <a href="https://twitter.com/chrisderv">Christophe Dervieux</a> saying that binder was not supporting R at this time. Christophe definitely made some progress when he shared in this <a href="https://twitter.com/chrisderv/status/1235668163741839373">tweet</a> his <a href="https://rpubs.com/cderv/581740">success in creating an interactive .Rmd</a></li>
+<li>The second <a href="https://gitter.im/jupyterhub/binder?at=5dbdd8f33d669b28a0228191">discussion was on gitter.com</a> initiated by <a href="https://twitter.com/RaoOfPhysics">Achintya Rao</a> saying that he successfully managed to create an <a href="https://raoofphysics.gitlab.io/blog-test/2015/07/23/hello-r-markdown/">interactive blogdown</a>.
+After being in contact with Achintya and by seeing Christophe’s code, it is possible to identify the essential component to make magic happened:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>The blogdown theme/ Rmd file need to include a code linking it to 1/the repository connected to the binder docker R environment and 2/ the package thebelab which is interacting between both.</li>
+</ol>
+<p>In Christophe’s code, this html code is included directly in the .Rmd file:</p>
+<pre><code>&lt;!-- Some stuff from thebelab required for the magic --&gt;
+&lt;!-- Configure and load Thebe !--&gt;
+&lt;script type=&quot;text/x-thebe-config&quot;&gt;
+  {
+    requestKernel: true,
+    binderOptions: {
+      repo: &#39;github_username/github_reponame,
+    },
+    kernelOptions: {
+      name: &quot;R&quot;,
+      kernelName: &quot;ir&quot;,
+    },
+  }
+&lt;/script&gt;
+
+&lt;!-- script for thebelab --&gt;
+&lt;script src=&quot;https://unpkg.com/thebelab@latest/lib/index.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>Whereas for Achintya’s blogdown, the following code is included in a specific file ./themes/hugo-lithium/layouts/partials/head_custom.html:</p>
+<pre><code>&lt;!-- Configure and load Thebe !--&gt;
+&lt;script type=&quot;text/x-thebe-config&quot;&gt;
+    {
+        bootstrap: false,
+        requestKernel: true,
+        binderOptions: {
+            repo: &#39;github_username/github_reponame,
+            ref: &#39;master&#39;,
+            repoProvider: &#39;github&#39;,
+        },
+        kernelOptions: {
+            name: &#39;ir&#39;,
+        }
+    }
+&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/thebelab@0.4.0/lib/index.js&quot;&gt;&lt;/script&gt;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Both document are including a button to activate the code.</li>
+</ol>
+<p>In Christophe’s code the button code and its action on the <code>bootstrapThebe</code> function are directly included in the Rmd file:</p>
+<pre class="r"><code># ad a button
+htmltools::tags$button(
+  id = &quot;activateButton&quot;,
+  style=&quot;width: 100px; height: 50px; font-size: 1.5em;&quot;, 
+  &quot;Activate&quot;
+)
+
+# js chunk
+// thebelab js script
+var bootstrapThebe = function() {
+    thebelab.bootstrap();
+}
+document.querySelector(&quot;#activateButton&quot;).addEventListener(&#39;click&#39;, bootstrapThebe)</code></pre>
+<p>For Achintya’s blogdown, the code to create the button is included in a specific file ./themes/hugo-lithium/layouts/shortcodes/code.html and the code to trigger the bootstrapThebe is included in a specific file ./themes/hugo-lithium/layouts/partials/code.html . But to link these html files with the Rmd, each blogdown blog post have to include the following code:</p>
+<pre class="r"><code>knitr::opts_chunk$set(collapse = TRUE, 
+                      attr.source=&quot;data-executable=&#39;true&#39;&quot;,
+                      eval = FALSE)</code></pre>
+</div>
+<div id="adding-the-link-to-the-repository-connected-to-binder" class="section level2">
+<h2>Adding the link to the repository connected to binder</h2>
+<p>I have hidden it to make it more generic and explicit but Christophe used the demo repo connected to binder <a href="https://github.com/binder-examples/r" class="uri">https://github.com/binder-examples/r</a> whereas Achintya has linked his blogdown to a repository hosted on his github.</p>
+<p>In fact, the necessity of connecting a repository to binder and to indicate the link to this repository is also used in Juniper in a very similar way. However, instead of having a separated repository, Ines was connecting a branch of the same repository used for the deployment. From my github beginner experience, I think a distinct repository is easier to manage.</p>
+<p>The necessity of having a distinct branch or repository is explained by Ines as follow in <a href="https://github.com/ines/course-starter-r">the readme of her template</a>: “The reason they’re different is that binder forces a Docker container rebuild when a branch is updated. So, if we served our container out of master, it would rebuild every time we modified a chapter.md or an exercise.”</p>
+<p>To build this binder docker image from a repository it is super easy, you just need two files on the root of the repository:</p>
+<ul>
+<li>a R script which contains all the package to install in order to run the code in your interactive chunks</li>
+<li>a text file containing YYYY-MM-DD snapshot at MRAN that will be used for installing libraries. <a href="https://github.com/binder-examples/r">See here</a> for details.
+The you just need to go to binder.org fill your repository url and branch (if not master) and this is it!</li>
+</ul>
+<p>You can have a look at this <a href="https://kind-raman-74e497.netlify.com/2015/07/23/hello-r-markdown/">blogdown test containing interactive code chunks here</a> (this blogdown works in the same way as Achintya’s so but it is hosted on my <a href="https://github.com/damien-dupre/blog-test-damien">github repository</a> and uses a binder docker image connected to my <a href="https://github.com/damien-dupre/thebelabr">github repository</a> as well).</p>
+</div>
+<div id="next-steps" class="section level2">
+<h2>Next steps</h2>
+<p>For the moment, thanks to Achintya and Christophe’s work, I have a blog test will 2 code chunks that are interactive. The next move will be to convert my Juniper-mardown-node.js tutorial to a thebelab –rmarkdown-blogdown.</p>
+<p>Another interesting part would be to integrate a code evaluation system like {gradethis} for example. I’m also wondering if {learnr} would work as well!</p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/&amp;text=How%20to%20make%20an%20interactive%20tutorial%20to%20teach%20R?" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/&amp;t=How%20to%20make%20an%20interactive%20tutorial%20to%20teach%20R?" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=How%20to%20make%20an%20interactive%20tutorial%20to%20teach%20R?&amp;body=/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/&amp;title=How%20to%20make%20an%20interactive%20tutorial%20to%20teach%20R?" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=How%20to%20make%20an%20interactive%20tutorial%20to%20teach%20R?%20/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/how-to-make-an-interactive-tutorial-to-teach-r-an-overview/&amp;title=How%20to%20make%20an%20interactive%20tutorial%20to%20teach%20R?" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu3aea10c21f63ade17b8fa472aae412ab_4713825_270x270_fill_q90_lanczos_center.jpg" alt="Damien Dupré">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Damien Dupré</a></h5>
+      <h6 class="card-subtitle">Assistant Professor of Business Research Methods</h6>
+      <p class="card-text">My research interests relies on time-series analyses of psychological and physiological measures.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/damien_dupre" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=FR2TRIEAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/damien-dupre" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    © 2020 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
